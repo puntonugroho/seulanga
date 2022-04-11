@@ -104,7 +104,8 @@ class HalamanUtama extends CI_Controller {
 
 
 		if(!empty($dokumen_elektronik)){
-			$TampilDokumenElektronik = '<object id="pdf" height="640px" width="100%" type="application/pdf" data="'.base_url().'dokumen/'.$dokumen_elektronik.'"><span align="center"></span></object>';
+			//$TampilDokumenElektronik = '<object id="pdf" height="640px" width="100%" type="application/pdf" data="'.base_url().'dokumen/'.$dokumen_elektronik.'"><span align="center"></span></object>';
+			$TampilDokumenElektronik = '<iframe src = "'.base_url().'/ViewerJS/#../dokumen/'.$dokumen_elektronik.'" width="100%" height="640" allowfullscreen webkitallowfullscreen></iframe>';
 		} else {
 			$TampilDokumenElektronik = '<object id="pdf" height="640px" width="100%" type="application/pdf" data=""><span align="center">Dokumen Elektronik Tidak Tersedia</span></object>';
 		}
