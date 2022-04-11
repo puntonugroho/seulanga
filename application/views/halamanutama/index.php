@@ -127,7 +127,7 @@
 													<th style="font-weight: 600; font-size:0.9rem">Tgl. Register</th>
 													<th style="font-weight: 600; font-size:0.9rem">Nomor</th>
 													<th style="font-weight: 600; font-size:0.9rem">Pengirim</th>
-													<th style="font-weight: 600; font-size:0.9rem">Aksi</th>
+													<th style="font-weight: 600; font-size:0.9rem">Pelaksana Terakhir</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -139,7 +139,7 @@
 													echo "<td>" . $this->tanggalhelper->convertToInputDate($row->tanggal_register) . "</td>";
 													echo "<td>" . $row->nomor_surat . "</td>";
 													echo "<td>" . $row->pengirim . "</td>";
-													echo "<td> - </td>";
+													echo "<td>" .$row->tujuan_disposisi_nama. "</td>";
 													echo "</tr>";
 												} ?>
 											</tbody>
