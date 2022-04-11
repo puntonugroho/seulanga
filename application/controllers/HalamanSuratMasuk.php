@@ -335,7 +335,8 @@ class HalamanSuratMasuk extends CI_Controller {
 		$dokumen = $queryRegister->row()->dokumen_elektronik;
 
 		if(!empty($dokumen)){
-			$TampilDokumenElektronik = '<object id="pdf" height="1024px" width="100%" type="application/pdf" data="'.base_url().'dokumen/'.$dokumen.'"></object>';
+			// $TampilDokumenElektronik = '<object id="pdf" height="1024px" width="100%" type="application/pdf" data="'.base_url().'dokumen/'.$dokumen.'"></object>';
+			$TampilDokumenElektronik = '<iframe src = "'.base_url().'/ViewerJS/#../dokumen/'.$dokumen.'" width="100%" height="640" allowfullscreen webkitallowfullscreen></iframe>';
 		} else {
 			$TampilDokumenElektronik = '<object id="pdf" height="1024px" width="100%" type="application/pdf" data=""><span align="center">Dokumen Elektronik Tidak Tersedia</span></object>';
 		}

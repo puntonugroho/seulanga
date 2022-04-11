@@ -19,6 +19,7 @@ ERROR - 2022-04-11 08:26:55 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 08:26:55 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-11 08:33:46 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-11 08:33:46 --> 404 Page Not Found: Assets/maps
+<<<<<<< HEAD
 ERROR - 2022-04-11 10:58:08 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-11 10:58:08 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 10:58:15 --> 404 Page Not Found: Assets/maps
@@ -44,3 +45,40 @@ ERROR - 2022-04-11 11:05:12 --> The upload path does not appear to be valid.
 ERROR - 2022-04-11 11:05:12 --> Query error: Duplicate entry '0-1' for key 'PRIMARY' - Invalid query: INSERT INTO `register_surat` (`klasifikasi_surat_id`, `klasifikasi_surat`, `nomor_index`, `nomor_agenda`, `jenis_surat_id`, `jenis_surat`, `tanggal_register`, `tanggal_surat`, `nomor_surat`, `pengirim`, `tujuan_id`, `tujuan`, `perihal`, `dokumen_elektronik`, `keterangan`, `status_pelaksanaan_id`, `status_pelaksanaan`, `diinput_oleh`, `diinput_tanggal`) VALUES ('1', 'Surat Masuk', '12', '12/2022', '1', 'Rahasia', '2022-04-11', '2022-04-11', 'W1-A22/11/220', 'kdmflkdfmda', '2', 'Ketua Mahkamah Syar\'iyah', 'dfdfdsfsd', NULL, 'dsfsdfsdf', '1', 'Pendaftaran', 'admin', '2022-04-11 11:05:12')
 ERROR - 2022-04-11 11:05:15 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 11:05:15 --> 404 Page Not Found: Assets/js
+=======
+ERROR - 2022-04-11 10:10:53 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:10:53 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:10:56 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:10:56 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:11:08 --> 404 Page Not Found: Dokumen/14183b8caefab824317498f310716225.pdf
+ERROR - 2022-04-11 10:11:08 --> 404 Page Not Found: Dokumen/14183b8caefab824317498f310716225.pdf
+ERROR - 2022-04-11 10:11:08 --> 404 Page Not Found: Dokumen/14183b8caefab824317498f310716225.pdf
+ERROR - 2022-04-11 10:13:34 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:13:34 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:14:34 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:14:34 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:37:08 --> Severity: Parsing Error --> syntax error, unexpected '"' C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 339
+ERROR - 2022-04-11 10:37:30 --> Severity: Parsing Error --> syntax error, unexpected '400' (T_LNUMBER) C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 339
+ERROR - 2022-04-11 10:38:22 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:38:22 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:38:24 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:38:25 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:40:11 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:40:11 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:41:14 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:41:14 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:42:48 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:42:48 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:45:57 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:45:57 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:46:01 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:46:01 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:46:22 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:46:22 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:47:00 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:47:00 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:47:43 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 10:47:43 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:47:56 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 10:47:56 --> 404 Page Not Found: Assets/js
+>>>>>>> punto
