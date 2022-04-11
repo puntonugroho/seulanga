@@ -348,6 +348,8 @@ class HalamanSuratMasuk extends CI_Controller
 
 		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
 
+		// die(var_dump($register_id));
+
 		$queryRegister = $this->model->get_seleksi('v_suratmasuk', 'register_id', $register_id);
 		$klasifikasi_surat_id = $queryRegister->row()->klasifikasi_surat_id;
 		$klasifikasi_surat = $queryRegister->row()->klasifikasi_surat;
@@ -437,6 +439,7 @@ class HalamanSuratMasuk extends CI_Controller
 		foreach ($query->result() as $row) {
 			$no++;
 			$UserData = array();
+			//$UserData[] = $register_id;
 			$UserData[] = "<div>" . $no . "</div>";
 			$UserData[] = $this->tanggalhelper->convertToInputDate($row->tanggal_pelaksanaan);
 			$UserData[] = $row->jenis_pelaksanaan;
@@ -962,6 +965,7 @@ class HalamanSuratMasuk extends CI_Controller
 		}
 
 		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
+		//die(var_dump($register_id));
 
 		$queryKonfigurasi1 = $this->model->get_seleksi('sys_config', 'id', '4');
 		$queryKonfigurasi2 = $this->model->get_seleksi('sys_config', 'id', '22');

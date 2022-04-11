@@ -384,7 +384,7 @@
 									<div class="col-md-12" style="margin-bottom:10px;">
 										<button onclick="TampilPelaksanaan()" id="TombolTambahPelaksanaan" class="btn btn-sm btn-success">Tambah</button>
 										<?php if (in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan'))) { ?>
-											<button onclick="CetakDisposisi(1)" id="TombolCetakDisposisi" class="btn btn-sm btn-warning">Cetak Disposisi</button>
+											<button onclick="CetakDisposisi(0)" id="TombolCetakDisposisi" class="btn btn-sm btn-warning">Cetak Disposisi</button>
 										<?php } ?>
 									</div>
 									<br /><br />

@@ -193,6 +193,10 @@
 
 
 	function CetakDisposisi(register_id) {
+		if (register_id==0) {
+			register_id = document.getElementById("register_id_detil").value;
+		}
+		console.log(register_id);
 		$.post('<?php echo base_url() ?>suratmasuk_disposisi', {
 			register_id: register_id
 		}, function(response) {
