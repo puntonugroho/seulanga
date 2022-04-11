@@ -28,6 +28,7 @@ class HalamanSuratMasuk extends CI_Controller {
 			$UserData = array();
 			$UserData[] = "<div>".$no."</div>";
 			$UserData[] = $this->tanggalhelper->convertDayDate($row->tanggal_register);
+			$UserData[] = $row->nomor_surat;
 			$UserData[] = $row->nomor_agenda;
 			$UserData[] = $row->jenis_surat;
 			$UserData[] = $row->pengirim;

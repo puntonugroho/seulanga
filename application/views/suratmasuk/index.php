@@ -24,6 +24,7 @@
 										<tr>
 											<th>NO</th>
 											<th>TANGGAL REGISTER</th>
+											<th>NOMOR SURAT</th>
 											<th>NOMOR AGENDA</th>
 											<th>SIFAT SURAT</th>
 											<th>PENGIRIM</th>
