@@ -82,3 +82,9 @@ ERROR - 2022-04-11 10:47:43 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 10:47:56 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 10:47:56 --> 404 Page Not Found: Assets/js
 >>>>>>> punto
+ERROR - 2022-04-11 11:09:48 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:09:48 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:10:01 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:10:01 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:10:09 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:10:09 --> 404 Page Not Found: Assets/js

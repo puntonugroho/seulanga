@@ -197,7 +197,7 @@
 			</div>
 		</div>
 		<div class="modal fade" id="modal_disposisi">
-			<div class="modal-dialog" style="width: 65%;">
+			<div class="modal-dialog" style="width: 100%;">
 				<div class="modal-content">
 					<div class="modal-header" style="text-align: center;display: block;">
 						<h3 class="modal-title" style="font-weight:600"><span id="judul_modal"></span></h3>
