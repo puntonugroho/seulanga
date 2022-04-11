@@ -131,3 +131,13 @@ ERROR - 2022-04-11 16:05:58 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 16:05:58 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-11 16:06:00 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 16:06:00 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 16:31:38 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 16:31:38 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 16:31:39 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 16:31:39 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 16:47:02 --> 404 Page Not Found: Dokumen/14183b8caefab824317498f310716225.pdf
+ERROR - 2022-04-11 16:47:03 --> 404 Page Not Found: Dokumen/14183b8caefab824317498f310716225.pdf
+ERROR - 2022-04-11 16:47:04 --> Severity: Warning --> unlink(./dokumen/14183b8caefab824317498f310716225.pdf): No such file or directory C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 329
+ERROR - 2022-04-11 17:28:51 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 17:28:58 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 17:28:58 --> 404 Page Not Found: Assets/js

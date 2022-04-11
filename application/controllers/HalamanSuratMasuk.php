@@ -670,6 +670,7 @@ class HalamanSuratMasuk extends CI_Controller
 		$pegawai_group_id = $queryPengguna->row()->group_id;
 		$pegawai_group = $queryPengguna->row()->group_name;
 
+		// var_dump($pelaksanaan_id);
 
 		if ($pelaksanaan_id == '-1') {
 			$data = array(
@@ -724,11 +725,30 @@ class HalamanSuratMasuk extends CI_Controller
 			$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_update_id, 'status_pelaksanaan' => $jenis_pelaksanaan_update);
 			$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
 		}
+
+		$querydetail = $this->model->get_seleksi('register_surat','register_id',$register_id);
+		$nomor_surat = $querydetail->row()->nomor_surat;
+		$tanggal_surat = $querydetail->row()->tanggal_surat;
+		$telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $pegawai_tujuan_group_id)->row()->chatid;
+		$message_text = "Sdr. ".$pegawai_tujuan." Anda Menerima Disposisi Surat Nomor : "
+						.$nomor_surat. " tanggal ".$tanggal_surat. " dari ".$pegawai_group." ".$pegawai_nama.
+						". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+
 		if ($querySimpan == 1) {
-			echo json_encode(array('st' => 1, 'msg' => 'Simpan Data Pelaksanaan Berhasil'));
+			kirimNotifikasiTelegram($telegram_id, $message_text);
+			echo json_encode(array('st' => 1, 'tele_id' => $telegram_id));
 		} else {
-			echo json_encode(array('st' => 1, 'msg' => 'Simpan Data Pelaksanaan Gagal'));
+			echo json_encode(array('st' => 0, 'msg' => 'Simpan Data Pelaksanaan Gagal'));
 		}
+
+		// $telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $pegawai_group_id)->row()->chatid;
+		// $ress = kirimNotifikasiTelegram($telegram_id, $message_text);
+		// if ($ress = 'sukses') {
+		// 	echo json_encode(array('st' => 1, 'msg' => $message_text, 'tujuan_id' => $telegram_id));
+		// } else {
+		// 	echo json_encode(array('st' => 0, 'msg' => $ress));
+		// }
+
 		return;
 	}
 
