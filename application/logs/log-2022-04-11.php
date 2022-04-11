@@ -88,3 +88,34 @@ ERROR - 2022-04-11 11:10:01 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 11:10:01 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-11 11:10:09 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 11:10:09 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:12:18 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:12:18 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:13:07 --> Query error: Duplicate entry '0-0' for key 'PRIMARY' - Invalid query: INSERT INTO `register_pelaksanaan` (`register_id`, `jenis_pelaksanaan_id`, `jenis_pelaksanaan`, `tanggal_pelaksanaan`, `dari_userid`, `dari_fullname`, `dari_jabatan_id`, `dari_jabatan`, `kepada_userid`, `kepada_fullname`, `kepada_jabatan_id`, `kepada_jabatan`, `keterangan`, `diinput_oleh`, `diinput_tanggal`) VALUES ('0', '10', 'Disposisi', '2022-04-11', '1', 'Dra. Hj. Rosmawardani, S.H., M.H', '2', 'Ketua Mahkamah Syar\'iyah', '2', 'Drs. Syafruddin', '4', 'Panitera', '', 'ros', '2022-04-11 11:13:07')
+ERROR - 2022-04-11 11:13:10 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:13:10 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:14:01 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:14:01 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:14:08 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:14:08 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:14:36 --> Query error: Duplicate entry '0-0' for key 'PRIMARY' - Invalid query: INSERT INTO `register_pelaksanaan` (`register_id`, `jenis_pelaksanaan_id`, `jenis_pelaksanaan`, `tanggal_pelaksanaan`, `dari_userid`, `dari_fullname`, `dari_jabatan_id`, `dari_jabatan`, `kepada_userid`, `kepada_fullname`, `kepada_jabatan_id`, `kepada_jabatan`, `keterangan`, `diinput_oleh`, `diinput_tanggal`) VALUES ('0', '10', 'Disposisi', '2022-04-11', '1', 'Dra. Hj. Rosmawardani, S.H., M.H', '2', 'Ketua Mahkamah Syar\'iyah', '2', 'Drs. Syafruddin', '4', 'Panitera', 'dffsfsdf', 'ros', '2022-04-11 11:14:36')
+ERROR - 2022-04-11 11:14:39 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:14:39 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:15:19 --> Query error: Duplicate entry '0-0' for key 'PRIMARY' - Invalid query: INSERT INTO `register_pelaksanaan` (`register_id`, `jenis_pelaksanaan_id`, `jenis_pelaksanaan`, `tanggal_pelaksanaan`, `dari_userid`, `dari_fullname`, `dari_jabatan_id`, `dari_jabatan`, `kepada_userid`, `kepada_fullname`, `kepada_jabatan_id`, `kepada_jabatan`, `keterangan`, `diinput_oleh`, `diinput_tanggal`) VALUES ('0', '10', 'Disposisi', '2022-04-11', '1', 'Dra. Hj. Rosmawardani, S.H., M.H', '2', 'Ketua Mahkamah Syar\'iyah', '2', 'Drs. Syafruddin', '4', 'Panitera', 'dadsdasd', 'ros', '2022-04-11 11:15:19')
+ERROR - 2022-04-11 11:15:23 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:15:23 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:16:52 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:16:53 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:16:56 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-11 11:16:57 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-11 11:17:34 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:17:34 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:23:07 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:23:07 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:23:18 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:23:18 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:24:58 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:24:58 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:25:07 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:25:07 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 11:26:14 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-11 11:26:14 --> 404 Page Not Found: Assets/js
