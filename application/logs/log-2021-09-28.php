@@ -1,0 +1,16 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-09-28 15:00:11 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY pelaksanaan_id DESC LIMIT 1' at line 1 - Invalid query: SELECT * FROM register_pelaksanaan WHERE register_id= ORDER BY pelaksanaan_id DESC LIMIT 1
+ERROR - 2021-09-28 15:00:11 --> Severity: Error --> Call to a member function row() on a non-object /var/www/html/amsal/application/controllers/HalamanSuratMasuk.php 863
+ERROR - 2021-09-28 15:00:14 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY pelaksanaan_id DESC LIMIT 1' at line 1 - Invalid query: SELECT * FROM register_pelaksanaan WHERE register_id= ORDER BY pelaksanaan_id DESC LIMIT 1
+ERROR - 2021-09-28 15:00:14 --> Severity: Error --> Call to a member function row() on a non-object /var/www/html/amsal/application/controllers/HalamanSuratMasuk.php 863
+ERROR - 2021-09-28 15:00:15 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY pelaksanaan_id DESC LIMIT 1' at line 1 - Invalid query: SELECT * FROM register_pelaksanaan WHERE register_id= ORDER BY pelaksanaan_id DESC LIMIT 1
+ERROR - 2021-09-28 15:00:15 --> Severity: Error --> Call to a member function row() on a non-object /var/www/html/amsal/application/controllers/HalamanSuratMasuk.php 863
+ERROR - 2021-09-28 17:28:51 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 - Invalid query: SELECT * FROM v_groups WHERE group_id>
+ERROR - 2021-09-28 17:28:51 --> Severity: Error --> Call to a member function result() on a non-object /var/www/html/amsal/application/controllers/HalamanSuratMasuk.php 556
+ERROR - 2021-09-28 17:28:53 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 - Invalid query: SELECT * FROM v_groups WHERE group_id>
+ERROR - 2021-09-28 17:28:53 --> Severity: Error --> Call to a member function result() on a non-object /var/www/html/amsal/application/controllers/HalamanSuratMasuk.php 556
+ERROR - 2021-09-28 17:28:56 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 - Invalid query: SELECT * FROM v_groups WHERE group_id>
+ERROR - 2021-09-28 17:28:56 --> Severity: Error --> Call to a member function result() on a non-object /var/www/html/amsal/application/controllers/HalamanSuratMasuk.php 556
+ERROR - 2021-09-28 17:28:57 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 - Invalid query: SELECT * FROM v_groups WHERE group_id>
+ERROR - 2021-09-28 17:28:57 --> Severity: Error --> Call to a member function result() on a non-object /var/www/html/amsal/application/controllers/HalamanSuratMasuk.php 556
