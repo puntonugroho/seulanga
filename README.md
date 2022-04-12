@@ -1,2 +1,2 @@
 # amsal2
-aplikasi persuratan ms aceh
+Aplikasi Persuratan Mahkamah Syar'iyah Aceh
