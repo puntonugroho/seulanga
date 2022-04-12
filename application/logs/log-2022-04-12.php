@@ -249,3 +249,15 @@ ERROR - 2022-04-12 16:42:58 --> Severity: Warning --> mysqli::real_connect(): (H
 ERROR - 2022-04-12 16:42:58 --> Unable to connect to the database
 ERROR - 2022-04-12 17:37:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 ERROR - 2022-04-12 17:37:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 19:02:13 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:02:13 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:02:39 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:02:39 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:04:08 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:04:08 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:04:30 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:04:30 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:13:47 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:13:47 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:14:04 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:14:04 --> 404 Page Not Found: Assets/maps
