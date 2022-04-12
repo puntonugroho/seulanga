@@ -135,11 +135,11 @@
 												foreach ($queryPelaksanaanSK->result() as $row) {
 													$a++;
 													echo "<tr>";
-													echo "<td>" . $a . "</td>";
-													echo "<td>" . $this->tanggalhelper->convertToInputDate($row->tanggal_register) . "</td>";
-													echo "<td>" . $row->nomor_surat . "</td>";
-													echo "<td>" . $row->pengirim . "</td>";
-													echo "<td>" .$row->tujuan_disposisi_nama. "</td>";
+													echo "<td style='font-size:0.87rem'>" . $a . "</td>";
+													echo "<td style='font-size:0.87rem'>" . $this->tanggalhelper->convertToInputDate($row->tanggal_register) . "</td>";
+													echo "<td style='font-size:0.87rem'>" . $row->nomor_surat . "</td>";
+													echo "<td style='font-size:0.87rem'>" . $row->pengirim . "</td>";
+													echo "<td style='font-size:0.87rem'>" .$row->tujuan_disposisi_nama. "</td>";
 													echo "</tr>";
 												} ?>
 											</tbody>
@@ -168,11 +168,11 @@
 												foreach ($queryPelaksanaanSM->result() as $row) {
 													$a++;
 													echo "<tr>";
-													echo "<td>" . $a . "</td>";
-													echo "<td>" . $this->tanggalhelper->convertToInputDate($row->tanggal_register) . "</td>";
-													echo "<td>" . $row->nomor_surat . "</td>";
-													echo "<td>" . $row->tujuan . "</td>";
-													echo "<td><div align='center'>" . $row->waktu . "</div></td>";
+													echo "<td style='font-size:0.87rem'>" . $a . "</td>";
+													echo "<td style='font-size:0.87rem'>" . $this->tanggalhelper->convertToInputDate($row->tanggal_register) . "</td>";
+													echo "<td style='font-size:0.87rem'>" . $row->nomor_surat . "</td>";
+													echo "<td style='font-size:0.87rem'>" . $row->tujuan . "</td>";
+													echo "<td style='font-size:0.87rem'><div align='center'>" . $row->waktu . "</div></td>";
 													echo "</tr>";
 												} ?>
 											</tbody>

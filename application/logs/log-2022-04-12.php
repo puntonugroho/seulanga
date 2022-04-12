@@ -263,3 +263,5 @@ ERROR - 2022-04-12 19:30:00 --> Severity: Error --> Call to a member function ro
 ERROR - 2022-04-12 19:41:24 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 317
 ERROR - 2022-04-12 19:42:15 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 323
 ERROR - 2022-04-12 19:42:21 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 323
+ERROR - 2022-04-12 19:55:18 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:55:18 --> 404 Page Not Found: Assets/maps
