@@ -1008,7 +1008,7 @@ class HalamanSuratMasuk extends CI_Controller
 			// $tampil_pelaksanaan2[] .= "<td colspan='2'><b>" . $row->dari_jabatan . "</b><br/>" . $row->dari_fullname . "</td>";
 			$tampil_pelaksanaan2[] .= "<td colspan='2'><b>" . $row->dari_jabatan . "</b>";
 			$tampil_pelaksanaan2[] .= "<td width='30'>" . $namaJabatan . "</td>";
-			$tampil_pelaksanaan2[] .= "<td width='30'>" . $row->jenis_pelaksanaan . "</td>";
+			$tampil_pelaksanaan2[] .= "<td width='30'>" . $row->keterangan . "</td>";
 			$tampil_pelaksanaan2[] .= "</tr>";
 		}
 
