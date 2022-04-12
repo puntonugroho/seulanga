@@ -45,8 +45,8 @@
 		<footer class="footer">
 			<div class="footer-wrap">
 				<div class="d-sm-flex justify-content-center justify-content-sm-between">
-					<span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.ms-aceh.go.id/" target="_blank">MS Lhoksukon </a>2022</span>
-					<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">MAHKAMAH SYAR'IYAH ACEH </span>
+					<span class="text text-center text-sm-left d-block d-sm-inline-block" style="color: #fff;">Copyright © <a href="https://www.ms-aceh.go.id/" target="_blank" style="color: #f0c26a;">MS Aceh </a>2022</span>
+					<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center" style="color: #fff;">MAHKAMAH SYAR'IYAH ACEH </span>
 				</div>
 			</div>
 		</footer>
@@ -300,16 +300,16 @@
 				<div class="panel-body">
 					<div class="col-md-12" style="width:100%;">
 						<div class="row">
-						<div class="col-md-10">
-							<button onclick="TutupModal()" data-dismiss="modal" class="btn btn-sm btn-white btn-block text-left">Kembali</button>
+							<div class="col-md-10">
+								<button onclick="TutupModal()" data-dismiss="modal" class="btn btn-sm btn-white btn-block text-left">Kembali</button>
+							</div>
+							<div class="col-md-2" style="display: flex; flex-direction: row;justify-content: center;align-items:center;margin-top:-3px;margin-bottom:5px">
+								<?php if (in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan'))) { ?>
+									<button onclick="HapusSuratMasuk()" data-dismiss="modal" class="btn btn-sm btn-danger btn-block">Hapus</button>
+								<?php } ?>
+							</div>
 						</div>
-						<div class="col-md-2" style="display: flex; flex-direction: row;justify-content: center;align-items:center;margin-top:-3px;margin-bottom:5px">
-							<?php if (in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan'))) { ?>
-								<button onclick="HapusSuratMasuk()" data-dismiss="modal" class="btn btn-sm btn-danger btn-block">Hapus</button>
-							<?php } ?>
-						</div>
-				     	</div>
-						 <br />
+						<br />
 
 						<ul class="nav nav-tabs" role="tablist">
 							<li class="nav-item">

@@ -8,7 +8,7 @@
 							<h4 class="card-title">DATA PEGAWAI</h4>
 						</div>
 						<div class="col-md-2" style="display: flex; flex-direction: row;justify-content: center;align-items:center;margin-top:-3px;margin-bottom:5px">
-							<button onclick="BukaModal('<?php echo $id; ?>')" class="btn btn-primary btn-sm btn-block">Tambah</button>	
+							<button onclick="BukaModal('<?php echo $id; ?>')" class="btn btn-primary btn-sm btn-block">Tambah</button>
 						</div>
 					</div>
 					<div class="row">
@@ -39,8 +39,8 @@
 		<footer class="footer">
 			<div class="footer-wrap">
 				<div class="d-sm-flex justify-content-center justify-content-sm-between">
-					<span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.ms-aceh.go.id/" target="_blank">MS Aceh </a>2022</span>
-					<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">MAHKAMAH SYAR'IYAH ACEH </span>
+					<span class="text text-center text-sm-left d-block d-sm-inline-block" style="color: #fff;">Copyright © <a href="https://www.ms-aceh.go.id/" target="_blank" style="color: #f0c26a;">MS Aceh </a>2022</span>
+					<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center" style="color: #fff;">MAHKAMAH SYAR'IYAH ACEH </span>
 				</div>
 			</div>
 		</footer>

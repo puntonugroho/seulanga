@@ -43,8 +43,8 @@
 		<footer class="footer">
 			<div class="footer-wrap">
 				<div class="d-sm-flex justify-content-center justify-content-sm-between">
-					<span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.ms-aceh.go.id/" target="_blank">MS Lhoksukon </a>2022</span>
-					<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">MAHKAMAH SYAR'IYAH ACEH </span>
+					<span class="text text-center text-sm-left d-block d-sm-inline-block" style="color: #fff;">Copyright © <a href="https://www.ms-aceh.go.id/" target="_blank" style="color: #f0c26a;">MS Aceh </a>2022</span>
+					<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center" style="color: #fff;">MAHKAMAH SYAR'IYAH ACEH </span>
 				</div>
 			</div>
 		</footer>
@@ -391,7 +391,7 @@
 						<label class="col-md-6 control-label">Tanggal Pengiriman</label>
 						<div class="col-md-10">
 							<div id="datepickers-popup2" class="input-group date datepicker">
-								<input type="text" name="tanggal_pengiriman" class="form-control" id="datepicker-default2" required/>
+								<input type="text" name="tanggal_pengiriman" class="form-control" id="datepicker-default2" required />
 								<span class="input-group-addon input-group-append border-left">
 									<span class="mdi mdi-calendar input-group-text"></span>
 								</span>
