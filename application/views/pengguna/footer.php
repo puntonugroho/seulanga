@@ -27,7 +27,7 @@
 			title: $judul,
 			text: $pesan,
 			image: $gambar,
-			sticky: true,
+			sticky: false,
 			time: '',
 			class_name: 'my-sticky-class'
 		});
