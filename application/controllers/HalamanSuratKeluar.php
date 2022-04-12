@@ -219,8 +219,8 @@ class HalamanSuratKeluar extends CI_Controller
 		$queryKodeSurat = $this->model->get_seleksi('sys_config', 'id', '23');
 		$kode_surat = $queryKodeSurat->row()->value;
 
-		$bulan_register = date("m", strtotime($tanggal_register));
-		$tahun_register = date("Y", strtotime($tanggal_register));;
+		$bulan_register = date("m", strtotime(date_format(date_create($tanggal_register),"d/m/Y H:i:s")));
+		$tahun_register = date("Y", strtotime($tanggal_register));
 
 		$queryNomorIndex = $this->model->get_seleksi_nomor_index($tahun_register);
 		$nomor_index = $queryNomorIndex->row()->nomor_index + 1;
@@ -234,7 +234,7 @@ class HalamanSuratKeluar extends CI_Controller
 		echo json_encode(array(
 			'st' => 1,
 			'keterangan_jenis_surat' => $keterangan_jenis_surat,
-			'nomor_surat' => $nomor_surat
+			'nomor_surat' => $nomor_surat,
 		));
 		return;
 	}

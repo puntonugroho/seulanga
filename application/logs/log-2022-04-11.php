@@ -141,6 +141,7 @@ ERROR - 2022-04-11 16:47:04 --> Severity: Warning --> unlink(./dokumen/14183b8ca
 ERROR - 2022-04-11 17:28:51 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 17:28:58 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 17:28:58 --> 404 Page Not Found: Assets/js
+<<<<<<< HEAD
 ERROR - 2022-04-11 17:51:07 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
 ERROR - 2022-04-11 17:51:07 --> Unable to connect to the database
 ERROR - 2022-04-11 17:53:14 --> 404 Page Not Found: Assets/js
@@ -223,3 +224,7 @@ ERROR - 2022-04-11 19:22:27 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 19:22:28 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-11 19:23:33 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 19:23:33 --> 404 Page Not Found: Assets/js
+=======
+ERROR - 2022-04-11 20:02:44 --> Severity: Warning --> date_format() expects parameter 1 to be DateTimeInterface, string given C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeluar.php 222
+ERROR - 2022-04-11 20:03:53 --> Severity: Warning --> date_format() expects parameter 1 to be DateTimeInterface, string given C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeluar.php 222
+>>>>>>> 268c7c842aba61c8fc7b881f3b90188e82b578b2

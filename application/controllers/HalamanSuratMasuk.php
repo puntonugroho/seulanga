@@ -633,6 +633,11 @@ class HalamanSuratMasuk extends CI_Controller
 		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
 		$tanggal_pelaksanaan = $this->tanggalhelper->convertToMysqlDate($this->input->post('tanggal_pelaksanaan'));
 		$jenis_pelaksanaan_id = $this->input->post('jenis_pelaksanaan');
+		
+		$message_text = "".$namaJabatan." MS Aceh Anda Menerima Surat Nomor : "
+		.$nomor_surat. " tanggal ".$tanggal_surat. " dari ".$pengirim. 
+		". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+		
 		if ($jenis_pelaksanaan_id == '10') {
 			$jenis_pelaksanaan = "Disposisi";
 		} else if ($jenis_pelaksanaan_id == '20') {
@@ -735,9 +740,16 @@ class HalamanSuratMasuk extends CI_Controller
 		$nomor_surat = $querydetail->row()->nomor_surat;
 		$tanggal_surat = $querydetail->row()->tanggal_surat;
 		$telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $pegawai_tujuan_group_id)->row()->chatid;
-		$message_text = "Sdr. ".$pegawai_tujuan." Anda Menerima Disposisi Surat Nomor : "
+
+		if ($jenis_pelaksanaan_id == '10') {
+			$message_text = "Sdr. ".$pegawai_tujuan." Anda Menerima Disposisi Surat Nomor : "
 						.$nomor_surat. " tanggal ".$tanggal_surat. " dari ".$pegawai_group." ".$pegawai_nama.
 						". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+		} else if ($jenis_pelaksanaan_id == '30') {
+			$message_text = "Sdr. ".$pegawai_tujuan." Anda Menerima Terusan Surat Nomor : "
+						.$nomor_surat. " tanggal ".$tanggal_surat. " dari ".$pegawai_group." ".$pegawai_nama.
+						". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+		}
 
 		if ($querySimpan == 1) {
 			kirimNotifikasiTelegram($telegram_id, $message_text);
@@ -745,15 +757,6 @@ class HalamanSuratMasuk extends CI_Controller
 		} else {
 			echo json_encode(array('st' => 0, 'msg' => 'Simpan Data Pelaksanaan Gagal'));
 		}
-
-		// $telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $pegawai_group_id)->row()->chatid;
-		// $ress = kirimNotifikasiTelegram($telegram_id, $message_text);
-		// if ($ress = 'sukses') {
-		// 	echo json_encode(array('st' => 1, 'msg' => $message_text, 'tujuan_id' => $telegram_id));
-		// } else {
-		// 	echo json_encode(array('st' => 0, 'msg' => $ress));
-		// }
-
 		return;
 	}
 

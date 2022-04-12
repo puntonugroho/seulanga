@@ -18,6 +18,18 @@
 <script src="<?php echo base_url(); ?>assets/js/data-table.js"></script>
 
 <script type="text/javascript">
+	function pesan($judul, $pesan, $gambar) {
+		$.gritter.add({
+			title: $judul,
+			text: $pesan,
+			image: $gambar,
+			sticky: true,
+			time: '',
+			class_name: 'my-sticky-class'
+		});
+		return false;
+	}
+
 	$(document).ready(function() {
 		$('#tampil_pelaksanaan_jabatan').hide();
 		$('#tampil_pelaksanaan_pegawai').hide();
