@@ -443,8 +443,10 @@ class HalamanSuratMasuk extends CI_Controller
 			$UserData[] = "<div>" . $no . "</div>";
 			$UserData[] = $this->tanggalhelper->convertToInputDate($row->tanggal_pelaksanaan);
 			$UserData[] = $row->jenis_pelaksanaan;
-			$UserData[] = $row->dari_fullname . '<br/>' . $row->dari_jabatan;
-			$UserData[] = $row->kepada_fullname . '<br/>' . $row->kepada_jabatan;
+			// $UserData[] = $row->dari_fullname . '<br/>' . $row->dari_jabatan;
+			$UserData[] = $row->dari_jabatan;
+			// $UserData[] = $row->kepada_fullname . '<br/>' . $row->kepada_jabatan;
+			$UserData[] = $row->kepada_jabatan;
 			$UserData[] = $row->keterangan;
 			if ($dataTerakhir->pelaksanaan_id == $row->pelaksanaan_id) {
 				$UserData[] = '<div>
@@ -987,26 +989,30 @@ class HalamanSuratMasuk extends CI_Controller
 		$nomor_agenda = $queryRegister->row()->nomor_agenda;
 
 		$queryPelaksanaan = $this->model->get_seleksi('register_pelaksanaan', 'register_id', $register_id);
-		$a = 0;
+		//$a = 0;
 		$TampilPelaksanaan = "<tr height='300px'>
 							<td colspan='2' width='40%'' align='center'></td>
 							<td width='30%' align='center'></td>
 							<td width='30%' align='center'></td></tr>";
+		//die(var_dump($queryPelaksanaan->result()));
+		$tampil_pelaksanaan2 = array();
 		foreach ($queryPelaksanaan->result() as $row) {
-			$a++;
+			//$a++;
 			if (!empty($row->kepada_jabatan)) {
-				$namaJabatan = "<b>" . $row->kepada_jabatan . "</b><br/>" . $row->kepada_fullname;
+				//$namaJabatan = "<b>" . $row->kepada_jabatan . "</b><br/>" . $row->kepada_fullname;
+				$namaJabatan = "<b>" . $row->kepada_jabatan . "</b>";
 			} else {
 				$namaJabatan = "-";
 			}
-			$TampilPelaksanaan = "<tr>";
-			$TampilPelaksanaan .= "<td colspan='2'><b>" . $row->dari_jabatan . "</b><br/>" . $row->dari_fullname . "</td>";
-			$TampilPelaksanaan .= "<td width='30'>" . $namaJabatan . "</td>";
-			$TampilPelaksanaan .= "<td width='30'>" . $row->jenis_pelaksanaan . "</td>";
-			$TampilPelaksanaan .= "</tr>";
+			$tampil_pelaksanaan2[] = "<tr>";
+			// $tampil_pelaksanaan2[] .= "<td colspan='2'><b>" . $row->dari_jabatan . "</b><br/>" . $row->dari_fullname . "</td>";
+			$tampil_pelaksanaan2[] .= "<td colspan='2'><b>" . $row->dari_jabatan . "</b>";
+			$tampil_pelaksanaan2[] .= "<td width='30'>" . $namaJabatan . "</td>";
+			$tampil_pelaksanaan2[] .= "<td width='30'>" . $row->jenis_pelaksanaan . "</td>";
+			$tampil_pelaksanaan2[] .= "</tr>";
 		}
 
-		$tampil_pelaksanaan = $TampilPelaksanaan;
+		$tampil_pelaksanaan = $tampil_pelaksanaan2;
 
 		echo json_encode(array(
 			'st' => 1,
