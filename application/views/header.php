@@ -23,12 +23,12 @@
 		<div id="page-loader" class="fade in"><span class="spinner"></span></div>
 			<!-- partial:partials/_horizontal-navbar.html -->
 		<div class="horizontal-menu">
-			<nav class="navbar top-navbar col-lg-12 col-12 p-0" style="background:#464DEE">
+			<nav class="navbar top-navbar col-lg-12 col-12 p-0" style="background:#4b56c0">
 				<div class="container-fluid">
 					<div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
 					<ul class="navbar-nav navbar-brand-wrapper navbar-nav-left">
 						<a class="navbar-brand brand-logo" href="<?php echo base_url();?>">
-							<img style="height:50px;" src="images/logo_new.png" alt="logo"/></a>
+							<img style="height:50px;" src="images/logodalam.png" alt="logo"/></a>
 						<a class="navbar-brand brand-logo-mini" style="margin-left:-10px; width:80px;" href="<?php echo base_url();?>">
 							<img style="height:40px"; src="images/logo_new_mini.png" alt="logo"/></a>
 					</ul>

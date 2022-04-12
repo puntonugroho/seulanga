@@ -7,7 +7,7 @@
 								<div class="col-lg-3 d-flex grid-margin stretch-card">
 									<div class="card sale-diffrence-border">
 										<div class="card-body">
-											<i class="mdi mdi-download icon-lg text-warning" style="float:right"></i>
+											<i class="mdi mdi-download icon-lg text-primary" style="float:right"></i>
 											<h2 class="text-dark mb-2 font-weight-bold"><?php echo $jumlahSuratMasuk; ?></h2>
 											<h4 class="card-title mb-2">SURAT MASUK</h4>
 											<small class="text-muted">Tahun <?php echo $tahun; ?></small>
@@ -17,7 +17,7 @@
 								<div class="col-lg-3 d-flex grid-margin stretch-card">
 									<div class="card sale-visit-statistics-border">
 										<div class="card-body">
-											<i class=" mdi mdi-upload icon-lg text-warning" style="float:right"></i>
+											<i class=" mdi mdi-upload icon-lg text-info" style="float:right"></i>
 											<h2 class="text-dark mb-2 font-weight-bold"><?php echo $jumlahSuratKeluar; ?></h2>
 											<h4 class="card-title mb-2">SURAT KELUAR</h4>
 											<small class="text-muted">Tahun <?php echo $tahun; ?></small>
@@ -25,22 +25,22 @@
 									</div>
 								</div>
 								<div class="col-lg-3 d-flex grid-margin stretch-card">
-									<div class="card bg-primary">
+									<div class="card" style="background-color: #4b56c0;">
 										<div class="card-body text-white">
 											<h3 class="font-weight-bold mb-3">75 %</h3>
 											<div class="progress mb-3">
-												<div class="progress-bar  bg-warning" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+												<div class="progress-bar  bg-info" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 											<p class="pb-0 mb-0" style="font-weight:600">TINDAK LANJUT DISPOSISI</p>
 										</div>
 									</div>
 								</div>
 								<div class="col-lg-3 d-flex grid-margin stretch-card">
-									<div class="card bg-danger">
+									<div class="card" style="background-color: #f0c26a;">
 										<div class="card-body text-white">
 											<h3 class="font-weight-bold mb-3">80 %</h3>
 											<div class="progress mb-3">
-												<div class="progress-bar  bg-warning" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+												<div class="progress-bar  bg-info" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 											<p class="pb-0 mb-0" style="font-weight:600">PROGRES PENGIRIMAN SURAT</p>
 										</div>
@@ -188,8 +188,8 @@
 				<footer class="footer">
 					<div class="footer-wrap">
 						<div class="d-sm-flex justify-content-center justify-content-sm-between">
-							<span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.ms-aceh.go.id/" target="_blank">MS Aceh </a>2022</span>
-							<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">MAHKAMAH SYAR'IYAH ACEH </span>
+							<span class="text text-center text-sm-left d-block d-sm-inline-block" style="color: #fff;">Copyright © <a href="https://www.ms-aceh.go.id/" target="_blank" style="color: #f0c26a;">MS Aceh </a>2022</span>
+							<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center" style="color: #fff;">MAHKAMAH SYAR'IYAH ACEH </span>
 						</div>
 					</div>
 				</footer>

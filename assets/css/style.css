@@ -19490,7 +19490,7 @@ code {
 
 /* Footer */
 .footer {
-  background: #fff;
+  background: #4b56c0;
   transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
   -webkit-transition: all 0.25s ease;
@@ -19501,7 +19501,7 @@ code {
 }
 
 .footer .footer-wrap {
-  background: #fff;
+  background: #4b56c0;
   padding: 30px 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -29271,7 +29271,7 @@ div.tagsinput span.tag a {
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-icon {
   margin-right: 0;
-  font-size: 1.125rem;
+  font-size: 2.0rem;
   color: #000000;
   font-weight: 400;
   display: block;
@@ -29424,17 +29424,17 @@ div.tagsinput span.tag a {
   position: absolute;
   left: 0;
   bottom: 0;
-  border-bottom: 2px solid #0ddbb9;
+  border-bottom: 2px solid #f0c26a;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-icon {
-  color: #0ddbb9;
+  color: #f0c26a;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-title,
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link i,
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-arrow {
-  color: #464dee;
+  color: #0a0a0a;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu {
