@@ -33,7 +33,7 @@
             <div class="detailsh">
               <img class="help" src="<?php echo base_url(); ?>images/help.png" alt="">
               <h3 style="color: #0a0a0a;">Mahkamah Syar'iyah Aceh</h3>
-              <!-- <p>Sistem Persuratan secara Digital</p> -->
+              <p>Sistem Persuratan secara Digital</p>
             </div>
           </div>
           <div class="col-md-5 loginform">

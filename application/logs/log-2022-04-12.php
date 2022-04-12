@@ -134,3 +134,19 @@ ERROR - 2022-04-12 09:47:49 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-12 09:47:49 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-12 09:49:48 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-12 09:49:48 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 10:03:19 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 10:03:19 --> Unable to connect to the database
+ERROR - 2022-04-12 10:03:19 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 10:03:19 --> Unable to connect to the database
+ERROR - 2022-04-12 10:03:19 --> Query error: Access denied for user 'root'@'localhost' (using password: YES) - Invalid query: SELECT *
+FROM `sys_user_online`
+WHERE `id` = 187
+ERROR - 2022-04-12 10:03:19 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 18
+ERROR - 2022-04-12 10:03:21 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 10:03:21 --> Unable to connect to the database
+ERROR - 2022-04-12 10:03:21 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 10:03:21 --> Unable to connect to the database
+ERROR - 2022-04-12 10:03:21 --> Query error: Access denied for user 'root'@'localhost' (using password: YES) - Invalid query: SELECT *
+FROM `sys_user_online`
+WHERE `id` = 187
+ERROR - 2022-04-12 10:03:21 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 18
