@@ -269,7 +269,22 @@ ERROR - 2022-04-12 16:42:58 --> Unable to connect to the database
 ERROR - 2022-04-12 17:37:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 ERROR - 2022-04-12 17:37:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4adce9cf89ee4d0dccaecc702bbff24890fd1417
+=======
+ERROR - 2022-04-12 19:02:13 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:02:13 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:02:39 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:02:39 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:04:08 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:04:08 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:04:30 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:04:30 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:13:47 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 19:13:47 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:14:04 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 19:14:04 --> 404 Page Not Found: Assets/maps
+>>>>>>> 13385c96be19f5fac99b3e5885a94744d3f5af36
 =======
 ERROR - 2022-04-12 18:06:41 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 ERROR - 2022-04-12 18:06:41 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf

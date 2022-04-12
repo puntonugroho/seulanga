@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>AMSAL</title>
+	<title>SUDI</title>
 	<!-- <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" /> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta content="" name="description" />
@@ -30,7 +30,7 @@
 						<a class="navbar-brand brand-logo" href="<?php echo base_url();?>">
 							<img style="height:50px;" src="images/logodalam.png" alt="logo"/></a>
 						<a class="navbar-brand brand-logo-mini" style="margin-left:-10px; width:80px;" href="<?php echo base_url();?>">
-							<img style="height:40px"; src="images/logo_new_mini.png" alt="logo"/></a>
+							<img style="height:50px"; src="images/logo_new_mini.png" alt="logo"/></a>
 					</ul>
 					<!-- <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
 							<p class="navbar-brand" style="font-size:18px; color:#ffff; margin-top:10px">

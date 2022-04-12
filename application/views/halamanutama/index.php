@@ -36,7 +36,7 @@
 									</div>
 								</div>
 								<div class="col-lg-3 d-flex grid-margin stretch-card">
-									<div class="card" style="background-color: #f0c26a;">
+									<div class="card" style="background-color: #e2b967;">
 										<div class="card-body text-white">
 											<h3 class="font-weight-bold mb-3">80 %</h3>
 											<div class="progress mb-3">
@@ -123,11 +123,11 @@
 										<table class="table table-hover">
 											<thead>
 												<tr>
-													<th style="font-weight: 600; font-size:0.9rem">No</th>
-													<th style="font-weight: 600; font-size:0.9rem">Tgl. Register</th>
-													<th style="font-weight: 600; font-size:0.9rem">Nomor</th>
-													<th style="font-weight: 600; font-size:0.9rem">Pengirim</th>
-													<th style="font-weight: 600; font-size:0.9rem">Pelaksana Terakhir</th>
+													<th style="font-weight: 600; font-size:0.87rem">No</th>
+													<th style="font-weight: 600; font-size:0.87rem">Tgl. Register</th>
+													<th style="font-weight: 600; font-size:0.87rem">Nomor</th>
+													<th style="font-weight: 600; font-size:0.87rem">Pengirim</th>
+													<th style="font-weight: 600; font-size:0.87rem">Pelaksana Terakhir</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -156,11 +156,11 @@
 										<table class="table table-hover">
 											<thead>
 												<tr>
-													<th style="font-weight: 600; font-size:0.9rem">No</th>
-													<th style="font-weight: 600; font-size:0.9rem">Tgl. Register</th>
-													<th style="font-weight: 600; font-size:0.9rem">Nomor</th>
-													<th style="font-weight: 600; font-size:0.9rem">Tujuan</th>
-													<th style="font-weight: 600; font-size:0.9rem">Hari ke</th>
+													<th style="font-weight: 600; font-size:0.87rem">No</th>
+													<th style="font-weight: 600; font-size:0.87rem">Tgl. Register</th>
+													<th style="font-weight: 600; font-size:0.87rem">Nomor</th>
+													<th style="font-weight: 600; font-size:0.87rem">Tujuan</th>
+													<th style="font-weight: 600; font-size:0.87rem">Hari ke</th>
 												</tr>
 											</thead>
 											<tbody>
