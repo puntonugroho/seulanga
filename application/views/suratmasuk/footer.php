@@ -292,11 +292,12 @@
 				$('#tambah_pelaksanaan').hide();
 
 				pesan('PERINGATAN', json.msg, '');
+				location.reload();
 				$('#table_pegawai').DataTable().ajax.reload();
 			} else if (json.st == 0) {
 				$('#tambah_pelaksanaan').hide();
 				pesan('PERINGATAN', json.msg, '');
-
+				location.reload();
 				$('#table_pegawai').DataTable().ajax.reload();
 			}
 		});
