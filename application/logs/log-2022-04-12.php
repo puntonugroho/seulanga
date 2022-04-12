@@ -217,3 +217,9 @@ ERROR - 2022-04-12 12:13:56 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-12 12:13:56 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-12 12:14:03 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
 FROM `v_groups_with_name`
+ERROR - 2022-04-12 17:56:14 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 17:56:14 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 17:56:17 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 17:56:18 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 17:56:29 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 17:56:29 --> 404 Page Not Found: Assets/js
