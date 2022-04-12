@@ -249,3 +249,10 @@ ERROR - 2022-04-12 16:42:58 --> Severity: Warning --> mysqli::real_connect(): (H
 ERROR - 2022-04-12 16:42:58 --> Unable to connect to the database
 ERROR - 2022-04-12 17:37:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 ERROR - 2022-04-12 17:37:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 18:06:41 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 18:06:41 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 18:07:50 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 18:07:50 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 18:31:38 --> Severity: Error --> Unsupported operand types C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 507
+ERROR - 2022-04-12 18:51:57 --> Severity: Error --> Call to a member function row() on null C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 310
+ERROR - 2022-04-12 18:52:10 --> Severity: Error --> Call to a member function row() on null C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 310

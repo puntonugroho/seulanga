@@ -498,11 +498,12 @@ class HalamanSuratMasuk extends CI_Controller
 		$jenis_pelaksanaan = form_dropdown('jenis_pelaksanaan', $array_pelaksanaan, $jenis_pelaksanaan_id, 'class="form-control" required id="jenis_pelaksanaan" onChange="JenisPelaksanaan()"');
 
 
-		$queryJabatan = $this->model->get_jabatan_pelaksana($dari_jabatan_id);
-		$JenisJabatan = array();
+		// $queryJabatan = $this->model->get_jabatan_pelaksana($dari_jabatan_id);
+		$queryJabatan = $this->model->get_list_jabatan();
+		$JabatanQuery = array();
 		$InitJabatan[''] = "Pilih";
 		foreach ($queryJabatan->result() as $row) {
-			$JenisJabatan[$row->group_id] = $row->group_name;
+			$JabatanQuery[$row->group_id] = $row->group_name;
 		}
 		$JenisJabatan = $InitJabatan + $JabatanQuery;
 
