@@ -779,7 +779,7 @@ class HalamanSuratMasuk extends CI_Controller
 				'encrypt_name' => TRUE,
 				'overwrite' => TRUE,
 				'remove_spaces' => TRUE,
-				'max_size' => "100485760"
+				'max_size' => "100000"
 			);
 
 			$this->load->library('upload', $config);

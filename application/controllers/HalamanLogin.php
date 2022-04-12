@@ -41,11 +41,12 @@ class HalamanLogin extends CI_Controller {
 
 		$queryPengguna = $this->model->get_seleksi_pengguna($nama);
 		$cekPengguna = $queryPengguna->num_rows();
+		//die(var_dump($cekPengguna));
 		if($cekPengguna==1){
 			$code_activation = $queryPengguna->row()->code_activation;
 			$passwordEnkrip = $this->arr2md5(array($code_activation,$password));
 			$passDB = $queryPengguna->row()->password;
-			
+			//die(var_dump($passDB==$passwordEnkrip));
 			if($passDB==$passwordEnkrip){
 				$userid = $queryPengguna->row()->userid;
 				$fullname = $queryPengguna->row()->fullname; 
