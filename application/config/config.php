@@ -49,4 +49,4 @@ $config['compress_output'] = FALSE;
 $config['time_reference'] = 'local';
 $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
-$config['telegram_bot_token'] = '5064305861:AAFMuCLDvU49EBvSoFsNMJQKzsmYer0OMPI';
+$config['telegram_bot_token'] = '5141241629:AAEQtooX75JiF3K_W2q8dvIk0fxk5DS8lfs';

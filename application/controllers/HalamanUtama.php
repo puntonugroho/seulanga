@@ -85,7 +85,7 @@ class HalamanUtama extends CI_Controller
 
 		// if ($group_id == '2' || $group_id == '3') {
 		// 	$queryJabatan = $this->model->get_data('v_groups_struktural');
-			
+
 		// } else {
 		// 	$queryJabatan = $this->model->get_data('v_groups');
 		// }
@@ -99,10 +99,9 @@ class HalamanUtama extends CI_Controller
 			// } else {
 			// $arrayJabatan[$row->group_id] = $row->group_name;
 			// }
-			if((!empty($row->nama))){
+			if ((!empty($row->nama))) {
 				$arrayJabatan[$row->group_id] = $row->group_name;
 			}
-			
 		}
 
 		if ($group_id == '2' || $group_id == '3') {
@@ -299,30 +298,31 @@ class HalamanUtama extends CI_Controller
 		$querySimpan = $this->model->simpan_data('register_pelaksanaan', $data);
 		if ($jenis_pelaksanaan_id == '10') {
 			$message_text = "Sdr. " . $kepada_fullname . " Anda Menerima Disposisi Surat Nomor : "
-			. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
-			". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
+				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		} else if ($jenis_pelaksanaan_id == '30') {
 			$message_text = "Sdr. " . $kepada_fullname . " Anda Menerima Terusan Surat Nomor : "
-			. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
-			". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
+				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		}
-		
-		$telegram_id = $queryPegawaiTujuan->row()->chatid;
-
-		// $ress = $this->sendTeleMessage($telegram_id, $message_text, $telebot_secret_token);
-		// if($ress = 'sukses'){
-		// 	echo json_encode(array('st'=>1,'msg'=>$message_text,'tujuan_id'=>$queryPegawaiTujuan));
-		// }else{
-		// 	echo json_encode(array('st'=>0,'msg'=>$ress));
-		// }
-
-		if ($querySimpan == 1) {
-			$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_id, 'status_pelaksanaan' => $jenis_pelaksanaan);
-			$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
-			$hasil = $this->sendTeleMessage($telegram_id, $message_text, $telebot_secret_token);
-			echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
+		if ($jenis_pelaksanaan_id != '20') {
+			if ($querySimpan == 1) {
+				$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_id, 'status_pelaksanaan' => $jenis_pelaksanaan);
+				$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
+				echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
+			} else {
+				echo json_encode(array('st' => 1, 'msg' => 'Simpan Data Disposisi Gagal'));
+			}
 		} else {
-			echo json_encode(array('st' => 1, 'msg' => 'Simpan Data Disposisi Gagal'));
+			$telegram_id = $queryPegawaiTujuan->row()->chatid;
+			if ($querySimpan == 1) {
+				$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_id, 'status_pelaksanaan' => $jenis_pelaksanaan);
+				$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
+				$hasil = $this->sendTeleMessage($telegram_id, $message_text, $telebot_secret_token);
+				echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
+			} else {
+				echo json_encode(array('st' => 1, 'msg' => 'Simpan Data Disposisi Gagal'));
+			}
 		}
 		return;
 	}
