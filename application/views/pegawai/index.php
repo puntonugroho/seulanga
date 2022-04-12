@@ -97,7 +97,9 @@
 					</form>
 					<div class="modal-footer">
 						<button onclick="TutupModal()" data-dismiss="modal" class="btn btn-sm btn-white">Kembali</button>
-						<span id="hapus"></span>
+						<?php if(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_hapus'))) {?>
+							<button onclick="HapusModal(1)" data-dismiss="modal" class="btn btn-sm btn-danger">Hapus</button>
+								<?php } ?>
 						<button onclick="SimpanModal()" type="submit" data-dismiss="modal" class="btn btn-sm btn-success">Simpan</button>
 
 					</div>

@@ -156,3 +156,18 @@ ERROR - 2022-04-12 10:36:44 --> Severity: Warning --> in_array() expects paramet
 ERROR - 2022-04-12 10:36:45 --> Severity: Warning --> in_array() expects parameter 2 to be array, null given C:\xampp\htdocs\amsal\application\views\suratmasuk\index.php 307
 ERROR - 2022-04-12 10:40:22 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-12 10:40:22 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 10:48:30 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 10:48:30 --> Unable to connect to the database
+ERROR - 2022-04-12 10:48:33 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 10:48:33 --> Unable to connect to the database
+ERROR - 2022-04-12 10:48:33 --> Query error: Access denied for user 'root'@'localhost' (using password: NO) - Invalid query: SELECT *
+FROM `sys_user_online`
+WHERE `id` = 190
+ERROR - 2022-04-12 10:48:33 --> Severity: Error --> Call to a member function row() on a non-object C:\xampp\htdocs\amsal\application\controllers\HalamanPegawai.php 12
+ERROR - 2022-04-12 10:48:48 --> Severity: Warning --> in_array() expects parameter 2 to be array, null given C:\xampp\htdocs\amsal\application\views\pegawai\index.php 100
+ERROR - 2022-04-12 10:55:59 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 10:55:59 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 10:56:06 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 10:56:06 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 10:57:45 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 10:57:45 --> 404 Page Not Found: Assets/js

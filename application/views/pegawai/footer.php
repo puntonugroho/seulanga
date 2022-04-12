@@ -72,6 +72,9 @@
 
 
 	function HapusModal(id) {
+		if (id==1) {
+			id=$('#id').val();
+		}
 		$.post('<?php echo base_url() ?>pegawai_hapus', {
 			id: id
 		}, function(response) {
