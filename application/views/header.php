@@ -108,6 +108,7 @@
 							<ul class="submenu-item">
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>pegawai">Tambah Pegawai</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>penomoran">Format Nomor Surat</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>jenissuratketerangan">Jenis Surat Keterangan</a></li>
 							</ul>
 						</div>
 					</li>

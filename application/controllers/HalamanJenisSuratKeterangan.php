@@ -17,7 +17,7 @@ class HalamanJenisSuratKeterangan extends CI_Controller {
 		$data['register_id'] = base64_encode($this->encrypt->encode('-1'));
 		$this->load->view('header');
 		$this->load->view('jenissuratketerangan/index',$data);
-		$this->load->view('footer');
+		//$this->load->view('footer');
 	}
 
 	public function jenissuratketerangan_data(){
@@ -32,7 +32,7 @@ class HalamanJenisSuratKeterangan extends CI_Controller {
 			$UserData[] = $row->nama;
 			$UserData[] = "<div align='center'>".($row->aktif=='1' ? 'Ya' : 'Tidak')."</div>";
 			$UserData[] = '<div align="center">
-				<button type="button" onclick="BukaModal(\''.base64_encode($this->encrypt->encode($row->id)).'\')" class="btn btn-success btn-sm m-r-5"><div><i class="fa fa-2x fa-edit"></i></div></button>
+				<button type="button" onclick="BukaModal(\''.base64_encode($this->encrypt->encode($row->id)).'\')" class="btn btn-success btn-sm m-r-5"><div>DETIL</div></button>
 				</div>';
 			$data[] = $UserData;
 		}

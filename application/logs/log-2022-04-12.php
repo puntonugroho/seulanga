@@ -73,3 +73,64 @@ ERROR - 2022-04-12 05:42:37 --> Severity: Error --> Call to a member function ro
 ERROR - 2022-04-12 07:31:42 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 ERROR - 2022-04-12 07:31:42 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 >>>>>>> 6802910c185d75b88296942a6a44df33ff7c7ea1
+ERROR - 2022-04-12 08:07:29 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 08:07:29 --> Unable to connect to the database
+ERROR - 2022-04-12 08:07:29 --> Severity: Error --> Call to a member function real_escape_string() on a non-object C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 391
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/css
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/css
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/css
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/css
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/plugins
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 08:09:56 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 08:33:40 --> Severity: Warning --> in_array() expects parameter 2 to be array, null given C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeterangan.php 8
+ERROR - 2022-04-12 08:34:18 --> Severity: Warning --> in_array() expects parameter 2 to be array, null given C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeterangan.php 8
+ERROR - 2022-04-12 08:35:16 --> Severity: Warning --> in_array() expects parameter 2 to be array, null given C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeterangan.php 8
+ERROR - 2022-04-12 08:36:35 --> Severity: Warning --> in_array() expects parameter 2 to be array, null given C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeterangan.php 8
+ERROR - 2022-04-12 08:36:43 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 08:36:43 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 08:36:48 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 08:36:48 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 08:36:56 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 08:36:56 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 08:37:06 --> Severity: Warning --> in_array() expects parameter 2 to be array, null given C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeterangan.php 8
+ERROR - 2022-04-12 08:37:10 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 08:37:10 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 08:38:36 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 08:38:36 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 08:38:45 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 08:38:45 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 08:39:44 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:28:47 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:28:47 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:28:49 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:28:49 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:33:03 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:33:03 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:33:17 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:33:17 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:35:55 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:35:55 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:36:00 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:36:00 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:37:06 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:37:06 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:39:44 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:39:44 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:40:42 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:40:42 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:44:27 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:44:27 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:47:49 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:47:49 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 09:49:48 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 09:49:48 --> 404 Page Not Found: Assets/maps

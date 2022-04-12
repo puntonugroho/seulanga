@@ -1,32 +1,56 @@
-<div id="content" class="content">
-	<h1 class="page-header">JENIS SURAT KETERANGAN</h1>
-	<div class="row" id="row">
-		<div class="col-md-12">
-		<div class="panel panel-inverse">
-			<div class="panel-heading">
-				<button onclick="BukaModal('<?php echo $register_id; ?>')" class="btn btn-success btn-sm m-r-5">Tambah</button>
-			</div>
-			<div class="panel-body">
-				<table id="table_jenissuratketerangan" class="table table-striped table-bordered">
-				<thead>
-					<tr>
-						<th width="5%"><div align="center">NO</div></th>
-						<th width="10%"><div align="center">KODE</div></th>
-						<th width="65%"><div align="center">NAMA</div></th>
-						<th width="10%"><div align="center">AKTIF</div></th>
-						<th width="10%"></th>
-					</tr>
-				</thead>
-				</table>
+<div class="container-fluid page-body-wrapper">
+	<div class="main-panel">
+		<div class="content-wrapper">
+			<div class="card">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-md-8">
+							<h4 class="card-title">JENIS SURAT KETERANGAN</h4>
+						</div>
+						<div class="col-md-2" style="display: flex; flex-direction: row;justify-content: center;align-items:center;margin-top:-3px;margin-bottom:5px;margin-left:211px">
+								<?php if (in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan'))) { ?>
+									<button onclick="BukaModal('<?php echo $register_id; ?>')" class="btn btn-primary btn-sm mr-2 btn-block">Tambah Baru</button>
+								<?php } ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="table-responsive">
+								<table id="table_suratketerangan" class="table">
+									<thead>
+										<tr>
+											<th>NO</th>
+											<th>KODE</th>
+											<th>NAMA</th>
+											<th>AKTIF</th>
+											<th>AKSI</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		</div>
+		<!-- partial:partials/_footer.html -->
+		<footer class="footer">
+			<div class="footer-wrap">
+				<div class="d-sm-flex justify-content-center justify-content-sm-between">
+					<span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.ms-aceh.go.id/" target="_blank">MS Aceh </a>2022</span>
+					<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">MAHKAMAH SYAR'IYAH ACEH </span>
+				</div>
+			</div>
+		</footer>
+		<!-- partial -->
 	</div>
 </div>
 
-
+<!-- #modal-dialog -->
 <div class="modal fade" id="modal_jenissuratketerangan">
-<div class="modal-dialog" style="width: 50%;">
+<div class="modal-dialog">
 	<div class="modal-content">
 			<div class="modal-header"><h4 class="modal-title" id="judul"></h4></div>
 			<div class="modal-body">
@@ -68,66 +92,145 @@
 </div>
 </div>
 
+<!-- main-panel ends -->
+</div>
+</div>
+<script src="<?php echo base_url(); ?>assets/js/base.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/hoverable-collapse.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/off-canvas.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/template.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/settings.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/todolist.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.cookie.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/profile-settings.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/moment.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/formpickers.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/dataTables.bootstrap4.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/data-table.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/gritter/js/jquery.gritter.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/sweetalert.js"></script>
+<!-- <script src="<?php echo base_url(); ?>assets/js/ui-modal-notification.demo.js"></script> -->
+<script src="<?php echo base_url(); ?>assets/js/jquery.PrintArea.js"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-	table = $('#table_jenissuratketerangan').DataTable({ 
-		"processing": true,
-		"serverSide": true,
-		"bSort": false,
-		"bInfo": false,
-		"ajax": {
-			"url": "<?php echo base_url()?>jenissuratketerangan_data",
-			"type": "POST"
-		},
+	function pesan($judul, $pesan, $gambar) {
+		$.gritter.add({
+			title: $judul,
+			text: $pesan,
+			image: $gambar,
+			sticky: true,
+			time: '',
+			class_name: 'my-sticky-class'
+		});
+		return false;
+	}
+
+	var table;
+	$(document).ready(function() {
+		$('#TombolHapus').hide();
+		table = $('#table_suratketerangan').DataTable({
+			"processing": true,
+			"serverSide": true,
+			"bSort": false,
+			"bInfo": false,
+			"ajax": {
+				"url": "<?php echo base_url() ?>jenissuratketerangan_data",
+				"type": "POST"
+			},
+
+		});
 	});
-});
+
+	function TutupModal() {
+		$('#modal_penomoran').modal('toggle');
+		$('#table_penomoran').DataTable().ajax.reload();
+	}
+
+	function HapusModal(penomoran_id) {
+		$.post('<?php echo base_url() ?>penomoran_hapus', {
+			penomoran_id: penomoran_id
+		}, function(response) {
+			var json = jQuery.parseJSON(response);
+			if (json.st == 1) {
+				$('#modal_penomoran').modal('toggle');
+				$('#table_penomoran').DataTable().ajax.reload();
+				pesan('INFORMASI', json.msg, '');
+			} else if (json.st == 0) {
+				pesan('PERINGATAN', json.msg, '');
+				$('#table_penomoran').DataTable().ajax.reload();
+			}
+		});
+	}
 
 
-function BukaModal(id){
-	$.post('<?php echo base_url()?>jenissuratketerangan_add', { 
-		id:id
-	}, function(response){
-		var json = jQuery.parseJSON(response);
-		if(json.st==1){
-			$("#judul").html("");
-			$("#aktif_").html("");
-			$("#register_").html("");
-			$("#id").val("");
-			$("#kode").val("");
-			$("#nama").val("");
-			$("#dokumen_").html("");
-			$("#kode").val(json.kode);
-			$("#nama").val(json.nama);
-			$("#dokumen_").append(json.dokumen);
-			$("#id").val(json.id);
-			$("#judul").append(json.judul);
-			$("#aktif_").append(json.aktif);
-			$("#register_").append(json.register);
-			$('#modal_jenissuratketerangan').modal({ show: true,backdrop: 'static' });        
-		}else if(json.st==0){
-			$('#table_jenissuratketerangan').DataTable().ajax.reload();
+	function SimpanModal() {
+		var penomoran_id = $('#penomoran_id').val();
+		var nama = $('#nama').val();
+		var keterangan = $('#keterangan').val();
+		var status = $('#status').val();
+		if (kode == '') {
+			pesan('PERINGATAN', 'Kolom Kode Nomor Surat Wajib Diisi', '');
+			return;
 		}
-	});
-}
+		if (status == '') {
+			pesan('PERINGATAN', 'Kolom Status Kode Surat Wajib Diisi', '');
+			return;
+		}
+		$.post('<?php echo base_url() ?>penomoran_simpan', {
+			penomoran_id: penomoran_id,
+			nama: nama,
+			keterangan: keterangan,
+			status: status
+		}, function(response) {
+			var json = jQuery.parseJSON(response);
+			if (json.st == 1) {
+				$('#modal_penomoran').modal('toggle');
+				$('#table_penomoran').DataTable().ajax.reload();
+				pesan('INFORMASI', json.msg, '');
+			} else if (json.st == 0) {
+				pesan('PERINGATAN', json.msg, '');
+				$('#table_penomoran').DataTable().ajax.reload();
+			}
+		});
+	}
 
-document.getElementById('dokumen').addEventListener('change', checkFile, false);
-dokumen.addEventListener('change', checkFile, false);
-function checkFile(e) {
-    var file_list = e.target.files;
-    for (var i = 0, file; file = file_list[i]; i++) {
-        var sFileName = file.name;
-        var sFileExtension = sFileName.split('.')[sFileName.split('.').length - 1].toLowerCase();
-        var iFileSize = file.size;
-        var iConvert = (file.size / 10485760).toFixed(2);
 
-        if (!(sFileExtension === "rtf") || iFileSize > 10485760) {
-            txt = "Jenis File : " + sFileExtension + "<br/><br/>";
-            txt += "Ukuran: " + iConvert + " MB <br/><br/>";
-            txt += "Pastikan Format Dokumen rtf dengan ukuran maksimal 10MB.\n\n";
-            pesan('PERINGATAN',txt,'');
-            $("#dokumen").val("");
-        }
-    }
-}
+		function BukaModal(id){
+		$.post('<?php echo base_url()?>jenissuratketerangan_add', { 
+			id:id
+		}, function(response){
+			var json = jQuery.parseJSON(response);
+			if(json.st==1){
+				$("#judul").html("");
+				$("#aktif_").html("");
+				$("#register_").html("");
+				$("#id").val("");
+				$("#kode").val("");
+				$("#nama").val("");
+				$("#dokumen_").html("");
+				$("#kode").val(json.kode);
+				$("#nama").val(json.nama);
+				$("#dokumen_").append(json.dokumen);
+				$("#id").val(json.id);
+				$("#judul").append(json.judul);
+				$("#aktif_").append(json.aktif);
+				$("#register_").append(json.register);
+				$('#modal_jenissuratketerangan').modal({ show: true,backdrop: 'static' });        
+			}else if(json.st==0){
+				$('#table_jenissuratketerangan').DataTable().ajax.reload();
+			}
+		});
+	}
 </script>
+<!-- <script>
+		$(document).ready(function() {
+			App.init();
+            TableManageDefault.init();
+            FormPlugins.init();
+		});
+	</script> -->
+</body>
+
+</html>

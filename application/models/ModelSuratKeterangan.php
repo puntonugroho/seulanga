@@ -142,6 +142,14 @@ class ModelSuratKeterangan extends CI_Model {
 		}	
 	}
 
+	public function get_ref_surat_keterangan(){
+		try {
+			return $this->db->query("SELECT * FROM ref_jenis_surat_keterangan");
+		} catch (Exception $e) {
+			return 0;
+		}
+	}
+
 	
 
 }
