@@ -160,7 +160,7 @@
 													<th style="font-weight: 600; font-size:0.9rem">Tgl. Register</th>
 													<th style="font-weight: 600; font-size:0.9rem">Nomor</th>
 													<th style="font-weight: 600; font-size:0.9rem">Tujuan</th>
-													<th style="font-weight: 600; font-size:0.9rem">Aksi</th>
+													<th style="font-weight: 600; font-size:0.9rem">Hari ke</th>
 												</tr>
 											</thead>
 											<tbody>

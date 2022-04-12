@@ -273,7 +273,9 @@
 							<div class="col-md-3" style="display: flex; flex-direction: row;justify-content: center;align-items:center;margin-top:-3px;margin-bottom:5px">
 								<span id="tombol_edit_surat_keluar" class="mr-2"></span>
 								<span id="tombol_kirim_surat_keluar" class="mr-2"></span>
-								<span id="tombol_hapus_surat_keluar"></span>
+								<?php if(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_hapus'))) {?>
+									<span id="tombol_hapus_surat_keluar"></span>
+								<?php } ?>
 							</div>
 						</div>
 						<br />

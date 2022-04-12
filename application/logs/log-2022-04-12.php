@@ -206,3 +206,14 @@ ERROR - 2022-04-12 12:00:48 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6
 ERROR - 2022-04-12 12:01:30 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 ERROR - 2022-04-12 12:01:30 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 >>>>>>> Stashed changes
+ERROR - 2022-04-12 12:11:56 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 12:11:56 --> 404 Page Not Found: Assets/css
+ERROR - 2022-04-12 12:12:05 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 12:12:05 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 12:12:15 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:15 --> Severity: Error --> Call to a member function result() on a non-object C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:13:56 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 12:13:56 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 12:14:03 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
