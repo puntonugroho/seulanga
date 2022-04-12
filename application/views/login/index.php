@@ -60,7 +60,7 @@
                       <i class="fas fa-lock"></i>
                     </span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Masukkan Password" name="password" aria-label="Username" aria-describedby="basic-addon1">
+                  <input type="password" class="form-control" placeholder="Masukkan Password" name="password" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
               </div>
 
