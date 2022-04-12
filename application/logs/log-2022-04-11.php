@@ -141,3 +141,5 @@ ERROR - 2022-04-11 16:47:04 --> Severity: Warning --> unlink(./dokumen/14183b8ca
 ERROR - 2022-04-11 17:28:51 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 17:28:58 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-11 17:28:58 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-11 20:02:44 --> Severity: Warning --> date_format() expects parameter 1 to be DateTimeInterface, string given C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeluar.php 222
+ERROR - 2022-04-11 20:03:53 --> Severity: Warning --> date_format() expects parameter 1 to be DateTimeInterface, string given C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeluar.php 222
