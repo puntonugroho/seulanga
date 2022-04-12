@@ -1,4 +1,11 @@
 
 application/config/config.php
+<<<<<<< HEAD
+application/config/database.php
+=======
 application/logs/log-2022-04-11.php
+<<<<<<< HEAD
 application/logs/log-2022-04-12.php
+=======
+>>>>>>> 268c7c842aba61c8fc7b881f3b90188e82b578b2
+>>>>>>> refs/remotes/origin/main

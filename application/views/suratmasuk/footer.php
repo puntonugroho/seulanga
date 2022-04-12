@@ -193,6 +193,10 @@
 
 
 	function CetakDisposisi(register_id) {
+		if (register_id==0) {
+			register_id = $("#register_id_detil").val();
+		}
+		//console.log(register_id);
 		$.post('<?php echo base_url() ?>suratmasuk_disposisi', {
 			register_id: register_id
 		}, function(response) {
@@ -288,11 +292,12 @@
 				$('#tambah_pelaksanaan').hide();
 
 				pesan('PERINGATAN', json.msg, '');
+				location.reload();
 				$('#table_pegawai').DataTable().ajax.reload();
 			} else if (json.st == 0) {
 				$('#tambah_pelaksanaan').hide();
 				pesan('PERINGATAN', json.msg, '');
-
+				location.reload();
 				$('#table_pegawai').DataTable().ajax.reload();
 			}
 		});
