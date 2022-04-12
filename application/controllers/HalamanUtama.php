@@ -83,19 +83,26 @@ class HalamanUtama extends CI_Controller
 
 		$group_id = $this->session->userdata('group_id');
 
-		if ($group_id == '2' || $group_id == '3') {
-			$queryJabatan = $this->model->get_data('v_groups_struktural');
-		} else {
-			$queryJabatan = $this->model->get_data('v_groups');
-		}
+		// if ($group_id == '2' || $group_id == '3') {
+		// 	$queryJabatan = $this->model->get_data('v_groups_struktural');
+			
+		// } else {
+		// 	$queryJabatan = $this->model->get_data('v_groups');
+		// }
+		$queryJabatan = $this->model->get_data('v_groups_with_name');
+
 		$arrayJabatan = array();
 		$arrayJabatan[''] = "Pilih";
 		foreach ($queryJabatan->result() as $row) {
-			if ($group_id == '2' || $group_id == '3') {
-				$arrayJabatan[$row->groupid] = (!empty($row->nama) ? $row->group_name . ' -  [ ' . $row->nama . ' ]' : "<strike>" . $row->group_name . '</strike> -  [ Pegawai Belum Didaftarkan ke Sistem ]');
-			} else {
+			// if ($group_id == '2' || $group_id == '3') {
+			// 	$arrayJabatan[$row->groupid] = (!empty($row->nama) ? $row->group_name . ' -  [ ' . $row->nama . ' ]' : "<strike>" . $row->group_name . '</strike> -  [ Pegawai Belum Didaftarkan ke Sistem ]');
+			// } else {
+			// $arrayJabatan[$row->group_id] = $row->group_name;
+			// }
+			if((!empty($row->nama))){
 				$arrayJabatan[$row->group_id] = $row->group_name;
 			}
+			
 		}
 
 		if ($group_id == '2' || $group_id == '3') {

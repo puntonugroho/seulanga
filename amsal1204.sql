@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2022 at 07:55 AM
+-- Generation Time: Apr 12, 2022 at 12:03 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -144,14 +144,26 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id`, `nip`, `nama`, `nama_gelar`, `golongan_id`, `golongan`, `pangkat`, `alamat`, `keterangan`, `aktif`, `foto`, `jabatan_id`, `jabatan_nama`, `chatid`, `diinput_oleh`, `diinput_tanggal`, `diperbaharui_oleh`, `diperbaharui_tanggal`) VALUES
-(1, '195412081979032007', '', 'Dra. Hj. Rosmawardani, S.H., M.H', 18, 'IV/e', 'Pembina Utama', 'Banda Aceh', '', 'Y', NULL, 2, 'Ketua Pengadilan', NULL, 'admin', '2021-08-04 03:29:18', '', NULL),
+(1, '196105011988031002', '', 'Drs. H. Zulkifli Yus, M.H.', 18, 'IV/e', 'Pembina Utama', 'Banda Aceh', '', 'Y', NULL, 2, 'Ketua', NULL, 'admin', '2021-08-04 03:29:18', '', NULL),
 (2, '196202101994031003', '', 'Drs. Syafruddin', 17, 'IV/d', 'Pembina Utama Madya', 'Banda Aceh', '', 'Y', NULL, 4, 'Panitera', NULL, 'admin', '2021-08-04 03:30:14', '', NULL),
-(3, '195803141983031004', '', 'Rafi', 18, 'IV/e', 'Pembina Utama', 'Banda Aceh', '', 'Y', NULL, 3, 'Wakil Ketua Pengadilan', NULL, 'admin', '2021-08-04 04:13:03', '', NULL),
-(4, '-', '', 'latif', 14, 'IV/a', 'Pembina', 'Banda Aceh', '', 'Y', NULL, 6, 'Panitera Muda Perdata', NULL, 'admin', '2021-08-04 04:13:43', 'admin', '2021-08-04 04:51:33'),
-(5, '-', '', 'bahrun', 14, 'IV/a', 'Pembina', 'Banda Aceh', '', 'Y', NULL, 19, 'Kepala Sub Bagian Umum dan Keuangan aceh', NULL, 'admin', '2021-08-04 04:14:13', '', NULL),
-(6, '-', '', 'Khairuddin, S.H., M.H.', 17, 'IV/d', 'Pembina Utama Madya', 'Banda Aceh', '', 'Y', NULL, 16, 'Sekretaris', 226437812, 'admin', '2021-08-04 04:50:09', '', NULL),
-(7, '-', '', 'Drs. Ilyas, S.H., M.H', 14, 'IV/a', 'Pembina', 'Banda Aceh', '', 'Y', NULL, 7, 'Panitera Muda Hukum', NULL, 'admin', '2021-08-04 04:51:17', 'admin', '2021-08-04 04:51:39'),
-(8, '-', '', 'ratna', 14, 'IV/a', 'Pembina', 'Banda Aceh', '', 'Y', NULL, 5, 'Panitera Muda Pidana', NULL, 'admin', '2021-08-04 04:52:01', '', NULL);
+(4, '196507311994031003', '', 'Abd. Latif, S.H, M.H.', 14, 'IV/a', 'Pembina', 'Banda Aceh', '', 'Y', NULL, 6, 'Panitera Muda Banding', NULL, 'admin', '2021-08-04 04:13:43', 'admin', '2021-08-04 04:51:33'),
+(5, '196711121990121001', '', 'Bahrun, S.H., M.H.', 14, 'III/d', 'Penata Tingkat I', 'Banda Aceh', '', 'Y', NULL, 19, 'Kepala Sub Bagian Tata Usaha dan Rumah Tangga', NULL, 'admin', '2021-08-04 04:14:13', '', NULL),
+(6, '196708121994031007	', '', 'H. Hilman Lubis, S.H., M.H.', 17, 'IV/c', 'Pembina Utama Muda', 'Banda Aceh', '', 'Y', NULL, 16, 'Sekretaris', 226437812, 'admin', '2021-08-04 04:50:09', '', NULL),
+(7, '196202101994031003', '', 'Drs. Ilyas, S.H., M.H', 14, 'IV/a', 'Pembina', 'Banda Aceh', '', 'Y', NULL, 7, 'Panitera Muda Hukum', NULL, 'admin', '2021-08-04 04:51:17', 'admin', '2021-08-04 04:51:39'),
+(8, '196810131997032001', '', 'Ratna Juita, S.Ag., S.H., M.H.', 14, 'IV/a', 'Pembina', 'Banda Aceh', '', 'Y', NULL, 5, 'Panitera Muda Jinayat', NULL, 'admin', '2021-08-04 04:52:01', '', NULL),
+(9, '197404061994031001', '', 'Mirza, S.H., M.H.', 15, 'IV/b', 'Pembina Tingkat I', 'Banda Aceh', '', 'Y', NULL, 31, 'Kabag Umum dan Keuangan', NULL, 'admin', '2022-04-12 08:20:28', '', NULL),
+(10, '197404072006041002', '', 'Fahmi Riswin, S.E.Ak.', 13, 'III/d', 'Penata Tingkat I', 'Banda Aceh', '', 'Y', NULL, 18, 'Kepala Sub Bagian Renprog', NULL, 'admin', '2022-04-12 08:25:55', '', NULL),
+(11, '198408142007041001', '', 'Jainal Tabrani, S.H., M.H.', 13, 'III/d', 'Penata Tingkat I', 'Banda Aceh', '', 'Y', NULL, 17, 'Kepala Sub Bagian Kepegawaian dan TI', NULL, 'admin', '2022-04-12 08:27:37', '', NULL),
+(12, '198512292009122003', '', 'Yani Riyanti, S.E., M.Si.', 13, 'III/d', 'Penata Tingkat I', 'Banda Aceh', '', 'Y', NULL, 30, 'Kepala Sub Bagian Keuangan dan Pelaporan', NULL, 'admin', '2022-04-12 08:50:29', '', NULL),
+(13, '197607262006042003', '', 'Yosi Dirola, S.E.', 13, 'III/d', 'Penata Tingkat I', 'Banda Aceh', '', 'Y', NULL, 25, 'Pengelola Keuangan', NULL, 'admin', '2022-04-12 08:52:59', '', NULL),
+(14, '197905012009122001', '', 'Isnawati, S.E.', 12, 'III/c', 'Penata', 'Banda Aceh', '', 'Y', NULL, 25, 'Pengelola Keuangan', NULL, 'admin', '2022-04-12 08:54:30', '', NULL),
+(15, '198106102010032002', '', 'Monik Zarinah, SE, M.Si.', 12, 'III/c', 'Penata', 'Banda Aceh', '', 'Y', NULL, 25, 'Pengelola Keuangan', NULL, 'admin', '2022-04-12 08:55:25', '', NULL),
+(16, '198709122009041002', '', 'Armada, S.E.', 11, 'III/b', 'Penata Muda Tingkat I', 'Banda Aceh', '', 'Y', NULL, 25, 'Pengelola Keuangan', NULL, 'admin', '2022-04-12 08:56:02', '', NULL),
+(17, '198211232009041002', '', 'Denny Kurniawan, S.T.', 13, 'III/d', 'Penata Tingkat I', 'Banda Aceh', '', 'Y', NULL, 26, 'Pranata Keuangan', NULL, 'admin', '2022-04-12 08:56:56', '', NULL),
+(18, '198212012009121004', '', 'Mohd Hanafi, S.H.I.', 12, 'III/c', 'Penata', 'Banda Aceh', '', 'Y', NULL, 26, 'Pranata Keuangan', NULL, 'admin', '2022-04-12 08:57:40', '', NULL),
+(19, '198007132006041002', '', 'Muhammad Kadri, S.T.', 12, 'III/c', 'Penata', 'Banda Aceh', '', 'Y', NULL, 24, 'Pranata Komputer', NULL, 'admin', '2022-04-12 09:00:11', '', NULL),
+(20, '198312122011011011', '', 'Heri Irawan, A.Md.', 10, 'III/a', 'Penata Muda', 'Banda Aceh', '', 'Y', NULL, 24, 'Pranata Komputer', NULL, 'admin', '2022-04-12 09:01:09', '', NULL),
+(21, '196202021993031003', '', 'Drs. A Murad, M.H.', 15, 'IV/b', 'Pembina Tingkat I', 'Banda Aceh', '', 'Y', NULL, 8, 'Panitera Pengganti', NULL, 'admin', '2022-04-12 09:02:22', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -1627,7 +1639,25 @@ INSERT INTO `sys_audittrail` (`id`, `datetime`, `ipaddress`, `username`, `tablen
 (13, '2021-08-04 04:54:20', '::1', '', 'sys_users', 'INSERT', 'Tambah Pengguna [Username=<b>bahrun</b>]<br />Tambah table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=6]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>userid</td><td>6</td></tr><tr><td>pegawai_id</td><td>5</td></tr><tr><td>fullname</td><td>bahrun</td></tr><tr><td>username</td><td>bahrun</td></tr><tr><td>password</td><td>7ee720947fb1383ddbc646763175e4c6</td></tr><tr><td>email</td><td>bahrun@gmail.com</td></tr><tr><td>activation</td><td>682935d98be8f3bc4cc6d52b2f188668</td></tr><tr><td>code_activation</td><td>a1a23f6f09ec7efee8d576a823e2338a</td></tr><tr><td>block</td><td>0</td></tr><tr><td>created_by</td><td>admin</td></tr><tr><td>created_on</td><td>2021-08-04 04:54:19</td></tr></table>'),
 (14, '2021-08-04 04:55:55', '::1', '', 'sys_users', 'INSERT', 'Tambah Pengguna [Username=<b>khair</b>]<br />Tambah table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=7]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>userid</td><td>7</td></tr><tr><td>pegawai_id</td><td>6</td></tr><tr><td>fullname</td><td>khair</td></tr><tr><td>username</td><td>khair</td></tr><tr><td>password</td><td>e5f2f4d0253a8312784195f9409f065f</td></tr><tr><td>email</td><td>khair@gmail.com</td></tr><tr><td>activation</td><td>faae5361878bd81899f2ea65a10245ac</td></tr><tr><td>code_activation</td><td>3286bf3ce458f4e3b638dae25a05a82f</td></tr><tr><td>block</td><td>0</td></tr><tr><td>created_by</td><td>admin</td></tr><tr><td>created_on</td><td>2021-08-04 04:55:54</td></tr></table>'),
 (15, '2021-08-04 04:56:20', '::1', '', 'sys_users', 'INSERT', 'Tambah Pengguna [Username=<b>ilyas</b>]<br />Tambah table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=8]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>userid</td><td>8</td></tr><tr><td>pegawai_id</td><td>7</td></tr><tr><td>fullname</td><td>Drs. Ilyas, S.H., M.H</td></tr><tr><td>username</td><td>ilyas</td></tr><tr><td>password</td><td>4a5211cf2de2e5897cbec7f2c4203f63</td></tr><tr><td>email</td><td>ilyas@gmail.com</td></tr><tr><td>activation</td><td>b65d370f50477300fcbd02ebfcd9bbd3</td></tr><tr><td>code_activation</td><td>87a55d74550b86c4d46e57f14c79eb69</td></tr><tr><td>block</td><td>0</td></tr><tr><td>created_by</td><td>admin</td></tr><tr><td>created_on</td><td>2021-08-04 04:56:19</td></tr></table>'),
-(16, '2021-08-04 04:56:46', '::1', '', 'sys_users', 'INSERT', 'Tambah Pengguna [Username=<b>ratna</b>]<br />Tambah table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=9]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>userid</td><td>9</td></tr><tr><td>pegawai_id</td><td>8</td></tr><tr><td>fullname</td><td>ratna</td></tr><tr><td>username</td><td>ratna</td></tr><tr><td>password</td><td>8ad1888c5e6a47a6947cade86dd2d61a</td></tr><tr><td>email</td><td>ratna@gmail.com</td></tr><tr><td>activation</td><td>e64233156482aaf65ad22b327d75b159</td></tr><tr><td>code_activation</td><td>3cfbc00fc9d66b8e74b680858d16d217</td></tr><tr><td>block</td><td>0</td></tr><tr><td>created_by</td><td>admin</td></tr><tr><td>created_on</td><td>2021-08-04 04:56:46</td></tr></table>');
+(16, '2021-08-04 04:56:46', '::1', '', 'sys_users', 'INSERT', 'Tambah Pengguna [Username=<b>ratna</b>]<br />Tambah table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=9]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>userid</td><td>9</td></tr><tr><td>pegawai_id</td><td>8</td></tr><tr><td>fullname</td><td>ratna</td></tr><tr><td>username</td><td>ratna</td></tr><tr><td>password</td><td>8ad1888c5e6a47a6947cade86dd2d61a</td></tr><tr><td>email</td><td>ratna@gmail.com</td></tr><tr><td>activation</td><td>e64233156482aaf65ad22b327d75b159</td></tr><tr><td>code_activation</td><td>3cfbc00fc9d66b8e74b680858d16d217</td></tr><tr><td>block</td><td>0</td></tr><tr><td>created_by</td><td>admin</td></tr><tr><td>created_on</td><td>2021-08-04 04:56:46</td></tr></table>'),
+(17, '2022-04-12 07:53:17', '::1', '', 'sys_users', 'UPDATE', 'Edit Pengguna [Username=<b>latif</b>]<br />Edit table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=4]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>pegawai_id</td><td>4</td></tr><tr><td>fullname</td><td>latif</td></tr><tr><td>username</td><td>latif</td></tr><tr><td>password</td><td>4bfa85f44d6b7df689285dbf2864b87a</td></tr><tr><td>email</td><td>latif@gmail.com</td></tr><tr><td>activation</td><td>89723a3c2dbc6c19ec0131852747efd2</td></tr><tr><td>code_activation</td><td>f88958e703296136aae79e5f0330071b</td></tr><tr><td>block</td><td>1</td></tr><tr><td>modified_by</td><td>admin</td></tr><tr><td>modified_on</td><td>2022-04-12 07:53:17</td></tr></table>'),
+(18, '2022-04-12 08:06:24', '::1', '', 'sys_users', 'UPDATE', 'Edit Pengguna [Username=<b>hilman</b>]<br />Edit table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=7]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>pegawai_id</td><td>6</td></tr><tr><td>fullname</td><td>H. Hilman Lubis, S.H., M.H.</td></tr><tr><td>username</td><td>hilman</td></tr><tr><td>password</td><td>3cef1d538d50997a0db50d7d568456d0</td></tr><tr><td>email</td><td>hilman@gmail.com</td></tr><tr><td>activation</td><td>d289d16fc20e8ac4f00e59e1e66f0cf6</td></tr><tr><td>code_activation</td><td>d78477723a1dc7c22d920b363d0aec61</td></tr><tr><td>block</td><td>0</td></tr><tr><td>modified_by</td><td>admin</td></tr><tr><td>modified_on</td><td>2022-04-12 08:06:24</td></tr></table>'),
+(19, '2022-04-12 08:12:13', '::1', '', 'sys_users', 'UPDATE', 'Edit Pengguna [Username=<b>bahrun</b>]<br />Edit table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=6]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>pegawai_id</td><td>5</td></tr><tr><td>fullname</td><td>Bahrun, S.H., M.H.</td></tr><tr><td>username</td><td>bahrun</td></tr><tr><td>password</td><td>e0c2383bdab93f0e3561f5142d3a9e67</td></tr><tr><td>email</td><td>bahrun@gmail.com</td></tr><tr><td>activation</td><td>62b7346f87f1f8e3bfb199ea4a458509</td></tr><tr><td>code_activation</td><td>3aff72b9fac7a9ca2ee560feed82b44f</td></tr><tr><td>block</td><td>0</td></tr><tr><td>modified_by</td><td>admin</td></tr><tr><td>modified_on</td><td>2022-04-12 08:12:13</td></tr></table>'),
+(20, '2022-04-12 08:12:28', '::1', '', 'sys_users', 'UPDATE', 'Edit Pengguna [Username=<b>ratna</b>]<br />Edit table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=9]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>pegawai_id</td><td>8</td></tr><tr><td>fullname</td><td>Ratna Juita, S.Ag., S.H., M.H.</td></tr><tr><td>username</td><td>ratna</td></tr><tr><td>password</td><td>c7f5ef59a1c532aa27a806ae50ee0408</td></tr><tr><td>email</td><td>ratna@gmail.com</td></tr><tr><td>activation</td><td>2cc45ccf733c5eabaf811a29f99baee4</td></tr><tr><td>code_activation</td><td>94d9f3bb2c087dae935fe4e521bf6e71</td></tr><tr><td>block</td><td>0</td></tr><tr><td>modified_by</td><td>admin</td></tr><tr><td>modified_on</td><td>2022-04-12 08:12:28</td></tr></table>'),
+(21, '2022-04-12 08:15:42', '::1', '', 'sys_users', 'UPDATE', 'Edit Pengguna [Username=<b>zul</b>]<br />Edit table <b>sys_users</b> dari halaman <b>users_edit</b> dengan Primary Key [userid=2]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>pegawai_id</td><td>1</td></tr><tr><td>fullname</td><td>Drs. H. Zulkifli Yus, M.H.</td></tr><tr><td>username</td><td>zul</td></tr><tr><td>password</td><td>e3d0af46f614b635ab9b7529005e4864</td></tr><tr><td>email</td><td>zulkifliyus@gmail.com</td></tr><tr><td>activation</td><td>f6ce7e59c5dd95db4bcc67b482029006</td></tr><tr><td>code_activation</td><td>e9b336fafb19f43afcd2122b087381bb</td></tr><tr><td>block</td><td>0</td></tr><tr><td>modified_by</td><td>admin</td></tr><tr><td>modified_on</td><td>2022-04-12 08:15:41</td></tr></table>'),
+(22, '2022-04-12 08:20:28', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Mirza, S.H., M.H.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>197404061994031001</td></tr><tr><td>nama_gelar</td><td>Mirza, S.H., M.H.</td></tr><tr><td>golongan_id</td><td>15</td></tr><tr><td>golongan</td><td>IV/b</td></tr><tr><td>pangkat</td><td>Pembina Tingkat I</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>31</td></tr><tr><td>jabatan_nama</td><td>Kabag Umum dan Keuangan</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:20:28</td></tr></table>'),
+(23, '2022-04-12 08:25:55', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Fahmi Riswin, S.E.Ak.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>197404072006041002</td></tr><tr><td>nama_gelar</td><td>Fahmi Riswin, S.E.Ak.</td></tr><tr><td>golongan_id</td><td>13</td></tr><tr><td>golongan</td><td>III/d</td></tr><tr><td>pangkat</td><td>Penata Tingkat I</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>18</td></tr><tr><td>jabatan_nama</td><td>Kepala Sub Bagian Renprog</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:25:55</td></tr></table>'),
+(24, '2022-04-12 08:27:37', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Jainal Tabrani, S.H., M.H.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>198408142007041001</td></tr><tr><td>nama_gelar</td><td>Jainal Tabrani, S.H., M.H.</td></tr><tr><td>golongan_id</td><td>13</td></tr><tr><td>golongan</td><td>III/d</td></tr><tr><td>pangkat</td><td>Penata Tingkat I</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>17</td></tr><tr><td>jabatan_nama</td><td>Kepala Sub Bagian Kepegawaian dan TI</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:27:37</td></tr></table>'),
+(25, '2022-04-12 08:50:29', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Yani Riyanti, S.E., M.Si.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>198512292009122003</td></tr><tr><td>nama_gelar</td><td>Yani Riyanti, S.E., M.Si.</td></tr><tr><td>golongan_id</td><td>13</td></tr><tr><td>golongan</td><td>III/d</td></tr><tr><td>pangkat</td><td>Penata Tingkat I</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>30</td></tr><tr><td>jabatan_nama</td><td>Kepala Sub Bagian Keuangan dan Pelaporan</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:50:29</td></tr></table>'),
+(26, '2022-04-12 08:52:59', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Yosi Dirola, S.E.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>197607262006042003</td></tr><tr><td>nama_gelar</td><td>Yosi Dirola, S.E.</td></tr><tr><td>golongan_id</td><td>13</td></tr><tr><td>golongan</td><td>III/d</td></tr><tr><td>pangkat</td><td>Penata Tingkat I</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>25</td></tr><tr><td>jabatan_nama</td><td>Pengelola Keuangan</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:52:59</td></tr></table>'),
+(27, '2022-04-12 08:54:30', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Isnawati, S.E.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>197905012009122001</td></tr><tr><td>nama_gelar</td><td>Isnawati, S.E.</td></tr><tr><td>golongan_id</td><td>12</td></tr><tr><td>golongan</td><td>III/c</td></tr><tr><td>pangkat</td><td>Penata</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>25</td></tr><tr><td>jabatan_nama</td><td>Pengelola Keuangan</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:54:30</td></tr></table>'),
+(28, '2022-04-12 08:55:25', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Monik Zarinah, SE, M.Si.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>198106102010032002</td></tr><tr><td>nama_gelar</td><td>Monik Zarinah, SE, M.Si.</td></tr><tr><td>golongan_id</td><td>12</td></tr><tr><td>golongan</td><td>III/c</td></tr><tr><td>pangkat</td><td>Penata</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>25</td></tr><tr><td>jabatan_nama</td><td>Pengelola Keuangan</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:55:25</td></tr></table>'),
+(29, '2022-04-12 08:56:03', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Armada, S.E.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>198709122009041002</td></tr><tr><td>nama_gelar</td><td>Armada, S.E.</td></tr><tr><td>golongan_id</td><td>11</td></tr><tr><td>golongan</td><td>III/b</td></tr><tr><td>pangkat</td><td>Penata Muda Tingkat I</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>25</td></tr><tr><td>jabatan_nama</td><td>Pengelola Keuangan</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:56:02</td></tr></table>'),
+(30, '2022-04-12 08:56:57', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Denny Kurniawan, S.T.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>198211232009041002</td></tr><tr><td>nama_gelar</td><td>Denny Kurniawan, S.T.</td></tr><tr><td>golongan_id</td><td>13</td></tr><tr><td>golongan</td><td>III/d</td></tr><tr><td>pangkat</td><td>Penata Tingkat I</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>26</td></tr><tr><td>jabatan_nama</td><td>Pranata Keuangan</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:56:56</td></tr></table>'),
+(31, '2022-04-12 08:57:41', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Mohd Hanafi, S.H.I.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>198212012009121004</td></tr><tr><td>nama_gelar</td><td>Mohd Hanafi, S.H.I.</td></tr><tr><td>golongan_id</td><td>12</td></tr><tr><td>golongan</td><td>III/c</td></tr><tr><td>pangkat</td><td>Penata</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>26</td></tr><tr><td>jabatan_nama</td><td>Pranata Keuangan</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 08:57:40</td></tr></table>'),
+(32, '2022-04-12 09:00:12', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Muhammad Kadri, S.T.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>198007132006041002</td></tr><tr><td>nama_gelar</td><td>Muhammad Kadri, S.T.</td></tr><tr><td>golongan_id</td><td>12</td></tr><tr><td>golongan</td><td>III/c</td></tr><tr><td>pangkat</td><td>Penata</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>24</td></tr><tr><td>jabatan_nama</td><td>Pranata Komputer</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 09:00:11</td></tr></table>'),
+(33, '2022-04-12 09:01:09', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Heri Irawan, A.Md.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>198312122011011011</td></tr><tr><td>nama_gelar</td><td>Heri Irawan, A.Md.</td></tr><tr><td>golongan_id</td><td>10</td></tr><tr><td>golongan</td><td>III/a</td></tr><tr><td>pangkat</td><td>Penata Muda</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>24</td></tr><tr><td>jabatan_nama</td><td>Pranata Komputer</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 09:01:09</td></tr></table>'),
+(34, '2022-04-12 09:02:23', '::1', 'admin', 'pegawai', 'TAMBAH', 'Tambah Pegawai [Pegawai=<b>Drs. A Murad, M.H.</b>]<br />Tambah tabel <b>pegawai</b>]', '<br><table style=\"vertical-align:top\" cellspacing=\"0\" cellpadding=\"1\" border=\"1\"><tr><th>Nama Kolom</th><th>Nilai</th></tr><tr><td>nip</td><td>196202021993031003</td></tr><tr><td>nama_gelar</td><td>Drs. A Murad, M.H.</td></tr><tr><td>golongan_id</td><td>15</td></tr><tr><td>golongan</td><td>IV/b</td></tr><tr><td>pangkat</td><td>Pembina Tingkat I</td></tr><tr><td>alamat</td><td>Banda Aceh</td></tr><tr><td>jabatan_id</td><td>8</td></tr><tr><td>jabatan_nama</td><td>Panitera Pengganti</td></tr><tr><td>aktif</td><td>Y</td></tr><tr><td>diinput_oleh</td><td>admin</td></tr><tr><td>diinput_tanggal</td><td>2022-04-12 09:02:22</td></tr></table>');
 
 -- --------------------------------------------------------
 
@@ -1690,6 +1720,7 @@ CREATE TABLE `sys_groups` (
   `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set left:(by system)',
   `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set right:(by system)',
   `name` varchar(100) NOT NULL DEFAULT '' COMMENT 'Nama Grup: isian bebas',
+  `inter_exter` tinyint(1) NOT NULL COMMENT '1=Internal, 2=External',
   `description` varchar(255) NOT NULL DEFAULT '' COMMENT 'Keterangan: isian bebas',
   `enable` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Aktif: pilihan 1=Ya; 0=Tidak',
   `ordering` int(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Urutan Grup Per Induknya',
@@ -1705,33 +1736,40 @@ CREATE TABLE `sys_groups` (
 -- Dumping data for table `sys_groups`
 --
 
-INSERT INTO `sys_groups` (`groupid`, `parent_id`, `level`, `lft`, `rgt`, `name`, `description`, `enable`, `ordering`, `lock_by`, `lock_on`, `created_by`, `created_on`, `modified_by`, `modified_on`) VALUES
-(-1, NULL, 0, 1, 62, 'Root', 'Root', 1, 1, '', NULL, NULL, NULL, NULL, NULL),
-(1, -1, 1, 2, 61, 'Super Administrator', 'Super Administrator', 1, 1, 'system', '2013-02-08 11:02:03', '', NULL, 'admin', '2012-11-13 12:44:56'),
-(2, 1, 2, 3, 4, 'Ketua Mahkamah Syar\'iyah', 'Ketua Mahkamah Syar\'iyah', 1, 1, '', NULL, 'admin', '2017-10-08 08:43:05', '', NULL),
-(3, 1, 2, 5, 6, 'Wakil Ketua Mahkamah Syar\'iyah', 'Wakil Ketua Mahkamah Syar\'iyah', 1, 2, '', NULL, 'admin', '2017-10-08 08:43:20', '', '2017-10-08 08:45:17'),
-(4, 1, 2, 7, 46, 'Panitera', 'Panitera', 1, 3, '', NULL, 'admin', '2017-10-08 08:46:01', '', '2017-10-08 08:46:24'),
-(5, 4, 3, 8, 11, 'Panitera Muda Jinayat', 'Kepaniteraan Muda Jinayat', 1, 1, '', NULL, 'admin', '2017-10-08 08:46:44', '', NULL),
-(6, 4, 3, 12, 15, 'Panitera Muda Permohonan', 'Kepaniteraan Muda Permohonan', 1, 2, '', NULL, 'admin', '2017-10-08 08:47:38', '', NULL),
-(7, 4, 3, 16, 19, 'Panitera Muda Gugatan', 'Kepaniteraan Muda Gugatan', 1, 3, '', NULL, 'admin', '2017-10-08 08:48:06', '', NULL),
-(8, 4, 3, 25, 26, 'Panitera Pengganti', '', 1, 10, '', NULL, 'admin', '2017-10-08 08:52:49', '', NULL),
-(9, 4, 3, 27, 28, 'Jurusita / Jurusita Pengganti', '', 1, 11, '', NULL, 'admin', '2017-10-08 08:53:18', '', NULL),
-(10, 4, 3, 20, 23, 'Panitera Muda Hukum', '', 1, 11, '', NULL, 'admin', '2017-10-08 08:53:18', '', NULL),
-(11, 10, 4, 21, 22, 'Staf  Panitera Muda Hukum', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:04:57', '', NULL),
-(16, 1, 2, 47, 80, 'Sekretaris', 'Sekretaris', 1, 4, '', NULL, 'admin', '2017-10-08 08:54:41', '', NULL),
-(17, 16, 3, 58, 61, 'Kasubbag Umum dan Keuangan', 'Sub Bagian Umum dan Keuangan', 1, 1, '', NULL, 'admin', '2017-10-08 08:55:50', '', '2017-10-08 08:58:29'),
-(18, 16, 3, 62, 65, 'Kasubbag Kepegawaian', 'Sub Bagian Kepegawaian', 1, 2, '', NULL, 'admin', '2017-10-08 08:59:20', '', NULL),
-(19, 16, 3, 53, 56, 'Kasubbag PTIP', 'Sub Bagian PTIP', 1, 3, '', NULL, 'admin', '2017-10-08 08:59:54', '', NULL),
-(20, 5, 4, 9, 10, 'Staf Panitera Muda Jinayat', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:04:32', '', NULL),
-(21, 6, 4, 13, 14, 'Staf Panitera Muda Permohonan', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:04:45', '', NULL),
-(22, 7, 4, 17, 18, 'Staf  Panitera Muda Gugatan', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:04:57', '', NULL),
-(24, 16, 3, 65, 66, 'Pranata Komputer', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:05:24', '', NULL),
-(25, 10, 3, 67, 68, 'Pengelola Keuangan', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:05:40', '', NULL),
-(26, 11, 3, 69, 70, 'Pranata Keuangan', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:05:52', '', NULL),
-(27, 4, 3, 29, 30, 'Pranata Peradilan', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:06:10', '', NULL),
-(28, 17, 4, 60, 61, 'Staf Sub Bagian Umum dan Keuangan', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:06:53', '', NULL),
-(29, 18, 4, 64, 65, 'Staf Sub Bagian Kepegawaian', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:07:06', '', NULL),
-(30, 19, 4, 55, 56, 'Staf Sub Bagian PTIP', '', 1, 1, '', NULL, 'admin', '2017-10-08 09:07:21', '', NULL);
+INSERT INTO `sys_groups` (`groupid`, `parent_id`, `level`, `lft`, `rgt`, `name`, `inter_exter`, `description`, `enable`, `ordering`, `lock_by`, `lock_on`, `created_by`, `created_on`, `modified_by`, `modified_on`) VALUES
+(-1, NULL, 0, 1, 62, 'Root', 1, 'Root', 1, 1, '', NULL, NULL, NULL, NULL, NULL),
+(1, -1, 1, 2, 61, 'Super Administrator', 1, 'Super Administrator', 1, 1, 'system', '2013-02-08 11:02:03', '', NULL, 'admin', '2012-11-13 12:44:56'),
+(2, 1, 2, 3, 4, 'Ketua', 1, 'Ketua', 1, 1, '', NULL, 'admin', '2017-10-08 08:43:05', '', NULL),
+(3, 1, 2, 5, 6, 'Wakil Ketua ', 1, 'Wakil Ketua ', 1, 2, '', NULL, 'admin', '2017-10-08 08:43:20', '', '2017-10-08 08:45:17'),
+(4, 1, 2, 7, 46, 'Panitera', 1, 'Panitera', 1, 3, '', NULL, 'admin', '2017-10-08 08:46:01', '', '2017-10-08 08:46:24'),
+(5, 4, 3, 8, 11, 'Panitera Muda Jinayat', 1, 'Kepaniteraan Muda Jinayat', 1, 1, '', NULL, 'admin', '2017-10-08 08:46:44', '', NULL),
+(6, 4, 3, 12, 15, 'Panitera Muda Banding', 1, 'Kepaniteraan Muda Banding', 1, 2, '', NULL, 'admin', '2017-10-08 08:47:38', '', NULL),
+(7, 4, 3, 16, 19, 'Panitera Muda Hukum', 1, 'Kepaniteraan Muda Gugatan', 1, 3, '', NULL, 'admin', '2017-10-08 08:48:06', '', NULL),
+(8, 4, 4, 25, 26, 'Panitera Pengganti', 1, '', 1, 10, '', NULL, 'admin', '2017-10-08 08:52:49', '', NULL),
+(9, 4, 4, 27, 28, 'Jurusita / Jurusita Pengganti', 1, '', 1, 11, '', NULL, 'admin', '2017-10-08 08:53:18', '', NULL),
+(16, 1, 2, 47, 80, 'Sekretaris', 1, 'Sekretaris', 1, 4, '', NULL, 'admin', '2017-10-08 08:54:41', '', NULL),
+(17, 32, 4, 58, 61, 'Kepala Sub Bagian Kepegawaian dan TI', 1, '', 1, 1, '', NULL, 'admin', '2017-10-08 08:55:50', '', '2017-10-08 08:58:29'),
+(18, 32, 4, 62, 65, 'Kepala Sub Bagian Renprog', 1, '', 1, 2, '', NULL, 'admin', '2017-10-08 08:59:20', '', NULL),
+(19, 31, 4, 53, 54, 'Kepala Sub Bagian TURT', 1, '', 1, 3, '', NULL, 'admin', '2017-10-08 08:59:54', '', NULL),
+(20, 5, 5, 9, 10, 'Staf Panitera Muda Jinayat', 1, '', 0, 1, '', NULL, 'admin', '2017-10-08 09:04:32', '', NULL),
+(21, 6, 5, 13, 14, 'Staf Panitera Muda Banding', 1, '', 0, 1, '', NULL, 'admin', '2017-10-08 09:04:45', '', NULL),
+(22, 7, 5, 17, 18, 'Staf Panitera Muda Hukum', 1, '', 0, 1, '', NULL, 'admin', '2017-10-08 09:04:57', '', NULL),
+(24, 16, 4, 65, 66, 'Pranata Komputer', 1, '', 1, 1, '', NULL, 'admin', '2017-10-08 09:05:24', '', NULL),
+(25, 16, 4, 67, 68, 'Pengelola Keuangan', 1, '', 1, 1, '', NULL, 'admin', '2017-10-08 09:05:40', '', NULL),
+(26, 16, 4, 69, 70, 'Pranata Keuangan', 1, '', 1, 1, '', NULL, 'admin', '2017-10-08 09:05:52', '', NULL),
+(27, 4, 4, 29, 30, 'Pranata Peradilan', 1, '', 1, 1, '', NULL, 'admin', '2017-10-08 09:06:10', '', NULL),
+(28, 17, 5, 60, 61, 'Staf Sub Bagian Kepegawaian dan TI', 1, '', 0, 1, '', NULL, 'admin', '2017-10-08 09:06:53', '', NULL),
+(29, 18, 5, 64, 65, 'Staf Sub Bagian Renprog', 1, '', 0, 1, '', NULL, 'admin', '2017-10-08 09:07:06', '', NULL),
+(30, 31, 4, 55, 56, 'Kepala Sub Bagian Keuangan dan Pelaporan', 1, '', 1, 1, '', NULL, 'admin', '2017-10-08 09:07:21', '', NULL),
+(31, 16, 3, 48, 56, 'Kabag Umum dan Keuangan', 1, '', 1, 0, '', NULL, NULL, NULL, NULL, NULL),
+(32, 16, 3, 57, 64, 'Kabag Perencanaan dan Kepegawaian', 1, '', 1, 0, '', NULL, NULL, NULL, NULL, NULL),
+(33, 2, 2, 71, 72, 'Pengurus IKAHI', 1, '', 1, 0, '', NULL, NULL, NULL, NULL, NULL),
+(34, 2, 2, 73, 74, 'Pengurus IPASPI', 1, '', 1, 0, '', NULL, NULL, NULL, NULL, NULL),
+(35, 2, 2, 75, 76, 'Pengurus PTWP', 1, '', 1, 0, '', NULL, NULL, NULL, NULL, NULL),
+(36, 2, 2, 77, 78, 'Pengurus Dharmayukti Karini', 1, '', 1, 0, '', NULL, NULL, NULL, NULL, NULL),
+(37, 2, 2, 79, 80, 'Pengurus Koperasi', 1, '', 1, 0, '', NULL, NULL, NULL, NULL, NULL),
+(38, 2, 2, 81, 82, 'Pengurus PPHIMM', 1, '', 1, 0, '', NULL, NULL, NULL, NULL, NULL),
+(39, 2, 2, 83, 84, 'Pengurus ZIS', 1, '', 1, 0, '', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1775,14 +1813,13 @@ CREATE TABLE `sys_users` (
 
 INSERT INTO `sys_users` (`userid`, `pegawai_id`, `fullname`, `username`, `password`, `old_password`, `email`, `alternative_email`, `allow_concurrent_login`, `has_change_password`, `enable_change_password`, `last_change_password`, `password_expired_remainder`, `attemp_count`, `attemp_time`, `user_expired`, `last_login`, `block`, `activation`, `code_activation`, `params`, `lock_by`, `lock_on`, `created_by`, `created_on`, `modified_by`, `modified_on`) VALUES
 (1, 0, 'Super Administrator', 'admin', '22d3b91575acfd31a747aa90148723e2', '9e24d23de65f136b32ef8ffaad9d2086;9e24d23de65f136b32ef8ffaad9d2086;', 'admin@mail.go.id', '', -1, 1, 1, '2013-03-08 10:47:55', -1, 0, NULL, NULL, '2017-09-06 09:44:56', 0, 'b1a9d413781b40e7961c8c48a024f24e', '1672e5d8d1ae74efbe5d36c5c64b518f', '', '', NULL, '', '2011-03-22 23:36:46', 'system', '2012-08-29 00:15:45'),
-(2, 1, 'Dra. Hj. Rosmawardani, S.H., M.H', 'ros', 'c5449bcadaec011e4bc554dcde34056e', '', 'ros@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, '6b0b41f29b854a34bc5036cf95a0d74f', '64911d63fedf4fb6d4255e2130e6e904', '', '', NULL, 'admin', '2021-08-04 03:29:52', NULL, NULL),
+(2, 1, 'Drs. H. Zulkifli Yus, M.H.', 'zul', 'e3d0af46f614b635ab9b7529005e4864', '', 'zulkifliyus@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, 'f6ce7e59c5dd95db4bcc67b482029006', 'e9b336fafb19f43afcd2122b087381bb', '', '', NULL, 'admin', '2021-08-04 03:29:52', 'admin', '2022-04-12 08:15:41'),
 (3, 2, 'Drs. Syafruddin', 'syaf', '80776312162d09d86406a3ea9f4151f1', '', 'syaf@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, 'dcf3dd060300e5ae0fe500d65781bfbe', '527b9c87c3ea750538746364a99596fd', '', '', NULL, 'admin', '2021-08-04 03:31:48', NULL, NULL),
-(4, 4, 'latif', 'latif', '1a8a5d83ce5b455ea31cb36666a948c3', '', 'latif@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, '89723a3c2dbc6c19ec0131852747efd2', 'eeb3a028814776c51a4148819f20f785', '', '', NULL, 'admin', '2021-08-04 04:17:50', NULL, NULL),
-(5, 3, 'Rafi', 'rafi', '85ccab9353ea7aef6526a822ca28006d', '', 'rafi@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, 'ed2b8ba914746d536d843e831d6aafec', 'b4e57699a8e544863256c0cd196c92d0', '', '', NULL, 'admin', '2021-08-04 04:53:25', NULL, NULL),
-(6, 5, 'bahrun', 'bahrun', '7ee720947fb1383ddbc646763175e4c6', '', 'bahrun@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, '682935d98be8f3bc4cc6d52b2f188668', 'a1a23f6f09ec7efee8d576a823e2338a', '', '', NULL, 'admin', '2021-08-04 04:54:19', NULL, NULL),
-(7, 6, 'Khairuddin, S.H., M.H.', 'khair', 'e5f2f4d0253a8312784195f9409f065f', '', 'khair@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, 'faae5361878bd81899f2ea65a10245ac', '3286bf3ce458f4e3b638dae25a05a82f', '', '', NULL, 'admin', '2021-08-04 04:55:54', NULL, NULL),
+(4, 4, 'Abd. Latif, S.H, M.H.', 'latif', '4bfa85f44d6b7df689285dbf2864b87a', '', 'latif@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 1, '89723a3c2dbc6c19ec0131852747efd2', 'f88958e703296136aae79e5f0330071b', '', '', NULL, 'admin', '2021-08-04 04:17:50', 'admin', '2022-04-12 07:53:17'),
+(6, 5, 'Bahrun, S.H., M.H.', 'bahrun', 'e0c2383bdab93f0e3561f5142d3a9e67', '', 'bahrun@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, '62b7346f87f1f8e3bfb199ea4a458509', '3aff72b9fac7a9ca2ee560feed82b44f', '', '', NULL, 'admin', '2021-08-04 04:54:19', 'admin', '2022-04-12 08:12:13'),
+(7, 6, 'H. Hilman Lubis, S.H., M.H.', 'hilman', '3cef1d538d50997a0db50d7d568456d0', '', 'hilman@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, 'd289d16fc20e8ac4f00e59e1e66f0cf6', 'd78477723a1dc7c22d920b363d0aec61', '', '', NULL, 'admin', '2021-08-04 04:55:54', 'admin', '2022-04-12 08:06:24'),
 (8, 7, 'Drs. Ilyas, S.H., M.H', 'ilyas', '4a5211cf2de2e5897cbec7f2c4203f63', '', 'ilyas@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, 'b65d370f50477300fcbd02ebfcd9bbd3', '87a55d74550b86c4d46e57f14c79eb69', '', '', NULL, 'admin', '2021-08-04 04:56:19', NULL, NULL),
-(9, 8, 'ratna', 'ratna', '8ad1888c5e6a47a6947cade86dd2d61a', '', 'ratna@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, 'e64233156482aaf65ad22b327d75b159', '3cfbc00fc9d66b8e74b680858d16d217', '', '', NULL, 'admin', '2021-08-04 04:56:46', NULL, NULL);
+(9, 8, 'Ratna Juita, S.Ag., S.H., M.H.', 'ratna', 'c7f5ef59a1c532aa27a806ae50ee0408', '', 'ratna@gmail.com', '', -1, 0, 1, NULL, -1, 0, NULL, NULL, NULL, 0, '2cc45ccf733c5eabaf811a29f99baee4', '94d9f3bb2c087dae935fe4e521bf6e71', '', '', NULL, 'admin', '2021-08-04 04:56:46', 'admin', '2022-04-12 08:12:28');
 
 -- --------------------------------------------------------
 
@@ -1804,7 +1841,6 @@ INSERT INTO `sys_user_group` (`userid`, `groupid`) VALUES
 (2, 2),
 (3, 4),
 (4, 6),
-(5, 3),
 (6, 19),
 (7, 16),
 (8, 7),
@@ -2012,7 +2048,17 @@ INSERT INTO `sys_user_online` (`id`, `userid`, `host_address`, `login_time`, `us
 (177, 2, '::1', '2022-04-11 04:37:41', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', '', '', NULL, NULL),
 (178, 7, '192.168.17.93', '2022-04-11 05:26:03', 'Mozilla/5.0 (Linux; Android 11; SM-A307GN) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.73 Mobile Safari/537.36', '', '', NULL, NULL),
 (179, 2, '192.168.17.93', '2022-04-11 05:26:35', 'Mozilla/5.0 (Linux; Android 11; SM-A307GN) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.73 Mobile Safari/537.36', '', '', NULL, NULL),
-(180, 2, '192.168.17.93', '2022-04-11 05:36:34', 'Mozilla/5.0 (Linux; Android 11; SM-A307GN) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.73 Mobile Safari/537.36', '', '', NULL, NULL);
+(180, 2, '192.168.17.93', '2022-04-11 05:36:34', 'Mozilla/5.0 (Linux; Android 11; SM-A307GN) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.73 Mobile Safari/537.36', '', '', NULL, NULL),
+(181, 2, '::1', '2022-04-12 04:54:31', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', '', '', NULL, NULL),
+(182, 2, '127.0.0.1', '2022-04-12 05:31:38', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0', '', '', NULL, NULL),
+(183, 1, '::1', '2022-04-12 05:51:00', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', '', '', NULL, NULL),
+(184, 1, '::1', '2022-04-12 05:51:23', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', '', '', NULL, NULL),
+(185, 1, '::1', '2022-04-12 06:47:08', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', '', '', NULL, NULL),
+(186, 1, '::1', '2022-04-12 06:49:34', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', '', '', NULL, NULL),
+(187, 1, '::1', '2022-04-12 07:05:21', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36', '', '', NULL, NULL),
+(188, 2, '127.0.0.1', '2022-04-12 07:32:19', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0', '', '', NULL, NULL),
+(189, 7, '127.0.0.1', '2022-04-12 08:56:02', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0', '', '', NULL, NULL),
+(190, 2, '127.0.0.1', '2022-04-12 08:59:10', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0', '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2038,6 +2084,18 @@ CREATE TABLE `v_groups_struktural` (
 ,`pegawai_id` int(11) unsigned
 ,`nip` varchar(20)
 ,`nama` varchar(50)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `v_groups_with_name`
+-- (See below for the actual view)
+--
+CREATE TABLE `v_groups_with_name` (
+`group_id` int(11)
+,`nama` varchar(50)
+,`group_name` varchar(255)
 );
 
 -- --------------------------------------------------------
@@ -2256,6 +2314,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `v_groups_struktural`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_groups_struktural`  AS  select `a`.`groupid` AS `groupid`,`getTreeName`((`a`.`level` - 2),`a`.`name`) AS `group_name`,`getTreeName`((`a`.`level` - 2),`a`.`description`) AS `bagian`,`b`.`id` AS `pegawai_id`,`b`.`nip` AS `nip`,`b`.`nama_gelar` AS `nama` from (`sys_groups` `a` left join `pegawai` `b` on((`b`.`jabatan_id` = `a`.`groupid`))) where (`a`.`groupid` in (2,3,4,5,6,7,8,9,10,11,12,13,14,16,17,18,19)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `v_groups_with_name`
+--
+DROP TABLE IF EXISTS `v_groups_with_name`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_groups_with_name`  AS  select `sys_groups`.`groupid` AS `group_id`,`pegawai`.`nama_gelar` AS `nama`,`getTreeName`((`sys_groups`.`level` - 2),`sys_groups`.`name`) AS `group_name` from (`sys_groups` left join `pegawai` on((`sys_groups`.`groupid` = `pegawai`.`jabatan_id`))) where ((`sys_groups`.`enable` = 1) and (`sys_groups`.`lft` > 2) and (`sys_groups`.`rgt` <= 1000) and (`sys_groups`.`groupid` >= 2)) order by `sys_groups`.`lft` ;
 
 -- --------------------------------------------------------
 
@@ -2551,7 +2618,7 @@ ALTER TABLE `jenis_identitas`
 -- AUTO_INCREMENT for table `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary key: (by system)', AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary key: (by system)', AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `ref_instruksi`
@@ -2611,7 +2678,7 @@ ALTER TABLE `register_surat_keterangan`
 -- AUTO_INCREMENT for table `sys_audittrail`
 --
 ALTER TABLE `sys_audittrail`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary key: (by system)', AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary key: (by system)', AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `sys_config`
@@ -2623,7 +2690,7 @@ ALTER TABLE `sys_config`
 -- AUTO_INCREMENT for table `sys_user_online`
 --
 ALTER TABLE `sys_user_online`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'SessionId (by system)', AUTO_INCREMENT=181;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'SessionId (by system)', AUTO_INCREMENT=191;
 
 --
 -- Constraints for dumped tables

@@ -73,6 +73,7 @@ ERROR - 2022-04-12 05:42:37 --> Severity: Error --> Call to a member function ro
 ERROR - 2022-04-12 07:31:42 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 ERROR - 2022-04-12 07:31:42 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 >>>>>>> 6802910c185d75b88296942a6a44df33ff7c7ea1
+<<<<<<< Updated upstream
 ERROR - 2022-04-12 08:07:29 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
 ERROR - 2022-04-12 08:07:29 --> Unable to connect to the database
 ERROR - 2022-04-12 08:07:29 --> Severity: Error --> Call to a member function real_escape_string() on a non-object C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 391
@@ -171,3 +172,37 @@ ERROR - 2022-04-12 10:56:06 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-12 10:56:06 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-12 10:57:45 --> 404 Page Not Found: Assets/maps
 ERROR - 2022-04-12 10:57:45 --> 404 Page Not Found: Assets/js
+=======
+ERROR - 2022-04-12 09:52:42 --> Severity: Parsing Error --> syntax error, unexpected ',', expecting ')' C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 260
+ERROR - 2022-04-12 09:52:52 --> Severity: Error --> Call to undefined method HalamanSuratMasuk::get_list_jabatan() C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 212
+ERROR - 2022-04-12 09:52:58 --> Severity: Error --> Call to undefined method HalamanSuratMasuk::get_list_jabatan() C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 212
+ERROR - 2022-04-12 09:53:28 --> Severity: 4096 --> Object of class CI_DB_mysqli_result could not be converted to string C:\xampp\htdocs\amsal\system\helpers\form_helper.php 438
+ERROR - 2022-04-12 09:59:27 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 213
+ERROR - 2022-04-12 10:01:18 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 213
+ERROR - 2022-04-12 10:02:55 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 214
+ERROR - 2022-04-12 10:02:56 --> Severity: Parsing Error --> syntax error, unexpected ';' C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 214
+ERROR - 2022-04-12 10:41:55 --> Severity: Error --> Call to undefined method ModelSuratKeluar::get_list_jabatan() C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeluar.php 274
+ERROR - 2022-04-12 10:41:57 --> Severity: Error --> Call to undefined method ModelSuratKeluar::get_list_jabatan() C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeluar.php 274
+ERROR - 2022-04-12 10:42:02 --> Severity: Error --> Call to undefined method ModelSuratKeluar::get_list_jabatan() C:\xampp\htdocs\amsal\application\controllers\HalamanSuratKeluar.php 274
+ERROR - 2022-04-12 10:54:11 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 10:54:11 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:01:31 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:01:31 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:04:52 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:04:52 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:11:36 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:11:36 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:36:35 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:36:35 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:39:18 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:39:18 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:40:22 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:40:23 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:57:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:57:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 11:59:55 --> Severity: Parsing Error --> syntax error, unexpected '{' C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 102
+ERROR - 2022-04-12 12:00:48 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 12:00:48 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 12:01:30 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 12:01:30 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+>>>>>>> Stashed changes

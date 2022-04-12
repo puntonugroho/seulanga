@@ -188,8 +188,6 @@ class HalamanSuratMasuk extends CI_Controller
 	}
 
 
-
-
 	public function suratmasuk_add()
 	{
 		$this->form_validation->set_rules('register_id', 'ID Register', 'trim|required');
@@ -208,10 +206,13 @@ class HalamanSuratMasuk extends CI_Controller
 		}
 
 		$array_generate_nomor = array('1' => 'Ya', '2' => 'Tidak');
-
-		$JenisJabatan = array('' => 'Pilih', '2' => 'Ketua Mahkamah', '3' => 'Wakil Ketua Mahkamah', '4' => 'Panitera', '5' => 'Panitera Muda Jinayat', '6' => 'Panitera Muda Hukum ', '7' => 'Panitera Muda Gugatan', '10' => 'Panitera Muda Permohonan', '16' => 'Sekretaris', '17' => 'Kasubbag PTIP', '18' => 'Kasubbag Kepegawaian', '19' => 'Kasubbag Umum dan Keuangan');
-
-
+		$queryJabatan = $this->model->get_list_jabatan();
+		$InitJabatan = array('' => 'Pilih');
+		foreach ($queryJabatan->result() as $row) {
+			$JabatanQuery[$row->group_id] = $row->group_name;
+		}
+		$JenisJabatan = array_merge($InitJabatan,$JabatanQuery);
+		// $JenisJabatan = array('' => 'Pilih', '2' => 'Ketua Mahkamah', '3' => 'Wakil Ketua Mahkamah', '4' => 'Panitera', '5' => 'Panitera Muda Jinayat', '6' => 'Panitera Muda Hukum ', '7' => 'Panitera Muda Gugatan', '10' => 'Panitera Muda Permohonan', '16' => 'Sekretaris', '17' => 'Kasubbag PTIP', '18' => 'Kasubbag Kepegawaian', '19' => 'Kasubbag Umum dan Keuangan');
 
 		if ($register_id == '-1') {
 			$judul = "TAMBAH SURAT MASUK";
@@ -633,11 +634,11 @@ class HalamanSuratMasuk extends CI_Controller
 		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
 		$tanggal_pelaksanaan = $this->tanggalhelper->convertToMysqlDate($this->input->post('tanggal_pelaksanaan'));
 		$jenis_pelaksanaan_id = $this->input->post('jenis_pelaksanaan');
-		
-		$message_text = "".$namaJabatan." MS Aceh Anda Menerima Surat Nomor : "
-		.$nomor_surat. " tanggal ".$tanggal_surat. " dari ".$pengirim. 
-		". Mohon agar segera ditindaklanjuti, Terima Kasih.";
-		
+
+		$message_text = "" . $namaJabatan . " MS Aceh Anda Menerima Surat Nomor : "
+			. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $pengirim .
+			". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+
 		if ($jenis_pelaksanaan_id == '10') {
 			$jenis_pelaksanaan = "Disposisi";
 		} else if ($jenis_pelaksanaan_id == '20') {
@@ -736,19 +737,19 @@ class HalamanSuratMasuk extends CI_Controller
 			$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
 		}
 
-		$querydetail = $this->model->get_seleksi('register_surat','register_id',$register_id);
+		$querydetail = $this->model->get_seleksi('register_surat', 'register_id', $register_id);
 		$nomor_surat = $querydetail->row()->nomor_surat;
 		$tanggal_surat = $querydetail->row()->tanggal_surat;
 		$telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $pegawai_tujuan_group_id)->row()->chatid;
 
 		if ($jenis_pelaksanaan_id == '10') {
-			$message_text = "Sdr. ".$pegawai_tujuan." Anda Menerima Disposisi Surat Nomor : "
-						.$nomor_surat. " tanggal ".$tanggal_surat. " dari ".$pegawai_group." ".$pegawai_nama.
-						". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+			$message_text = "Sdr. " . $pegawai_tujuan . " Anda Menerima Disposisi Surat Nomor : "
+				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $pegawai_group . " " . $pegawai_nama .
+				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		} else if ($jenis_pelaksanaan_id == '30') {
-			$message_text = "Sdr. ".$pegawai_tujuan." Anda Menerima Terusan Surat Nomor : "
-						.$nomor_surat. " tanggal ".$tanggal_surat. " dari ".$pegawai_group." ".$pegawai_nama.
-						". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+			$message_text = "Sdr. " . $pegawai_tujuan . " Anda Menerima Terusan Surat Nomor : "
+				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $pegawai_group . " " . $pegawai_nama .
+				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		}
 
 		if ($querySimpan == 1) {
@@ -913,9 +914,9 @@ class HalamanSuratMasuk extends CI_Controller
 			$querySimpan = $this->model->pembaharuan_data('register_surat', $data, 'register_id', $register_id);
 		}
 		// perihal " . $perihal
-		$message_text = "".$namaJabatan." MS Aceh Anda Menerima Surat Nomor : "
-						.$nomor_surat. " tanggal ".$tanggal_surat. " dari ".$pengirim. 
-						". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+		$message_text = "" . $namaJabatan . " MS Aceh Anda Menerima Surat Nomor : "
+			. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $pengirim .
+			". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 
 		$telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $jabatan_id)->row()->chatid;
 		$ress = kirimNotifikasiTelegram($telegram_id, $message_text);

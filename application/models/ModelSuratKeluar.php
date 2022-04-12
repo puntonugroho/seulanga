@@ -101,6 +101,14 @@ class ModelSuratKeluar extends CI_Model {
 		}
 	}
 
+	public function get_list_jabatan(){
+		try {
+			return $this->db->query("SELECT * FROM v_groups");
+		} catch (Exception $e) {
+			return 0;
+		}	
+	}
+
 	public function get_seleksi_nomor_index($tahun_seleksi){
 		try {
 			$this->db->select_max('nomor_index');

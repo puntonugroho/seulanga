@@ -78,10 +78,10 @@
 									<div class="col-md-12" id="bulan_register_cari_"></div>
 								</div>
 
-								<div class="form-group">
+								<!-- <div class="form-group">
 									<label class="col-md-6 control-label">Jenis Pengiriman</label>
 									<div class="col-md-12" id="jenis_pengiriman_cari_"></div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</form>

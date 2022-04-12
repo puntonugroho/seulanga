@@ -125,7 +125,7 @@
 			if (json.st == 1) {
 				$("#tahun_register_cari_").html("");
 				$("#jabatan_struktural_cari_").html("");
-				$("#jenis_pengiriman_cari_").html("");
+				// $("#jenis_pengiriman_cari_").html("");
 				$("#bulan_register_cari_").html("");
 				$("#bulan_register_cari_").append(json.bulan_register);
 				$("#tahun_register_cari_").append(json.tahun_register);

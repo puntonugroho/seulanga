@@ -147,19 +147,26 @@ class HalamanSuratKeluar extends CI_Controller
 			return;
 		}
 
-		$queryJabatanStruktural = $this->model->get_data('v_groups_struktural');
-		$array_jabatan_struktural = array();
-		$array_jabatan_struktural[''] = "Pilih";
-		foreach ($queryJabatanStruktural->result() as $row) {
-			$array_jabatan_struktural[$row->groupid] = $row->group_name;
-		}
+		// $queryJabatanStruktural = $this->model->get_data('v_groups_struktural');
+		// $array_jabatan_struktural = array();
+		// $array_jabatan_struktural[''] = "Pilih";
+		// foreach ($queryJabatanStruktural->result() as $row) {
+		// 	$array_jabatan_struktural[$row->groupid] = $row->group_name;
+		// }
 
-		$queryPengiriman = $this->model->get_data('ref_pengiriman');
-		$array_pengiriman = array();
-		$array_pengiriman[''] = "Pilih";
-		foreach ($queryPengiriman->result() as $row) {
-			$array_pengiriman[$row->id] = $row->jenis_pengiriman;
+		$queryJabatan = $this->model->get_list_jabatan();
+		$InitJabatan = array('' => 'Pilih');
+		foreach ($queryJabatan->result() as $row) {
+			$JabatanQuery[$row->group_id] = $row->group_name;
 		}
+		$array_jabatan_struktural = array_merge($InitJabatan,$JabatanQuery);
+
+		// $queryPengiriman = $this->model->get_data('ref_pengiriman');
+		// $array_pengiriman = array();
+		// $array_pengiriman[''] = "Pilih";
+		// foreach ($queryPengiriman->result() as $row) {
+		// 	$array_pengiriman[$row->id] = $row->jenis_pengiriman;
+		// }
 
 		$arrayBulanRegister = array(
 			'' => 'Pilih',
@@ -186,14 +193,14 @@ class HalamanSuratKeluar extends CI_Controller
 
 		$bulan_register = form_dropdown('bulan_register_cari', $arrayBulanRegister, '', 'class="form-control" id="bulan_register_cari"');
 		$tahun_register = form_dropdown('tahun_register_cari', $array_tahun, '', 'class="form-control" id="tahun_register_cari"');
-		$pengiriman = form_dropdown('pengiriman_cari', $array_pengiriman, '', 'class="form-control" id="pengiriman_cari"');
+		// $pengiriman = form_dropdown('pengiriman_cari', $array_pengiriman, '', 'class="form-control" id="pengiriman_cari"');
 		$jabatan_struktural = form_dropdown('jabatan_struktural_cari', $array_jabatan_struktural, '', 'class="form-control" id="jabatan_struktural_cari"');
 
 		echo json_encode(array(
 			'st' => 1,
 			'bulan_register' => $bulan_register,
 			'tahun_register' => $tahun_register,
-			'pengiriman' => $pengiriman,
+			// 'pengiriman' => $pengiriman,
 			'jabatan_struktural' => $jabatan_struktural
 		));
 		return;
@@ -264,7 +271,6 @@ class HalamanSuratKeluar extends CI_Controller
 			$array_pengiriman[$row->id] = $row->jenis_pengiriman;
 		}
 
-
 		$queryJenisTujuanSurat = $this->model->get_data('v_tujuan_surat');
 		$array_jenis_tujuan_surat = array();
 		$array_jenis_tujuan_surat[''] = "Pilih";
@@ -272,14 +278,19 @@ class HalamanSuratKeluar extends CI_Controller
 			$array_jenis_tujuan_surat[$row->group_id] = $row->group_name;
 		}
 
-
-		$queryJabatanStruktural = $this->model->get_data('v_groups_struktural');
-		$array_jabatan_struktural = array();
-		$array_jabatan_struktural[''] = "Pilih";
-		foreach ($queryJabatanStruktural->result() as $row) {
-			$array_jabatan_struktural[$row->groupid] = $row->group_name;
+		$queryJabatan = $this->model->get_list_jabatan();
+		$InitJabatan = array('' => 'Pilih');
+		foreach ($queryJabatan->result() as $row) {
+			$JabatanQuery[$row->group_id] = $row->group_name;
 		}
+		$array_jabatan_struktural = array_merge($InitJabatan,$JabatanQuery);
 
+		// $queryJabatanStruktural = $this->model->get_data('v_groups_struktural');
+		// $array_jabatan_struktural = array();
+		// $array_jabatan_struktural[''] = "Pilih";
+		// foreach ($queryJabatanStruktural->result() as $row) {
+		// 	$array_jabatan_struktural[$row->groupid] = $row->group_name;
+		// }
 
 		if ($register_id == '-1') {
 			$judul = "TAMBAH DATA SURAT KELUAR";
