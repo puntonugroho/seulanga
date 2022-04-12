@@ -74,6 +74,7 @@ class HalamanLogin extends CI_Controller {
 				$kewenangan_referensi = array('-1','1','2','3');
 				$kewenangan_konfigurasi = array('-1','1','2','3');
 				$kewenangan_suratketerangan = array('-1','1','2','3','7','22');
+				$kewenangan_hapus = array('-1','1','2','3','4','16','19');
 			
 				$this->session->set_userdata('kewenangan_dashboard',$kewenangan_dashboard);
 				$this->session->set_userdata('kewenangan_persuratan',$kewenangan_persuratan);
@@ -81,6 +82,7 @@ class HalamanLogin extends CI_Controller {
 				$this->session->set_userdata('kewenangan_konfigurasi',$kewenangan_konfigurasi);
 				$this->session->set_userdata('kewenangan_disposisi',$kewenangan_disposisi);
 				$this->session->set_userdata('kewenangan_suratketerangan',$kewenangan_suratketerangan);
+				$this->session->set_userdata('kewenangan_hapus',$kewenangan_hapus);
 				
 				$queryKonfigurasi1 = $this->model->get_konfigurasi('22');
 				$queryKonfigurasi2 = $this->model->get_konfigurasi('4');

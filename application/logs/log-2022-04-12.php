@@ -150,3 +150,9 @@ ERROR - 2022-04-12 10:03:21 --> Query error: Access denied for user 'root'@'loca
 FROM `sys_user_online`
 WHERE `id` = 187
 ERROR - 2022-04-12 10:03:21 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 18
+ERROR - 2022-04-12 10:29:28 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 10:29:28 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 10:36:44 --> Severity: Warning --> in_array() expects parameter 2 to be array, null given C:\xampp\htdocs\amsal\application\views\suratmasuk\index.php 307
+ERROR - 2022-04-12 10:36:45 --> Severity: Warning --> in_array() expects parameter 2 to be array, null given C:\xampp\htdocs\amsal\application\views\suratmasuk\index.php 307
+ERROR - 2022-04-12 10:40:22 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 10:40:22 --> 404 Page Not Found: Assets/maps

@@ -304,7 +304,7 @@
 								<button onclick="TutupModal()" data-dismiss="modal" class="btn btn-sm btn-white btn-block text-left">Kembali</button>
 							</div>
 							<div class="col-md-2" style="display: flex; flex-direction: row;justify-content: center;align-items:center;margin-top:-3px;margin-bottom:5px">
-								<?php if (in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan'))) { ?>
+							<?php if(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_hapus'))) {?>
 									<button onclick="HapusSuratMasuk()" data-dismiss="modal" class="btn btn-sm btn-danger btn-block">Hapus</button>
 								<?php } ?>
 							</div>
