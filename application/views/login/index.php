@@ -32,12 +32,12 @@
             <img class="logo" src="<?php echo base_url(); ?>images/logo.png" alt="">
             <div class="detailsh">
               <img class="help" src="<?php echo base_url(); ?>images/help.png" alt="">
-              <h3>Mahkamah Syar'iyah Aceh</h3>
+              <h3 style="color: #0a0a0a;">Mahkamah Syar'iyah Aceh</h3>
               <!-- <p>Sistem Persuratan secara Digital</p> -->
             </div>
           </div>
           <div class="col-md-5 loginform">
-            <h4>Selamat Datang</h4>
+            <h3 style="color: #fff;">Selamat Datang</h3>
             <p>Masuk dengan Akun Anda</p>
             <div class="login-det">
             <form action="<?php echo base_url(); ?>login_validasi" method="POST">
@@ -64,10 +64,10 @@
                 </div>
               </div>
 
-              <p class="forget"><a href="">Forget Password?</a></p>
-
+              <p class="forget"><a href=""></a></p>
+              <div>
               <button class="btn btn-sm btn-danger">Login</button>
-
+              </div>
 
               <div class="social-link">
                 <ul class="socil-icon">
