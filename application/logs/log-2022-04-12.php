@@ -206,3 +206,46 @@ ERROR - 2022-04-12 12:00:48 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6
 ERROR - 2022-04-12 12:01:30 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 ERROR - 2022-04-12 12:01:30 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 >>>>>>> Stashed changes
+ERROR - 2022-04-12 16:34:01 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:34:01 --> Unable to connect to the database
+ERROR - 2022-04-12 16:34:01 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:34:01 --> Unable to connect to the database
+ERROR - 2022-04-12 16:34:01 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:34:01 --> Unable to connect to the database
+ERROR - 2022-04-12 16:34:19 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:34:19 --> Unable to connect to the database
+ERROR - 2022-04-12 16:34:47 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:34:47 --> Unable to connect to the database
+ERROR - 2022-04-12 16:34:47 --> Severity: Error --> Call to a member function real_escape_string() on boolean C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 391
+ERROR - 2022-04-12 16:34:50 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:34:50 --> Unable to connect to the database
+ERROR - 2022-04-12 16:34:53 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:34:53 --> Unable to connect to the database
+ERROR - 2022-04-12 16:34:53 --> Severity: Error --> Call to a member function real_escape_string() on boolean C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 391
+ERROR - 2022-04-12 16:34:56 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:34:56 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:02 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:02 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:02 --> Severity: Error --> Call to a member function real_escape_string() on boolean C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 391
+ERROR - 2022-04-12 16:35:17 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:17 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:17 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:17 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:17 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:17 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:32 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:32 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:32 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:32 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:32 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:32 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:54 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:54 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:54 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:54 --> Unable to connect to the database
+ERROR - 2022-04-12 16:35:54 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:35:54 --> Unable to connect to the database
+ERROR - 2022-04-12 16:42:58 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 16:42:58 --> Unable to connect to the database
+ERROR - 2022-04-12 17:37:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
+ERROR - 2022-04-12 17:37:10 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf

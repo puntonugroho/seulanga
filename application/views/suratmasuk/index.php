@@ -9,7 +9,7 @@
 							<h4 class="card-title">REGISTER SURAT MASUK</h4>
 						</div>
 						<div class="col-md-4" style="display: flex; flex-direction: row;justify-content: center;align-items:center;margin-top:-3px;margin-bottom:5px">
-							<?php if (in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan'))) { ?>
+							<?php if (in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_inputsurat'))) { ?>
 								<button onclick="BukaModal('<?php echo $register_id; ?>')" class="btn btn-primary btn-sm mr-2 btn-block">Tambah Baru</button>
 							<?php } ?>
 							<button onclick="ModalPencarian('<?php echo $register_id; ?>')" class="btn btn-primary btn-sm mr-2 btn-block ">Pencarian Detil</button>

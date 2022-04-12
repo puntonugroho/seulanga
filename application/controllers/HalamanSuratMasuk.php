@@ -211,7 +211,8 @@ class HalamanSuratMasuk extends CI_Controller
 		foreach ($queryJabatan->result() as $row) {
 			$JabatanQuery[$row->group_id] = $row->group_name;
 		}
-		$JenisJabatan = array_merge($InitJabatan,$JabatanQuery);
+		$JenisJabatan = $InitJabatan + $JabatanQuery;
+		// die(var_dump($JenisJabatan));
 		// $JenisJabatan = array('' => 'Pilih', '2' => 'Ketua Mahkamah', '3' => 'Wakil Ketua Mahkamah', '4' => 'Panitera', '5' => 'Panitera Muda Jinayat', '6' => 'Panitera Muda Hukum ', '7' => 'Panitera Muda Gugatan', '10' => 'Panitera Muda Permohonan', '16' => 'Sekretaris', '17' => 'Kasubbag PTIP', '18' => 'Kasubbag Kepegawaian', '19' => 'Kasubbag Umum dan Keuangan');
 
 		if ($register_id == '-1') {
@@ -499,10 +500,11 @@ class HalamanSuratMasuk extends CI_Controller
 
 		$queryJabatan = $this->model->get_jabatan_pelaksana($dari_jabatan_id);
 		$JenisJabatan = array();
-		$JenisJabatan[''] = "Pilih";
+		$InitJabatan[''] = "Pilih";
 		foreach ($queryJabatan->result() as $row) {
 			$JenisJabatan[$row->group_id] = $row->group_name;
 		}
+		$JenisJabatan = $InitJabatan + $JabatanQuery;
 
 		$queryPegawai = $this->model->get_seleksi('pegawai', 'jabatan_id', $kepada_jabatan_id);
 		$arrayPegawai = array();
