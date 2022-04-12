@@ -256,3 +256,10 @@ ERROR - 2022-04-12 18:07:50 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6
 ERROR - 2022-04-12 18:31:38 --> Severity: Error --> Unsupported operand types C:\xampp\htdocs\amsal\application\controllers\HalamanSuratMasuk.php 507
 ERROR - 2022-04-12 18:51:57 --> Severity: Error --> Call to a member function row() on null C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 310
 ERROR - 2022-04-12 18:52:10 --> Severity: Error --> Call to a member function row() on null C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 310
+ERROR - 2022-04-12 19:25:25 --> Severity: Error --> Call to a member function row() on null C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 317
+ERROR - 2022-04-12 19:25:32 --> Severity: Error --> Call to a member function row() on null C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 317
+ERROR - 2022-04-12 19:26:23 --> Severity: Error --> Call to a member function row() on null C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 317
+ERROR - 2022-04-12 19:30:00 --> Severity: Error --> Call to a member function row() on null C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 317
+ERROR - 2022-04-12 19:41:24 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 317
+ERROR - 2022-04-12 19:42:15 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 323
+ERROR - 2022-04-12 19:42:21 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 323

@@ -211,7 +211,7 @@ class HalamanUtama extends CI_Controller
 			return;
 		}
 
-		$telebot_secret_token = '5064305861:AAFMuCLDvU49EBvSoFsNMJQKzsmYer0OMPI';
+		// $telebot_secret_token = '5064305861:AAFMuCLDvU49EBvSoFsNMJQKzsmYer0OMPI';
 		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
 		$group_id = $this->input->post('group_id');
 		$tanggal_pelaksanaan = $this->tanggalhelper->convertToMysqlDate($this->input->post('tanggal_pelaksanaan'));
@@ -305,7 +305,7 @@ class HalamanUtama extends CI_Controller
 				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
 				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		}
-		if ($jenis_pelaksanaan_id != '20') {
+		if ($jenis_pelaksanaan_id == '20') {
 			if ($querySimpan == 1) {
 				$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_id, 'status_pelaksanaan' => $jenis_pelaksanaan);
 				$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
@@ -314,11 +314,13 @@ class HalamanUtama extends CI_Controller
 				echo json_encode(array('st' => 1, 'msg' => 'Simpan Data Disposisi Gagal'));
 			}
 		} else {
-			$telegram_id = $queryPegawaiTujuan->row()->chatid;
+			$telegram_id = (is_null($queryPegawaiTujuan->row()->chatid) ? '' : $queryPegawaiTujuan->row()->chatid);
 			if ($querySimpan == 1) {
 				$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_id, 'status_pelaksanaan' => $jenis_pelaksanaan);
 				$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
-				$hasil = $this->sendTeleMessage($telegram_id, $message_text, $telebot_secret_token);
+				if($telegram_id != ''){
+					$this->kirimNotifikasiTelegram($telegram_id, $message_text);
+				}
 				echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
 			} else {
 				echo json_encode(array('st' => 1, 'msg' => 'Simpan Data Disposisi Gagal'));
