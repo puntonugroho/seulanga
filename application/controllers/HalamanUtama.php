@@ -10,6 +10,11 @@ class HalamanUtama extends CI_Controller
 		if ($this->session->userdata('status_login') == FALSE) {
 			redirect('keluar');
 		}
+
+		if($this->session->userdata('status_satker')){
+			redirect('suratmasuk');
+		}
+
 		if (!in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_dashboard'))) {
 			redirect('keluar');
 		}
@@ -18,9 +23,9 @@ class HalamanUtama extends CI_Controller
 		$queryCek = $this->model->get_seleksi('sys_user_online', 'id', $this->session->userdata('login_id'));
 		if (($queryCek->row()->host_address != $this->input->ip_address()) && ($queryCek->row()->userid != $this->session->userdata('userid')) && ($queryCek->row()->user_agent != $this->input->user_agent())) {
 			redirect('keluar');
+
 		}
 	}
-
 
 	public function index()
 	{
@@ -296,6 +301,8 @@ class HalamanUtama extends CI_Controller
 			'diinput_tanggal' => date("Y-m-d h:i:s", time())
 		);
 
+		// die(var_dump($data));
+
 		//simpan data
 		$querySimpan = $this->model->simpan_data('register_pelaksanaan', $data);
 		
@@ -317,7 +324,7 @@ class HalamanUtama extends CI_Controller
 				$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
 				echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
 			} else {
-				echo json_encode(array('st' => 1, 'msg' => 'Simpan Data Disposisi Gagal'));
+				echo json_encode(array('st' => 0, 'msg' => 'Simpan Data Disposisi Gagal'));
 			}
 		} else {
 			$telegram_id = (is_null($queryPegawaiTujuan->row()->chatid) ? '' : $queryPegawaiTujuan->row()->chatid);
@@ -325,11 +332,14 @@ class HalamanUtama extends CI_Controller
 				$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_id, 'status_pelaksanaan' => $jenis_pelaksanaan);
 				$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
 				if($telegram_id != ''){
-					kirimNotifikasiTelegram($telegram_id, $message_text);
-				}
-				echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
+					$hasil = kirimNotifikasiTelegram($telegram_id, $message_text);
+					echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
+				}else{
+					// $hasil = kirimNotifikasiTelegram($telegram_id, $message_text);
+					echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
+				}		
 			} else {
-				echo json_encode(array('st' => 1, 'msg' => 'Simpan Data Disposisi Gagal'));
+				echo json_encode(array('st' => 0, 'msg' => 'Simpan Data Disposisi Gagal'));
 			}
 		}
 		return;

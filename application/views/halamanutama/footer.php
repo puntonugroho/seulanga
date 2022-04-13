@@ -152,11 +152,11 @@
 		}
 
 		if (group_id == '2' || group_id == '3') {
-			jabatan = '';
-			// if (jabatan == '') {
-			// 	pesan('PERINGATAN', 'Kolom Jabatan Tujuan Disposisi Wajib Dipilih', '');
-			// 	return;
-			// }
+			// jabatan = '';
+			if (jabatan == '') {
+				pesan('PERINGATAN', 'Kolom Jabatan Tujuan Disposisi Wajib Dipilih', '');
+				return;
+			}
 		} else {
 			if (jenis_pelaksanaan == '10' || jenis_pelaksanaan == '30') {
 				if (jabatan == '') {
