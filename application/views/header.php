@@ -107,7 +107,6 @@
 						</a>
 						<div class="submenu">
 							<ul class="submenu-item">
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>pegawai">Tambah Pegawai</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>penomoran">Format Nomor Surat</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>jenissuratketerangan">Jenis Surat Keterangan</a></li>
 							</ul>
@@ -123,6 +122,7 @@
 						</a>
 						<div class="submenu">
 							<ul class="submenu-item">
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>pegawai">Tambah Pegawai</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>pengguna">Manajemen User</a></li>
 								<li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>konfigurasi">Pengaturan Satker</a></li>
 							</ul>
