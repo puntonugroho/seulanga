@@ -9,7 +9,7 @@ class HalamanSuratMasuk extends CI_Controller
 		if ($this->session->userdata('status_login') == FALSE) {
 			redirect('keluar');
 		}
-		if (!in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_dashboard'))) {
+		if (!in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan'))) {
 			redirect('keluar');
 		}
 		$this->load->model('ModelSuratMasuk', 'model');
@@ -31,6 +31,7 @@ class HalamanSuratMasuk extends CI_Controller
 
 	public function suratmasuk_data()
 	{
+
 		$query = $this->model->get_datatables();
 		$data = array();
 		$no = $_POST['start'];
@@ -44,7 +45,20 @@ class HalamanSuratMasuk extends CI_Controller
 			$UserData[] = $row->jenis_surat;
 			$UserData[] = $row->pengirim;
 			$UserData[] = $row->status_pelaksanaan;
-			$UserData[] = '<div>
+			if($this->session->userdata('status_satker')){
+				$UserData[] = '<div>
+				<div class="input-group-btn">
+					<ul class="dropdown-menu pull-right" style="padding:12px">
+						<li><a href="#" onclick="BukaModalDetil(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')">Detil</a></li>
+						<li><a href="#" onclick="BukaModal(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')">Edit Register</a></li>
+					</ul>
+					<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+					<span class="caret"></span>
+					</button>
+				 </div>
+			</div>';	
+			}else{
+				$UserData[] = '<div>
 					<div class="input-group-btn">
 	                	<ul class="dropdown-menu pull-right" style="padding:12px">
 	                    	<li><a href="#" onclick="BukaModalDetil(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')">Detil</a></li>
@@ -56,8 +70,8 @@ class HalamanSuratMasuk extends CI_Controller
 	                    </button>
 	             	</div>
 				</div>';
+			}
 
-			//$UserData[] = '<div align="center"><button type="button" onclick="BukaModalDetil(\''.base64_encode($this->encrypt->encode($row->register_id)).'\')" class="btn btn-success btn-sm m-r-5">Detil</button></div>';
 			$data[] = $UserData;
 		}
 
