@@ -296,7 +296,10 @@ class HalamanUtama extends CI_Controller
 			'diinput_tanggal' => date("Y-m-d h:i:s", time())
 		);
 
+		//simpan data
 		$querySimpan = $this->model->simpan_data('register_pelaksanaan', $data);
+		
+		//isi pesan telegram
 		if ($jenis_pelaksanaan_id == '10') {
 			$message_text = "Sdr. " . $kepada_fullname . " Anda Menerima Disposisi Surat Nomor : "
 				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
@@ -306,6 +309,8 @@ class HalamanUtama extends CI_Controller
 				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
 				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		}
+
+		//kirim pesan telegram
 		if ($jenis_pelaksanaan_id == '20') {
 			if ($querySimpan == 1) {
 				$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_id, 'status_pelaksanaan' => $jenis_pelaksanaan);

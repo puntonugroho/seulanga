@@ -13,6 +13,8 @@
 <script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/moment.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/formpickers.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/gritter/js/jquery.gritter.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/sweetalert.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/dataTables.bootstrap4.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/data-table.js"></script>
@@ -150,10 +152,11 @@
 		}
 
 		if (group_id == '2' || group_id == '3') {
-			if (jabatan == '') {
-				pesan('PERINGATAN', 'Kolom Jabatan Tujuan Disposisi Wajib Dipilih', '');
-				return;
-			}
+			jabatan = '';
+			// if (jabatan == '') {
+			// 	pesan('PERINGATAN', 'Kolom Jabatan Tujuan Disposisi Wajib Dipilih', '');
+			// 	return;
+			// }
 		} else {
 			if (jenis_pelaksanaan == '10' || jenis_pelaksanaan == '30') {
 				if (jabatan == '') {
