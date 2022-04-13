@@ -226,8 +226,14 @@ class HalamanSuratKeluar extends CI_Controller
 		$queryKodeSurat = $this->model->get_seleksi('sys_config', 'id', '23');
 		$kode_surat = $queryKodeSurat->row()->value;
 
-		$bulan_register = date("m", strtotime(date_format(date_create($tanggal_register),"d/m/Y H:i:s")));
-		$tahun_register = date("Y", strtotime($tanggal_register));
+		error_reporting(0);
+		$time_temp = strtr($tanggal_register,'/','-');
+		$time = date_create_from_format("d-m-Y",$time_temp);
+		$bulan_register = $time->format('m');
+		$tahun_register = $time->format('Y');
+
+		// $bulan_register = date("m", strtotime(date_format(date_create($tanggal_register),"d/m/Y H:i:s")));
+		// $tahun_register = date("Y", strtotime($tanggal_register));
 
 		$queryNomorIndex = $this->model->get_seleksi_nomor_index($tahun_register);
 		$nomor_index = $queryNomorIndex->row()->nomor_index + 1;
