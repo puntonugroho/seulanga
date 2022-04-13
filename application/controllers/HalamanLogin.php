@@ -47,12 +47,14 @@ class HalamanLogin extends CI_Controller {
 			$passwordEnkrip = $this->arr2md5(array($code_activation,$password));
 			$passDB = $queryPengguna->row()->password;
 			//die(var_dump($passDB==$passwordEnkrip));
+
 			if($passDB==$passwordEnkrip){
 				$userid = $queryPengguna->row()->userid;
 				$fullname = $queryPengguna->row()->fullname; 
 				$username =	$queryPengguna->row()->username; 
 				$group_id =	$queryPengguna->row()->group_id; 
-				$group_name = $queryPengguna->row()->group_name; 
+				$group_name = $queryPengguna->row()->group_name;
+				$status_satker = $queryPengguna->row()->status_pegawai; 
 				$ip_addr = $this->input->ip_address();
 				$user_agent = $this->input->user_agent();
 								
@@ -60,6 +62,7 @@ class HalamanLogin extends CI_Controller {
 				$this->session->set_userdata('userid',$userid);
 				$this->session->set_userdata('fullname',$fullname); 
 				$this->session->set_userdata('username',$username); 
+				$this->session->set_userdata('status_satker',$status_satker);
 				$this->session->set_userdata('group_id',$group_id); 
 				$this->session->set_userdata('group_name',$group_name);
 				$data_login = array('userid' => $userid,
@@ -69,12 +72,12 @@ class HalamanLogin extends CI_Controller {
 				$this->session->set_userdata('login_id',$queryLogin);
 
 				$kewenangan_dashboard = array('-1','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39');
-				$kewenangan_persuratan = array('-1','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39');
+				$kewenangan_persuratan = array('-1','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40');
 				$kewenangan_disposisi = array('1','2','3','4','5','6','7','8','9','10','12','13','14','15','16','17','18','19','23','24','25','26','27','31');
 				$kewenangan_referensi = array('-1','1','2','3');
 				$kewenangan_konfigurasi = array('-1','1','2','3');
 				$kewenangan_suratketerangan = array('-1','1','2','3','7','22');
-				$kewenangan_input = array('-1','1','2','3','4','16','19');
+				$kewenangan_input = array('-1','1','2','3','4','16','19','40');
 				$kewenangan_hapus = array('-1','1','2','3','4','16','19');
 			
 				$this->session->set_userdata('kewenangan_dashboard',$kewenangan_dashboard);

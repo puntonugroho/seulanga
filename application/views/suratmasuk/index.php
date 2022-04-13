@@ -10,12 +10,16 @@
 						</div>
 						<div class="col-md-4" style="display: flex; flex-direction: row;justify-content: center;align-items:center;margin-top:-3px;margin-bottom:5px">
 							<?php if (in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_inputsurat'))) { ?>
-								<button onclick="BukaModal('<?php echo $register_id; ?>')" class="btn btn-primary btn-sm mr-2 btn-block">Tambah Baru</button>
+								<button onclick="BukaModal('<?php echo $register_id; ?>')" 
+								class="btn btn-primary btn-sm mr-2 btn-block">Tambah Baru</button>
 							<?php } ?>
+							<?php if (!$this->session->userdata('status_satker')){ ?>
 							<button onclick="ModalPencarian('<?php echo $register_id; ?>')" class="btn btn-primary btn-sm mr-2 btn-block ">Pencarian Detil</button>
 							<button onclick="ModalPeriodeCetakRegister('<?php echo $register_id; ?>')" class="btn btn-primary btn-sm btn-block">Cetak Register</button>
+							<?php } ?>
 						</div>
 					</div>
+					
 					<div class="row">
 						<div class="col-12">
 							<div class="table-responsive">
@@ -324,9 +328,11 @@
 							<li class="nav-item">
 								<a class="nav-link" data-toggle="tab" href="#default-tab-2" role="tab" aria-controls="profile-1" aria-selected="false">Dokumen Elektronik</a>
 							</li>
+							<?php if (!$this->session->userdata('status_satker')){ ?>
 							<li class="nav-item">
 								<a class="nav-link" data-toggle="tab" href="#default-tab-3" onclick="TampilRiwayatPelaksana()" role="tab" aria-controls="contact-1" aria-selected="false">Riwayat Pelaksanaan</a>
 							</li>
+							<?php } ?>
 						</ul>
 
 						<div class="tab-content">
@@ -385,6 +391,7 @@
 							<div class="tab-pane fade" id="default-tab-2">
 								<span id="dokumen_elektronik"></span>
 							</div>
+							<?php if (!$this->session->userdata('status_satker')){ ?>
 							<div class="tab-pane fade" id="default-tab-3" style="margin-top:-20px">
 								<div class="row">
 									<div class="col-md-12" style="margin-bottom:10px;">
@@ -482,6 +489,7 @@
 									</table>
 								</div>
 							</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
@@ -492,7 +500,7 @@
 </div>
 </div>
 
-
+<?php if (!$this->session->userdata('status_satker')){ ?>
 <div class="modal fade" id="modal-disposisi">
 	<div class="modal-dialog" style="width: 100%;">
 		<div class="modal-content">
@@ -558,3 +566,4 @@
 		</div>
 	</div>
 </div>
+<?php } ?>

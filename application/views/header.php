@@ -64,6 +64,7 @@
 				</div>
 				</div>
 			</nav>
+			<?php if(!$this->session->userdata('status_satker')) { ?>
 			<nav class="bottom-navbar">
 				<div class="container">
 					<ul class="nav page-navigation">
@@ -131,4 +132,5 @@
 					</ul>
 				</div>
 			</nav>
+			<?php } ?>
 		</div>
