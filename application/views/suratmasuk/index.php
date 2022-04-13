@@ -429,7 +429,7 @@
 													<td colspan="3">
 														<div align="right">
 															<button onclick="TutupPelaksanaan()" class="btn btn-sm btn-white">Kembali</button>
-															<button onclick="SimpanPelaksanaan()" class="btn btn-sm btn-success">Simpan</button>
+															<button onclick="SimpanPelaksanaan()" class="btn btn-sm btn-success" id="tombol_simpan_disposisi">Simpan</button>
 														</div>
 													</td>
 												</tr>

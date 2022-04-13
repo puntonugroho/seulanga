@@ -272,7 +272,7 @@
 					</div>
 					<div class="modal-footer">
 						<button onclick="TutupModal()" data-dismiss="modal" class="btn btn-sm btn-secondary">Kembali</button>
-						<button onclick="SimpanModal()" type="submit" class="btn btn-sm btn-success">Simpan</button>
+						<button onclick="SimpanModal()" type="submit" class="btn btn-sm btn-success" id="tombol_simpan_dashboard_disposisi">Simpan</button>
 					</div>
 				</div>
 			</div>

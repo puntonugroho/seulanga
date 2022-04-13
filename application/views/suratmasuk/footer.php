@@ -278,6 +278,7 @@
 				return;
 			}
 		}
+		$('#tombol_simpan_disposisi').attr("disabled",true);
 		$.post('<?php echo base_url() ?>suratmasuk_simpan_pelaksanaan', {
 			pelaksanaan_id: pelaksanaan_id,
 			tanggal_pelaksanaan: tanggal_pelaksanaan,
@@ -290,12 +291,13 @@
 			var json = jQuery.parseJSON(response);
 			if (json.st == 1) {
 				$('#tambah_pelaksanaan').hide();
-
+				$('#simpan_disposisi').attr("enabled",true);
 				pesan('PERINGATAN', json.msg, '');
 				location.reload();
 				$('#table_pegawai').DataTable().ajax.reload();
 			} else if (json.st == 0) {
 				$('#tambah_pelaksanaan').hide();
+				$('#simpan_disposisi').attr("enabled",true);
 				pesan('PERINGATAN', json.msg, '');
 				location.reload();
 				$('#table_pegawai').DataTable().ajax.reload();

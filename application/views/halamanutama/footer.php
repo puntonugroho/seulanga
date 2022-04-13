@@ -169,7 +169,7 @@
 				}
 			}
 		}
-
+		$('#tombol_simpan_dashboard_disposisi').attr("disabled",true);
 		$.post('<?php echo base_url() ?>dashboard_simpan_disposisi', {
 			register_id: register_id,
 			group_id: group_id,
@@ -182,9 +182,11 @@
 			var json = jQuery.parseJSON(response);
 			if (json.st == 1) {
 				$('#modal_disposisi').modal('toggle');
+				$('#tombol_simpan_dashboard_disposisi').attr("enabled",true);
 				TutupModal();
 				pesan('INFORMASI', json.msg, '');
 			} else if (json.st == 0) {
+				$('#tombol_simpan_dashboard_disposisi').attr("enabled",true);
 				TutupModal();
 				pesan('PERINGATAN', json.msg, '');
 			}
