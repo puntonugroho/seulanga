@@ -235,7 +235,7 @@ class HalamanSuratKeluar extends CI_Controller
 		// $bulan_register = date("m", strtotime(date_format(date_create($tanggal_register),"d/m/Y H:i:s")));
 		// $tahun_register = date("Y", strtotime($tanggal_register));
 
-		die(var_dump(date_format(date_create($tanggal_register),"d/m/Y H:i:s")));
+		//die(var_dump(date_format(date_create($tanggal_register),"d/m/Y H:i:s")));
 
 		$queryNomorIndex = $this->model->get_seleksi_nomor_index($tahun_register);
 		$nomor_index = $queryNomorIndex->row()->nomor_index + 1;
