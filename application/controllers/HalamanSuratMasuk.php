@@ -452,8 +452,8 @@ class HalamanSuratMasuk extends CI_Controller
 			$UserData[] = $row->keterangan;
 			if ($dataTerakhir->pelaksanaan_id == $row->pelaksanaan_id) {
 				$UserData[] = '<div>
-					<button type="button" onclick="EditPelaksanaan(\'' . base64_encode($this->encrypt->encode($row->pelaksanaan_id)) . '\')" class="btn btn-success btn-sm m-r-5">Edit</button>
-					<button type="button" onclick="HapusPelaksanaan(\'' . base64_encode($this->encrypt->encode($row->pelaksanaan_id)) . '\')" class="btn btn-danger btn-sm m-r-5">Hapus</button>
+					<button type="button" style="width: 100%" onclick="EditPelaksanaan(\'' . base64_encode($this->encrypt->encode($row->pelaksanaan_id)) . '\')" class="btn btn-success btn-sm m-r-5">Edit</button>
+					<button type="button" style="width: 100%" onclick="HapusPelaksanaan(\'' . base64_encode($this->encrypt->encode($row->pelaksanaan_id)) . '\')" class="btn btn-danger btn-sm m-r-5">Hapus</button>
 					</div>';
 			} else {
 				$UserData[] = '';

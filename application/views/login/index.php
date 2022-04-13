@@ -33,7 +33,7 @@
             <div class="detailsh">
               <img class="help" src="<?php echo base_url(); ?>images/help.png" alt="">
               <h3 style="color: #0a0a0a;">Mahkamah Syar'iyah Aceh</h3>
-              <p>Sistem Persuratan secara Digital</p>
+              <p>Sistem Persuratan Digital</p>
             </div>
           </div>
           <div class="col-md-5 loginform">
@@ -72,13 +72,13 @@
               <div class="social-link">
                 <ul class="socil-icon">
                   <li>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/msaceh.id" target="_blank"><i class="fab fa-facebook-f"></i></a>
                   </li>
                   <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://twitter.com/info_msaceh" target="_blank"><i class="fab fa-twitter"></i></a>
                   </li>
                   <li>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/ms_aceh/" target="_blank"><i class="fab fa-instagram"></i></a>
                   </li>
                   <!-- <li>
                                                 <a href="#"><i class="fab fa-pinterest-p"></i></a>
