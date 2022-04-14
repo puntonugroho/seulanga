@@ -206,6 +206,7 @@ ERROR - 2022-04-12 12:00:48 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6
 ERROR - 2022-04-12 12:01:30 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 ERROR - 2022-04-12 12:01:30 --> 404 Page Not Found: Dokumen/e398a4f7c61413c8d8e6fb98c3edca43.pdf
 >>>>>>> Stashed changes
+<<<<<<< Updated upstream
 ERROR - 2022-04-12 16:34:01 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
 ERROR - 2022-04-12 16:34:01 --> Unable to connect to the database
 ERROR - 2022-04-12 16:34:01 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
@@ -265,3 +266,66 @@ ERROR - 2022-04-12 19:42:15 --> Severity: Parsing Error --> syntax error, unexpe
 ERROR - 2022-04-12 19:42:21 --> Severity: Parsing Error --> syntax error, unexpected ')' C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 323
 ERROR - 2022-04-12 19:55:18 --> 404 Page Not Found: Assets/js
 ERROR - 2022-04-12 19:55:18 --> 404 Page Not Found: Assets/maps
+=======
+ERROR - 2022-04-12 12:09:27 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 12:09:27 --> Unable to connect to the database
+ERROR - 2022-04-12 12:09:27 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 12:09:27 --> Unable to connect to the database
+ERROR - 2022-04-12 12:09:27 --> Query error: Access denied for user 'root'@'localhost' (using password: YES) - Invalid query: SELECT *
+FROM `sys_user_online`
+WHERE `id` = 199
+ERROR - 2022-04-12 12:09:27 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 18
+ERROR - 2022-04-12 12:09:28 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 12:09:28 --> Unable to connect to the database
+ERROR - 2022-04-12 12:09:28 --> Severity: Warning --> mysqli::real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) C:\xampp\htdocs\amsal\system\database\drivers\mysqli\mysqli_driver.php 201
+ERROR - 2022-04-12 12:09:28 --> Unable to connect to the database
+ERROR - 2022-04-12 12:09:28 --> Query error: Access denied for user 'root'@'localhost' (using password: YES) - Invalid query: SELECT *
+FROM `sys_user_online`
+WHERE `id` = 199
+ERROR - 2022-04-12 12:09:28 --> Severity: Error --> Call to a member function row() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 18
+ERROR - 2022-04-12 12:10:32 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:10:32 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:10:37 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 12:10:37 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 12:11:08 --> 404 Page Not Found: Assets/maps
+ERROR - 2022-04-12 12:11:08 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 12:11:14 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:11:14 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:21 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:21 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:22 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:23 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:23 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:23 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:24 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:24 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:24 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:24 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:25 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:25 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:25 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:25 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:26 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:26 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:26 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:26 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:27 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:27 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 12:12:43 --> Query error: Table 'amsal.v_groups_with_name' doesn't exist - Invalid query: SELECT *
+FROM `v_groups_with_name`
+ERROR - 2022-04-12 12:12:43 --> Severity: Error --> Call to a member function result() on boolean C:\xampp\htdocs\amsal\application\controllers\HalamanUtama.php 96
+ERROR - 2022-04-12 18:08:36 --> 404 Page Not Found: Assets/js
+ERROR - 2022-04-12 18:08:36 --> 404 Page Not Found: Assets/maps
+>>>>>>> Stashed changes
