@@ -107,14 +107,14 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<label class="col-md-3 control-label">Bulan <font color='red'>*</font></label>
-									<div class="col-md-9" id="bulan_register_periode_cetak_"></div>
+									<label class="col-md-6 control-label">Bulan <font color='red'>*</font></label>
+									<div class="col-md-12" id="bulan_register_periode_cetak_"></div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label class="col-md-3 control-label">Tahun <font color='red'>*</font></label>
-									<div class="col-md-9" id="tahun_register_periode_cetak_"></div>
+									<label class="col-md-6 control-label">Tahun <font color='red'>*</font></label>
+									<div class="col-md-12" id="tahun_register_periode_cetak_"></div>
 								</div>
 							</div>
 						</div>

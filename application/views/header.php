@@ -28,7 +28,7 @@
 					<div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
 					<ul class="navbar-nav navbar-brand-wrapper navbar-nav-left">
 						<a class="navbar-brand brand-logo" href="<?php echo base_url();?>">
-							<img style="height:50px;" src="images/logodalam.png" alt="logo"/></a>
+							<img style="height:45px;" src="images/logodalam.png" alt="logo"/></a>
 						<a class="navbar-brand brand-logo-mini" style="margin-left:-10px; width:80px;" href="<?php echo base_url();?>">
 							<img style="height:50px"; src="images/logo_new_mini.png" alt="logo"/></a>
 					</ul>
@@ -71,7 +71,7 @@
 					<?php if(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_dashboard'))) {?>
 					<li class="nav-item <?php if($this->uri->segment(1)=="" || $this->uri->segment(1)=="dashboard"){echo 'active';}?>">
 						<a class="nav-link" href="<?php echo base_url();?>">
-							<i class="mdi mdi-codepen  menu-icon"></i>
+							<i class="mdi mdi-home-account  menu-icon"></i>
 							<span class="menu-title">Dashboard</span>
 						</a>
 					</li>
@@ -79,13 +79,13 @@
 					<?php if((in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan')))||(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_dashboard')))) {?>
 					<li class="nav-item  <?php if($this->uri->segment(1)=="suratmasuk"){echo 'active';}?>">
 						<a class="nav-link" href="<?php echo base_url();?>suratmasuk">
-							<i class="mdi mdi-email-outline  menu-icon"></i>
+							<i class="mdi mdi-email-plus-outline  menu-icon"></i>
 							<span class="menu-title">Surat Masuk</span>
 						</a>
 					</li>
 					<li class="nav-item <?php if($this->uri->segment(1)=="suratkeluar"){echo 'active';}?>">
 						<a href="<?php echo base_url();?>suratkeluar" class="nav-link">
-							<i class="mdi mdi-send menu-icon"></i>
+							<i class="mdi mdi-email-open menu-icon"></i>
 							<span class="menu-title">Surat Keluar</span>
 						</a>
 					</li>
@@ -101,7 +101,7 @@
 					<?php if(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_referensi'))) {?>
 					<li class="nav-item <?php if($this->uri->segment(1)=="jenissuratketerangan" || $this->uri->segment(1)=="penomoran"){echo 'active';}?>">
 						<a href="#" class="nav-link">
-							<i class="mdi mdi-bulletin-board menu-icon"></i>
+							<i class="mdi mdi-ballot-outline menu-icon"></i>
 							<span class="menu-title">Referensi</span>
 							<i class="menu-arrow"></i>
 						</a>
@@ -116,7 +116,7 @@
 					<?php if(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_konfigurasi'))) {?>
 					<li class="nav-item <?php if($this->uri->segment(1)=="pengguna" || $this->uri->segment(1)=="konfigurasi" || $this->uri->segment(1)=="pegawai"){echo 'active';}?>">
 						<a href="#" class="nav-link">
-							<i class="mdi mdi-brightness-5 menu-icon"></i>
+							<i class="mdi mdi-brightness-7 menu-icon"></i>
 							<span class="menu-title">Pengaturan</span>
 							<i class="menu-arrow"></i>
 						</a>

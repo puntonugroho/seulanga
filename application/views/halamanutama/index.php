@@ -36,11 +36,11 @@
 									</div>
 								</div>
 								<div class="col-lg-3 d-flex grid-margin stretch-card">
-									<div class="card" style="background-color: #e2b967;">
+									<div class="card" style="background-color: #4b56c0;">
 										<div class="card-body text-white">
 											<h3 class="font-weight-bold mb-3">80 %</h3>
 											<div class="progress mb-3">
-												<div class="progress-bar  bg-info" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+												<div class="progress-bar  bg-warning" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 											<p class="pb-0 mb-0" style="font-weight:600">PROGRES PENGIRIMAN SURAT</p>
 										</div>
