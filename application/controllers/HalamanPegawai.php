@@ -94,6 +94,7 @@ class HalamanPegawai extends CI_Controller {
 		$alamat = "";
 		$aktif_id = "";
 		$jabatan_id = "";
+		$chat_id = "";
 		$hapus = "";
 
 		if ($id=='-1'){
@@ -110,6 +111,7 @@ class HalamanPegawai extends CI_Controller {
 			$golongan_id = $queryPegawai->row()->golongan_id;
 			$pangkat = $queryPegawai->row()->pangkat;
 			$alamat = $queryPegawai->row()->alamat;
+			$chat_id = $queryPegawai->row()->chatid;
 			$aktif_id = $queryPegawai->row()->aktif;
 			$jabatan_id = $queryPegawai->row()->jabatan_id;
 
@@ -127,6 +129,7 @@ class HalamanPegawai extends CI_Controller {
 					'alamat'=>$alamat,
 					'judul'=>$judul,
 					'jabatan'=>$jabatan,
+					'chatid'=>$chat_id,
 					'hapus'=>$hapus,
 					'aktif'=>$aktif));
 		return;
@@ -178,6 +181,7 @@ class HalamanPegawai extends CI_Controller {
 		$golongan_id= $this->input->post('golongan');
 		$pangkat= $this->input->post('pangkat');
 		$jabatan_id = $this->input->post('jabatan');
+		$chat_id = $this->input->post('chatid');
 		$alamat = $this->input->post('alamat');
 		$aktif = $this->input->post('aktif');
 
@@ -202,6 +206,7 @@ class HalamanPegawai extends CI_Controller {
 					'golongan' => $golongan,
 					'pangkat' => $pangkat,
 					'alamat' => $alamat,
+					'chatid' => $chat_id,
 					'jabatan_id' => $jabatan_id,
 					'jabatan_nama' => $jabatan,
 					'aktif' => $aktif,
@@ -249,6 +254,7 @@ class HalamanPegawai extends CI_Controller {
 				'golongan' => $golongan,
 				'pangkat' => $pangkat,
 				'alamat' => $alamat,
+				'chatid' => $chat_id,
 				'jabatan_id' => $jabatan_id,
 				'jabatan_nama' => $jabatan,
 				'aktif' => $aktif,
