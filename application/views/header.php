@@ -99,7 +99,7 @@
 					</li>
 					<?php } ?> -->
 					<?php if(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_referensi'))) {?>
-					<li class="nav-item <?php if($this->uri->segment(1)=="pegawai" || $this->uri->segment(1)=="penomoran"){echo 'active';}?>">
+					<li class="nav-item <?php if($this->uri->segment(1)=="jenissuratketerangan" || $this->uri->segment(1)=="penomoran"){echo 'active';}?>">
 						<a href="#" class="nav-link">
 							<i class="mdi mdi-bulletin-board menu-icon"></i>
 							<span class="menu-title">Referensi</span>
@@ -114,7 +114,7 @@
 					</li>
 					<?php } ?>
 					<?php if(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_konfigurasi'))) {?>
-					<li class="nav-item <?php if($this->uri->segment(1)=="pengguna" || $this->uri->segment(1)=="konfigurasi"){echo 'active';}?>">
+					<li class="nav-item <?php if($this->uri->segment(1)=="pengguna" || $this->uri->segment(1)=="konfigurasi" || $this->uri->segment(1)=="pegawai"){echo 'active';}?>">
 						<a href="#" class="nav-link">
 							<i class="mdi mdi-brightness-5 menu-icon"></i>
 							<span class="menu-title">Pengaturan</span>
