@@ -35,6 +35,14 @@
 	}
 	
 	var table;
+
+	// <?php if(!$this->session->userdata('status_satker')){ ?>
+	// 	var url = "suratmasuk_data";
+	// 	<?php } else { ?>
+	// 	var url = "suratmasukeks_data";
+	// <?php } ?>
+
+<?php if(!$this->session->userdata('status_satker')){ ?>	
 	$(document).ready(function() {
 		$('#TombolHapus').hide();
 		table = $('#table_pegawai').DataTable({
@@ -44,7 +52,7 @@
 			"bSort": false,
 			"bInfo": false,
 			"ajax": {
-				"url": "<?php echo base_url() ?>suratmasuk_data",
+				"url": "<?php echo base_url()?>suratmasuk_data",
 				"type": "POST",
 				"data": function(data) {
 					data.tahun_register = $('#tahun_register_cari').val();
@@ -75,6 +83,29 @@
 		});
 
 	});
+<?php } else { ?>
+	$(document).ready(function() {
+		$('#TombolHapus').hide();
+		table = $('#table_pegawai').DataTable({
+			"processing": true,
+			"respinsive": true,
+			"serverSide": true,
+			"bSort": false,
+			"bInfo": false,
+			"ajax": {
+				"url": "<?php echo base_url()?>suratmasukeks_data",
+				"type": "POST",
+				"data": function(data) {
+					data.tahun_register = $('#tahun_register_cari').val();
+					data.tujuan_jabatan = $('#jabatan_cari').val();
+				}
+			},
+
+		});
+
+	});
+
+<?php } ?>
 
 	function ModalPencarian(register_id) {
 		$.post('<?php echo base_url() ?>suratmasuk_pencarian', {
@@ -446,8 +477,9 @@
 		});
 	}
 
-
+<?php if(!$this->session->userdata('status_satker')) { ?>
 	function BukaModal(register_id) {
+		
 		$.post('<?php echo base_url() ?>suratmasuk_add', {
 			register_id: register_id
 		}, function(response) {
@@ -493,8 +525,6 @@
 					document.getElementById('jabatan').disabled = true;
 					document.getElementById('datepicker-default2').disabled = true;
 				}
-
-
 				$('#modal-suratmasuk').modal({
 					show: true,
 					backdrop: 'static'
@@ -504,6 +534,56 @@
 			}
 		});
 	}
+
+<?php } else { ?>
+	function BukaModalEksternal(register_id)
+	 {	
+		$.post('<?php echo base_url() ?>suratmasuk_eks_add', {
+			register_id: register_id
+		}, function(response) {
+			var json = jQuery.parseJSON(response);
+			if (json.st == 1) {
+				$("#jenis_surat_").html("");
+				$("#register_id").val("");
+				$("#judul").html("");
+				$("#datepicker-default").val('');
+				$("#datepicker-default2").val("");
+				$("#nomor_surat").val("");
+				$("#perihal").val("");
+				$("#keterangan").val("");
+				$("#nomor_index").val("");
+				$("#nomor_agenda").val("");
+				$("#nomor_agenda_show").val("");
+				$("#nomor_index").val(json.nomor_index);
+				$("#nomor_agenda").val(json.nomor_agenda);
+				$("#nomor_agenda_show").val(json.nomor_agenda);
+				$("#keterangan").val(json.keterangan);
+				$("#perihal").val(json.perihal);
+				$("#nomor_surat").val(json.nomor_surat);
+				$("#datepicker-default2").val(json.tanggal_surat);
+				$("#datepicker-default").val(json.tanggal_register);
+				$("#register_id").val(json.register_id);
+				$("#jenis_surat_").append(json.jenis_surat);
+				$("#judul").append(json.judul);
+				$("#register_id").val(json.register_id);
+				document.getElementById('nomor_agenda_show').disabled = true;
+				if (json.judul == 'EDIT SURAT MASUK') {
+					document.getElementById('datepicker-default').disabled = true;
+					document.getElementById('JenisSurat').disabled = true;
+					document.getElementById('datepicker-default2').disabled = true;
+				}
+
+				$('#modal-suratmasuk-eksternal').modal({
+					show: true,
+					backdrop: 'static'
+				});
+			} else if (json.st == 0) {
+				$('#table_pegawai').DataTable().ajax.reload();
+			}
+		});
+	}	
+<?php } ?>
+
 
 	function GantiGenerateNomor() {
 		var generate_nomor = $('#generate_nomor').val();
@@ -516,6 +596,7 @@
 		}
 	}
 
+<?php if(!$this->session->userdata('status_satker')) { ?>
 
 	function GetNomorAgendaBaru() {
 		var tanggal_register = $('#datepicker-default').val();
@@ -538,6 +619,30 @@
 			}
 		});
 	}
+<?php } else { ?>
+
+	function GetNomorAgendaEksternalBaru() {
+		var tanggal_register = $('#datepicker-default').val();
+		// var tanggal_register = moment(tgl_dummy).format("dd/mm/yyyy");
+		$.post('<?php echo base_url() ?>suratmasuk_nomoragenda_eks', {
+			tanggal_register: tanggal_register
+		}, function(response) {
+			var json = jQuery.parseJSON(response);
+			if (json.st == 1) {
+				$("#nomor_index").val("");
+				$("#nomor_agenda").val("");
+				$("#nomor_agenda_show").val("");
+				$("#nomor_index").val(json.nomor_index);
+				$("#nomor_agenda").val(json.nomor_agenda);
+				$("#nomor_agenda_show").val(json.nomor_agenda);
+				
+			} else if (json.st == 0) {
+				$('#table_pegawai').DataTable().ajax.reload();
+			}
+		});
+	}
+
+<?php } ?>
 
 	document.getElementById('dokumen').addEventListener('change', checkFile, false);
 	dokumen.addEventListener('change', checkFile, false);
