@@ -159,7 +159,7 @@ class HalamanSuratKeluar extends CI_Controller
 		foreach ($queryJabatan->result() as $row) {
 			$JabatanQuery[$row->group_id] = $row->group_name;
 		}
-		$array_jabatan_struktural = array_merge($InitJabatan,$JabatanQuery);
+		$array_jabatan_struktural = $InitJabatan+$JabatanQuery;
 
 		// $queryPengiriman = $this->model->get_data('ref_pengiriman');
 		// $array_pengiriman = array();
@@ -291,7 +291,7 @@ class HalamanSuratKeluar extends CI_Controller
 		foreach ($queryJabatan->result() as $row) {
 			$JabatanQuery[$row->group_id] = $row->group_name;
 		}
-		$array_jabatan_struktural = array_merge($InitJabatan,$JabatanQuery);
+		$array_jabatan_struktural = $InitJabatan+$JabatanQuery;
 
 		// $queryJabatanStruktural = $this->model->get_data('v_groups_struktural');
 		// $array_jabatan_struktural = array();
