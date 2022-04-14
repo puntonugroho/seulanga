@@ -36,11 +36,7 @@
 									</div>
 								</div>
 								<div class="col-lg-3 d-flex grid-margin stretch-card">
-<<<<<<< Updated upstream
 									<div class="card" style="background-color: #4b56c0;">
-=======
-									<div class="card" style="background-color: #e2b967;">
->>>>>>> Stashed changes
 										<div class="card-body text-white">
 											<h3 class="font-weight-bold mb-3">80 %</h3>
 											<div class="progress mb-3">
