@@ -856,8 +856,9 @@ class HalamanSuratMasuk extends CI_Controller
 			$querySimpan = $this->model->pembaharuan_data('register_pelaksanaan', $data, 'pelaksanaan_id', $pelaksanaan_id);
 
 			$queryRegister = $this->model->get_last_pelaksana($register_id);
+			// die(var_dump($queryRegister->result()));
 			$jenis_pelaksanaan_update_id = (!empty($queryRegister->row()->jenis_pelaksanaan_id) ? $queryRegister->row()->jenis_pelaksanaan_id : '1');
-			$jenis_pelaksanaan_update = (!empty($queryRegister->row()->jenis_pelaksanaan_id) ? $queryRegister->row()->jenis_pelaksanaan_id : 'Pendaftaran');
+			$jenis_pelaksanaan_update = (!empty($queryRegister->row()->jenis_pelaksanaan) ? $queryRegister->row()->jenis_pelaksanaan : 'Pendaftaran');
 
 			$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_update_id, 'status_pelaksanaan' => $jenis_pelaksanaan_update);
 			$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
