@@ -144,6 +144,26 @@
 			}
 		});
 	}
+
+	function HapusModal(id) {
+		if (id==1) {
+			id=$('#userid').val();
+		}
+		// console.log(id);
+		$.post('<?php echo base_url() ?>pengguna_hapus', {
+			id: id
+		}, function(response) {
+			var json = jQuery.parseJSON(response);
+			if (json.st == 1) {
+				pesan('INFORMASI', json.msg, '');
+				$('#table_pengguna').DataTable().ajax.reload();
+			} else if (json.st == 0) {
+				pesan('PERINGATAN', json.msg, '');
+				$('#table_pengguna').DataTable().ajax.reload();
+				return;
+			}
+		});
+	}
 </script>
 <!-- <script>
 		$(document).ready(function() {

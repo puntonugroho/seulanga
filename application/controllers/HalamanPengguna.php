@@ -113,6 +113,32 @@ class HalamanPengguna extends CI_Controller {
         return(md5($hasil));
     }
 
+	public function pengguna_hapus(){
+		// $this->form_validation->set_rules('userid', 'ID Pengguna', 'trim|required');
+		// if ($this->form_validation->run() == FALSE){
+		// 	echo json_encode(array('st'=>0,'msg'=>'Anda Dilarang Melakukan Akses Langsung Ke Aplikasi'));
+		// 	return;
+		// }
+
+		// $id = $this->encrypt->decode(base64_decode($this->input->post('userid')));
+		$id=$this->input->post('id');
+
+		$queryPengguna = $this->model->get_seleksi2('v_users','pegawai_id',$id,'block','0');
+		$cekPengguna = $queryPengguna->num_rows();
+		// die(var_dump($id));
+		if($cekPengguna==0){
+			$queryHapusPengguna = $this->model->hapus_data('sys_users','userid',$id);
+			//$queryHapusPegawai = $this->model->hapus_pegawai($id);
+			if($queryHapusPengguna==TRUE){
+				echo json_encode(array('st'=>1,'msg'=>'Data Berhasil Dihapus'));
+			} else {
+				echo json_encode(array('st'=>0,'msg'=>'Data Gagal Dihapus'));
+			}
+		} else {
+			echo json_encode(array('st'=>0,'msg'=>'Status Pengguna Aktif, Tidak Bisa Dilakukan Penghapusan'));
+		}
+	}
+
 
 	public function pengguna_simpan(){
 		$this->form_validation->set_rules('userid', 'ID Pengguna', 'trim|required');
