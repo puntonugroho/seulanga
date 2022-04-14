@@ -243,6 +243,14 @@ class HalamanSuratMasuk extends CI_Controller
 		}
 		$array_generate_nomor = array('1' => 'Ya', '2' => 'Tidak');
 
+		$queryJabatan = $this->model->get_list_jabatan();
+		$JabatanQuery = array();
+		$InitJabatan[''] = "Pilih";
+		foreach ($queryJabatan->result() as $row) {
+			$JabatanQuery[$row->group_id] = $row->group_name;
+		}
+		$JenisJabatan = $InitJabatan + $JabatanQuery;
+
 		if ($register_id == '-1') {
 			$judul = "TAMBAH SURAT MASUK";
 			$tanggal_register = date("d/m/Y");
