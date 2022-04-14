@@ -188,7 +188,7 @@ class HalamanPegawai extends CI_Controller {
 		$jabatan = $queryJabatan->row()->name;
 
 		if($id=='-1'){
-			$array_jabatan_struktural = array(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19); 
+			$array_jabatan_struktural = array(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39); 
 			if(in_array($jabatan_id,$array_jabatan_struktural)){
 				$queryRegister = $this->model->get_seleksi2('pegawai','jabatan_id',$jabatan_id,'aktif','Y');
 				$cekPengguna = $queryRegister->num_rows();
@@ -232,15 +232,15 @@ class HalamanPegawai extends CI_Controller {
 				$querySimpanPengguna = $this->model->pembaharuan_data('sys_users',$data_pengguna,'userid',$userIDPengguna);
 			}
 
-			$array_jabatan_struktural = array(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19); 
-			if(in_array($jabatan_id,$array_jabatan_struktural)){
-				$queryRegister = $this->model->get_seleksi2('pegawai','jabatan_id',$jabatan_id,'aktif','Y');
-				$cekPengguna = $queryRegister->num_rows();
-				if($cekPengguna!=0){
-					echo json_encode(array('st'=>0,'register_id'=>base64_encode($this->encrypt->encode($id)),'msg'=>'Data Gagal Disimpan, Pegawai dengan Jabatan yang sama masih Aktif'));
-					return;
-				}
-			}
+			// $array_jabatan_struktural = array(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39); 
+			// if(in_array($jabatan_id,$array_jabatan_struktural)){
+			// 	$queryRegister = $this->model->get_seleksi2('pegawai','jabatan_id',$jabatan_id,'aktif','Y');
+			// 	$cekPengguna = $queryRegister->num_rows();
+			// 	if($cekPengguna!=0){
+			// 		echo json_encode(array('st'=>0,'register_id'=>base64_encode($this->encrypt->encode($id)),'msg'=>'Data Gagal Disimpan, Pegawai dengan Jabatan yang sama masih Aktif'));
+			// 		return;
+			// 	}
+			// }
 			
 			$data_pegawai = array(
 				'nip' => $nip,

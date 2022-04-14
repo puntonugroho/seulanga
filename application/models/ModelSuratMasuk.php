@@ -27,11 +27,39 @@ class ModelSuratMasuk extends CI_Model {
 		}
 	}
 
-
 	public function get_datatables(){
 		$this->_get_datatables_query();
         if($_POST['length'] != -1)
         $this->db->limit($_POST['length'], $_POST['start']);
+    	$this->db->order_by('register_id','DESC');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	private function _get_datatables_eksternal_query($pengirim_id){
+		if($this->input->post('tahun_register')){
+            $this->db->where('tahun_register', $this->input->post('tahun_register'));
+        }
+        if($this->input->post('tujuan_jabatan')){
+            $this->db->where('tujuan_id', $this->input->post('tujuan_jabatan'));
+        }
+		$this->db->from($this->v_table);
+		if($_POST['search']['value']){
+			$this->db->group_start();
+			$this->db->like('jenis_surat', $_POST['search']['value']);
+			$this->db->or_like('tahun_register', $_POST['search']['value']);
+			$this->db->or_like('nomor_surat', $_POST['search']['value']);
+			$this->db->or_like('pengirim', $_POST['search']['value']);
+			$this->db->where('pengirim_id',$pengirim_id);
+			$this->db->group_end();		
+		}
+	}
+
+	public function get_datatables_eks($pengirim_id){
+		$this->_get_datatables_eksternal_query($pengirim_id);
+        if($_POST['length'] != -1)
+        $this->db->where('pengirim_id', $pengirim_id);
+		$this->db->limit($_POST['length'], $_POST['start']);
     	$this->db->order_by('register_id','DESC');
 		$query = $this->db->get();
 		return $query->result();

@@ -21,6 +21,16 @@ class ModelPengguna extends CI_Model {
 		}
 	}
 
+	public function hapus_data($nama_tabel,$kolom_seleksi,$seleksi){
+		try {
+			$this->db->where($kolom_seleksi,$seleksi);
+			$this->db->delete($nama_tabel);
+			return 1;
+		} catch (Exception $e) {
+			return 0;
+		}
+	}
+
 
 	public function get_datatables(){
 		$this->_get_datatables_query();

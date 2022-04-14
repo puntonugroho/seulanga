@@ -10,7 +10,7 @@
 						</div>
 						<div class="col-md-4" style="display: flex; flex-direction: row;justify-content: center;align-items:center;margin-top:-3px;margin-bottom:5px">
 							<?php if (in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_inputsurat'))) { ?>
-								<button onclick="BukaModal('<?php echo $register_id; ?>')" 
+								<button onclick="BukaModalEksternal('<?php echo $register_id; ?>')" 
 								class="btn btn-primary btn-sm mr-2 btn-block">Tambah Baru</button>
 							<?php } ?>
 							<?php if (!$this->session->userdata('status_satker')){ ?>
@@ -25,6 +25,7 @@
 							<div class="table-responsive">
 								<table id="table_pegawai" class="table">
 									<thead>
+									<?php if (!$this->session->userdata('status_satker')){ ?>
 										<tr>
 											<th>NO</th>
 											<th>TANGGAL REGISTER</th>
@@ -35,6 +36,16 @@
 											<th>STATUS </th>
 											<th>AKSI</th>
 										</tr>
+									<?php } else { ?>
+										<tr>
+											<th>NO</th>
+											<th>TANGGAL REGISTER</th>
+											<th>NOMOR SURAT</th>
+											<th>SIFAT SURAT</th>
+											<th>STATUS </th>
+											<th>AKSI</th>
+										</tr>
+									<?php } ?>
 									</thead>
 									<tbody>
 									</tbody>
@@ -184,7 +195,7 @@
 	</div>
 </div>
 
-
+<?php if (!$this->session->userdata('status_satker')){ ?>
 <div class="modal fade" id="modal-suratmasuk">
 	<div class="modal-dialog" style="width: 85%;">
 		<div class="modal-content">
@@ -245,19 +256,9 @@
 										</div>
 									</div>
 								</div>
-								<!-- <div class="col-md-12">
-										<div id="datepicker-popup" class="input-group date datepicker">
-											<input type="text" name="tanggal_register" onChange="GetNomorAgendaBaru()" class="form-control" required id="datepicker-default" />
-											<span class="input-group-addon input-group-append border-left">
-											<span class="mdi mdi-calendar input-group-text"></span>
-										</span>
-										</div>
-									</div> -->
-
 								<div class="form-group">
 									<label class="col-md-6 control-label">Distribusi Kepada <font color="red">*</font></label>
 									<div class="col-md-12" id="jabatan_"></div>
-
 								</div>
 								<div class="form-group">
 									<label class="col-md-6 control-label">Nomor Surat <font color="red">*</font></label>
@@ -297,7 +298,87 @@
 		</div>
 	</div>
 </div>
+<?php } else { ?>
+	<div class="modal fade" id="modal-suratmasuk-eksternal">
+	<div class="modal-dialog" style="width: 85%;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="judul"></h4>
+			</div>
+			<div class="modal-body" style="padding:12px">
+				<div class="panel-body">
+					<form class="form-horizontal" method="POST" action="<?php echo base_url(); ?>suratmasukeksternal_simpan" enctype="multipart/form-data">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="hidden" name="register_id" id="register_id" />
+									<input type="hidden" name="nomor_index" id="nomor_index" />
+									<label class="col-md-6 control-label">Tanggal Kirim</label>
+									<div class="col-md-12">
+										<div id="datepicker-popup" class="input-group date datepicker">
+											<input type="text" name="tanggal_register" onChange="GetNomorAgendaEksternalBaru()" class="form-control" required id="datepicker-default" />
+											<span class="input-group-addon input-group-append border-left">
+												<span class="mdi mdi-calendar input-group-text"></span>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group" id="KolomNomorOtomatis">
+									<label class="col-md-6 control-label">Nomor Agenda <font color="red">*</font></label>
+									<div class="col-md-12">
+										<input type="text" class="form-control" required id="nomor_agenda_show" disabled />
+										<input type="hidden" name="nomor_agenda" class="form-control" id="nomor_agenda" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-6 control-label">Sifat Surat <font color="red">*</font></label>
+									<div class="col-md-12" id="jenis_surat_"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-6 control-label">Tanggal Surat <font color="red">*</font></label>
+									<div class="col-md-12">
+										<div id="datepickers-popup2" class="input-group date datepicker">
+											<input type="text" name="tanggal_surat" class="form-control" required id="datepicker-default2" />
+											<span class="input-group-addon input-group-append border-left">
+												<span class="mdi mdi-calendar input-group-text"></span>
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-6 control-label">Nomor Surat <font color="red">*</font></label>
+									<div class="col-md-12"><input type="text" class="form-control" required name="nomor_surat" id="nomor_surat" /></div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="col-md-6 control-label">Perihal <font color="red">*</font></label>
+									<div class="col-md-12" id="pegawai_"><textarea class="form-control" name="perihal" id="perihal" rows="6"></textarea></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-6 control-label">Keterangan</label>
+									<div class="col-md-12"><textarea class="form-control" id="keterangan" name="keterangan" rows="6"></textarea></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-6 control-label">Dokumen Elektronik</label>
+									<div class="col-md-12">
+										<input type="file" class="form-control" name="dokumen" id="dokumen" />
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="modal-footer">
+					<button onclick="TutupModal()" data-dismiss="modal" class="btn btn-sm btn-white">Kembali</button>
+					<span id="hapus"></span>
+					<button type="submit" class="btn btn-sm btn-success">Simpan</button>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
+<?php } ?>
 
 <!-- #modal-dialog -->
 <div class="modal fade" id="modal-suratmasuk-detil">

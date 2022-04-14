@@ -28,10 +28,8 @@ class HalamanSuratMasuk extends CI_Controller
 		$this->load->view('suratmasuk/footer');
 	}
 
-
 	public function suratmasuk_data()
 	{
-
 		$query = $this->model->get_datatables();
 		$data = array();
 		$no = $_POST['start'];
@@ -45,19 +43,6 @@ class HalamanSuratMasuk extends CI_Controller
 			$UserData[] = $row->jenis_surat;
 			$UserData[] = $row->pengirim;
 			$UserData[] = $row->status_pelaksanaan;
-			if($this->session->userdata('status_satker')){
-				$UserData[] = '<div>
-				<div class="input-group-btn">
-					<ul class="dropdown-menu pull-right" style="padding:12px">
-						<li><a href="#" onclick="BukaModalDetil(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')">Detil</a></li>
-						<li><a href="#" onclick="BukaModal(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')">Edit Register</a></li>
-					</ul>
-					<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-					<span class="caret"></span>
-					</button>
-				 </div>
-			</div>';	
-			}else{
 				$UserData[] = '<div>
 					<div class="input-group-btn">
 	                	<ul class="dropdown-menu pull-right" style="padding:12px">
@@ -70,7 +55,45 @@ class HalamanSuratMasuk extends CI_Controller
 	                    </button>
 	             	</div>
 				</div>';
-			}
+
+			$data[] = $UserData;
+		}
+
+		$json_data = array(
+			"draw" => $_POST['draw'],
+			"recordsTotal" => $this->model->count_all(),
+			"recordsFiltered" => $this->model->count_filtered(),
+			"data" => $data,
+		);
+		echo json_encode($json_data);
+	}
+
+	public function suratmasukeks_data()
+	{
+		$pengirim_id = $this->session->userdata("satker_id");
+		$query = $this->model->get_datatables_eks($pengirim_id);
+		$data = array();
+		$no = $_POST['start'];
+		foreach ($query as $row) {
+			$no++;
+			$UserData = array();
+			$UserData[] = "<div>" . $no . "</div>";
+			$UserData[] = $this->tanggalhelper->convertDayDate($row->tanggal_register);
+			$UserData[] = $row->nomor_surat;
+			$UserData[] = $row->jenis_surat;
+			$UserData[] = $row->status_pelaksanaan;
+				$UserData[] = '<div>
+				<div class="input-group-btn">
+					<ul class="dropdown-menu pull-right" style="padding:12px">
+						<li><a href="#" onclick="BukaModalDetil(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')">Detil</a></li>
+						<li><a href="#" onclick="BukaModal(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')">Edit Register</a></li>
+					</ul>
+					<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+					<span class="caret"></span>
+					</button>
+				 </div>
+			</div>';	
+			
 
 			$data[] = $UserData;
 		}
@@ -211,23 +234,14 @@ class HalamanSuratMasuk extends CI_Controller
 		}
 
 		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
-
+		// $pengirim =  $this->session->userdata('fullname');
 		$queryJenis = $this->model->get_data('ref_jenis_surat');
 		$JenisSurat = array();
 		$JenisSurat[''] = "Pilih";
 		foreach ($queryJenis->result() as $row) {
 			$JenisSurat[$row->id] = $row->nama;
 		}
-
 		$array_generate_nomor = array('1' => 'Ya', '2' => 'Tidak');
-		$queryJabatan = $this->model->get_list_jabatan();
-		$InitJabatan = array('' => 'Pilih');
-		foreach ($queryJabatan->result() as $row) {
-			$JabatanQuery[$row->group_id] = $row->group_name;
-		}
-		$JenisJabatan = $InitJabatan + $JabatanQuery;
-		// die(var_dump($JenisJabatan));
-		// $JenisJabatan = array('' => 'Pilih', '2' => 'Ketua Mahkamah', '3' => 'Wakil Ketua Mahkamah', '4' => 'Panitera', '5' => 'Panitera Muda Jinayat', '6' => 'Panitera Muda Hukum ', '7' => 'Panitera Muda Gugatan', '10' => 'Panitera Muda Permohonan', '16' => 'Sekretaris', '17' => 'Kasubbag PTIP', '18' => 'Kasubbag Kepegawaian', '19' => 'Kasubbag Umum dan Keuangan');
 
 		if ($register_id == '-1') {
 			$judul = "TAMBAH SURAT MASUK";
@@ -291,7 +305,73 @@ class HalamanSuratMasuk extends CI_Controller
 		return;
 	}
 
+	public function suratmasuk_eks_add()
+	{
+		$this->form_validation->set_rules('register_id', 'ID Register', 'trim|required');
+		if ($this->form_validation->run() == FALSE) {
+			echo json_encode(array('st' => 0, 'msg' => 'Anda Dilarang Melakukan Akses Langsung Ke Aplikasi'));
+			return;
+		}
 
+		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
+		$queryJenis = $this->model->get_data('ref_jenis_surat');
+		$JenisSurat = array();
+		$JenisSurat[''] = "Pilih";
+		foreach ($queryJenis->result() as $row) {
+			$JenisSurat[$row->id] = $row->nama;
+		}
+		if ($register_id == '-1') {
+			$judul = "TAMBAH SURAT MASUK";
+			$tanggal_register = date("d/m/Y");
+
+			$tanggal_surat = "";
+			$nomor_surat = "";
+			$perihal = "";
+			$keterangan = "";
+			$tahun_register = date("Y");
+
+			$queryNomorIndex = $this->model->get_seleksi_nomor_index($tahun_register);
+			$nomor_index = (!empty($queryNomorIndex->row()->nomor_index) ? $queryNomorIndex->row()->nomor_index + 1 : '1');
+
+			$queryKonfigurasi = $this->model->get_seleksi('sys_config', 'id', '24');
+			$format_agenda = $queryKonfigurasi->row()->value;
+
+			$kataganti = str_replace("NMR_AGENDA", $nomor_index, $format_agenda);
+			$nomor_agenda = str_replace("TAHUN_AGENDA", $tahun_register, $kataganti);
+			$jenis_surat = form_dropdown('jenis_surat', $JenisSurat, '', 'class="form-control" required id="JenisSurat"');
+		} else {
+			$querySurat = $this->model->get_seleksi('v_suratmasuk', 'register_id', $register_id);
+			$tanggal_register = $this->tanggalhelper->convertToInputDate($querySurat->row()->tanggal_register);
+			$jenis_surat_id = $querySurat->row()->jenis_surat_id;
+			$tanggal_surat = $this->tanggalhelper->convertToInputDate($querySurat->row()->tanggal_surat);
+			$nomor_surat = $querySurat->row()->nomor_surat;
+			$tujuan_id = $querySurat->row()->tujuan_id;
+			$perihal = $querySurat->row()->perihal;
+			$keterangan = $querySurat->row()->keterangan;
+			$nomor_index = $querySurat->row()->nomor_index;
+			$nomor_agenda = $querySurat->row()->nomor_agenda;
+			$tahun_register = $querySurat->row()->tahun_register;
+
+			$judul = "EDIT SURAT MASUK";
+			$jenis_surat = form_dropdown('jenis_surat', $JenisSurat, $jenis_surat_id, 'class="form-control" required id="JenisSurat"');
+		}
+		echo json_encode(array(
+			'st' => 1,
+			'register_id' => base64_encode($this->encrypt->encode($register_id)),
+			'nomor_index' => $nomor_index,
+			'nomor_agenda' => $nomor_agenda,
+			'tanggal_register' => $tanggal_register,
+			'tanggal_surat' => $tanggal_surat,
+			'nomor_surat' => $nomor_surat,
+			'perihal' => $perihal,
+			'keterangan' => $keterangan,
+			'jabatan' => $jabatan,
+			'jenis_surat' => $jenis_surat,
+			'tahun_register' => $tahun_register,
+			'judul' => $judul
+		));
+		return;
+	}
 
 	public function suratmasuk_nomoragenda()
 	{
@@ -322,6 +402,34 @@ class HalamanSuratMasuk extends CI_Controller
 		return;
 	}
 
+	public function suratmasuk_nomoragenda_eks()
+	{
+		$this->form_validation->set_rules('tanggal_register', 'Tanggal Register', 'trim|required');
+		if ($this->form_validation->run() == FALSE) {
+			echo json_encode(array('st' => 0, 'msg' => 'Anda Dilarang Melakukan Akses Langsung Ke Aplikasi'));
+			return;
+		}
+
+		$tanggal_register = $this->tanggalhelper->convertToMysqlDate($this->input->post('tanggal_register'));
+		$tahun_register = date("Y", strtotime($tanggal_register));
+
+		$queryNomorIndex = $this->model->get_seleksi_nomor_index($tahun_register);
+		$nomor_index = (!empty($queryNomorIndex->row()->nomor_index) ? $queryNomorIndex->row()->nomor_index + 1 : '1');
+
+		$queryKonfigurasi = $this->model->get_seleksi('sys_config', 'id', '24');
+		$format_agenda = $queryKonfigurasi->row()->value;
+
+		$kataganti = str_replace("NMR_AGENDA", $nomor_index, $format_agenda);
+		$nomor_agenda = str_replace("TAHUN_AGENDA", $tahun_register, $kataganti);
+
+		echo json_encode(array(
+			'st' => 1,
+			'nomor_index' => $nomor_index,
+			'tahun_register' => $tahun_register,
+			'nomor_agenda' => $nomor_agenda
+		));
+		return;
+	}
 
 	public function suratmasuk_hapus()
 	{
@@ -551,8 +659,6 @@ class HalamanSuratMasuk extends CI_Controller
 		return;
 	}
 
-
-
 	public function suratmasuk_tampil_pelaksana()
 	{
 		$this->form_validation->set_rules('jenis_pelaksanaan', 'Jenis Pelaksanaan', 'trim|required');
@@ -579,8 +685,6 @@ class HalamanSuratMasuk extends CI_Controller
 		}
 	}
 
-
-
 	public function suratmasuk_pelaksana_tambah()
 	{
 		$this->form_validation->set_rules('register_id', 'ID Register', 'trim|required');
@@ -604,7 +708,6 @@ class HalamanSuratMasuk extends CI_Controller
 			$dari_jabatan = "";
 			$tanggal_pelaksanaan = "";
 		}
-
 		$tanggal_sekarang = date("d/m/Y");
 
 		$array_pelaksanaan = array('' => 'Pilih', '10' => 'Disposisi', '20' => 'Dilaksanakan', '30' => 'Diteruskan');
@@ -632,8 +735,6 @@ class HalamanSuratMasuk extends CI_Controller
 		));
 		return;
 	}
-
-
 
 	public function suratmasuk_simpan_pelaksanaan()
 	{
@@ -945,6 +1046,161 @@ class HalamanSuratMasuk extends CI_Controller
 		redirect('suratmasuk');
 	}
 
+	public function suratmasukeksternal_simpan()
+	{
+		$this->form_validation->set_rules('register_id', 'ID Surat Masuk', 'trim|required');
+		if ($this->form_validation->run() == FALSE) {
+			echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
+			return;
+		}
+
+		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
+		$upload_data = "";
+		if (!empty($_FILES['dokumen']['name'])) {
+			$config = array(
+				'upload_path' => './dokumen/',
+				'allowed_types' => "pdf",
+				'file_ext_tolower' => TRUE,
+				'encrypt_name' => TRUE,
+				'overwrite' => TRUE,
+				'remove_spaces' => TRUE,
+				'max_size' => "100000"
+			);
+
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+
+			$this->upload->do_upload('dokumen');
+			$upload_data = $this->upload->data();
+		}
+
+		if ($register_id == "-1") {
+
+			$this->form_validation->set_rules('tanggal_surat', 'Tanggal Surat', 'trim|required');
+			$this->form_validation->set_rules('jenis_surat', 'Jenis Surat', 'trim|required');
+			$this->form_validation->set_rules('nomor_surat', 'Nomor Surat', 'trim');
+			$this->form_validation->set_rules('perihal', 'Perihal', 'trim|required');
+			$this->form_validation->set_rules('keterangan', 'Keterangan', 'trim');
+			$this->form_validation->set_rules('tanggal_register', 'Tanggal Register', 'trim|required');
+			if ($this->form_validation->run() == FALSE) {
+				echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
+				return;
+			}
+
+			$tanggal_register = $this->tanggalhelper->convertToMysqlDate($this->input->post('tanggal_register'));
+			$tahun_register = date('Y');
+			$tanggal_surat = $this->tanggalhelper->convertToMysqlDate($this->input->post('tanggal_surat'));
+			$jenis_surat_id = $this->input->post('jenis_surat');
+			$nomor_surat = $this->input->post('nomor_surat');
+			$pengirim =  $this->session->userdata('fullname');
+			$tujuan_id =  '19';
+			$satker_id = $this->session->userdata('satker_id');
+			$perihal = $this->input->post('perihal');
+			$keterangan = $this->input->post('keterangan');
+
+			$klasifikasi_surat_id = '1';
+			$klasifikasi_surat = 'Surat Masuk';
+
+			$queryJabatan = $this->model->get_seleksi('sys_groups', 'groupid', $tujuan_id);
+			$namaJabatan = $queryJabatan->row()->name;
+
+			$queryJenisSurat = $this->model->get_seleksi('ref_jenis_surat', 'id', $jenis_surat_id);
+			$namaJenisSurat = $queryJenisSurat->row()->nama;
+
+				$this->form_validation->set_rules('nomor_index', 'Nomor Index', 'trim|required');
+				$this->form_validation->set_rules('nomor_agenda', 'Nomor Agenda', 'trim|required');
+				if ($this->form_validation->run() == FALSE) {
+					echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
+					return;
+				}
+				// $nomor_index = $this->input->post('nomor_index');
+				// $nomor_agenda = $this->input->post('nomor_agenda');
+
+				$queryNomorIndex = $this->model->get_seleksi_nomor_index($tahun_register);
+				$nomor_index = (!empty($queryNomorIndex->row()->nomor_index) ? $queryNomorIndex->row()->nomor_index + 1 : '1');
+				$queryKonfigurasi = $this->model->get_seleksi('sys_config', 'id', '24');
+				$format_agenda = $queryKonfigurasi->row()->value;
+				$kataganti = str_replace("NMR_AGENDA", $nomor_index, $format_agenda);
+				$nomor_agenda = str_replace("TAHUN_AGENDA", $tahun_register, $kataganti);	
+
+
+			$data = array(
+				'klasifikasi_surat_id' => $klasifikasi_surat_id,
+				'klasifikasi_surat' => $klasifikasi_surat,
+				'nomor_index' => $nomor_index,
+				'nomor_agenda' => $nomor_agenda,
+				'jenis_surat_id' => $jenis_surat_id,
+				'jenis_surat' => $namaJenisSurat,
+				'tanggal_register' => $tanggal_register,
+				'tanggal_surat' => $tanggal_surat,
+				'nomor_surat' => $nomor_surat,
+				'pengirim_id' => $satker_id,
+				'pengirim' => $pengirim,
+				'tujuan_id' => $tujuan_id,
+				'tujuan' => $namaJabatan,
+				'perihal' => $perihal,
+				'dokumen_elektronik' => (!empty($upload_data['file_name']) ? $upload_data['file_name'] : NULL),
+				'keterangan' => $keterangan,
+				'status_pelaksanaan_id' => "1",
+				'status_pelaksanaan' => "Pendaftaran",
+				'diinput_oleh' => $this->session->userdata('username'),
+				'diinput_tanggal' => date("Y-m-d h:i:s", time())
+			);
+
+			$querySimpan = $this->model->simpan_data('register_surat', $data);
+		} else {
+			$this->form_validation->set_rules('nomor_surat', 'Nomor Surat', 'trim');
+			$this->form_validation->set_rules('perihal', 'Perihal', 'trim|required');
+			$this->form_validation->set_rules('keterangan', 'Keterangan', 'trim');
+			if ($this->form_validation->run() == FALSE) {
+				echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
+				return;
+			}
+			$nomor_surat = $this->input->post('nomor_surat');
+			$pengirim =  $this->session->userdata('fullname');
+			$satker_id = $this->session->userdata('satker_id');
+			$perihal = $this->input->post('perihal');
+			$keterangan = $this->input->post('keterangan');
+
+			if (!empty($upload_data['file_name'])) {
+				$data = array(
+					'nomor_surat' => $nomor_surat,
+					'pengirim' => $pengirim,
+					'pengirim_id' => $satker_id,
+					'perihal' => $perihal,
+					'dokumen_elektronik' => $upload_data['file_name'],
+					'keterangan' => $keterangan,
+					'diperbaharui_oleh' => $this->session->userdata('username'),
+					'diperbaharui_tanggal' => date("Y-m-d h:i:s", time())
+				);
+			} else {
+				$data = array(
+					'nomor_surat' => $nomor_surat,
+					'pengirim' => $pengirim,
+					'pengirim_id' => $satker_id,
+					'perihal' => $perihal,
+					'keterangan' => $keterangan,
+					'diperbaharui_oleh' => $this->session->userdata('username'),
+					'diperbaharui_tanggal' => date("Y-m-d h:i:s", time())
+				);
+			}
+
+			$querySimpan = $this->model->pembaharuan_data('register_surat', $data, 'register_id', $register_id);
+		}
+		// perihal " . $perihal
+		$message_text = "" . $namaJabatan . " MS Aceh Anda Menerima Surat Nomor : "
+			. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $pengirim .
+			". Mohon agar segera ditindaklanjuti, Terima Kasih.";
+
+		$telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $jabatan_id)->row()->chatid;
+		$ress = kirimNotifikasiTelegram($telegram_id, $message_text);
+		if ($ress = 'sukses') {
+			echo json_encode(array('st' => 1, 'msg' => $message_text, 'tujuan_id' => $telegram_id));
+		} else {
+			echo json_encode(array('st' => 0, 'msg' => $ress));
+		}
+		redirect('suratmasuk');
+	}
 
 
 	public function suratmasuk_pelaksana_hapus()

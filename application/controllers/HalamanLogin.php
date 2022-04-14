@@ -52,8 +52,9 @@ class HalamanLogin extends CI_Controller {
 				$userid = $queryPengguna->row()->userid;
 				$fullname = $queryPengguna->row()->fullname; 
 				$username =	$queryPengguna->row()->username; 
-				$group_id =	$queryPengguna->row()->group_id; 
+				$pegawai_id = $queryPengguna->row()->pegawai_id; 
 				$group_name = $queryPengguna->row()->group_name;
+				$group_id = $queryPengguna->row()->group_id;
 				$status_satker = $queryPengguna->row()->status_pegawai; 
 				$ip_addr = $this->input->ip_address();
 				$user_agent = $this->input->user_agent();
@@ -62,7 +63,14 @@ class HalamanLogin extends CI_Controller {
 				$this->session->set_userdata('userid',$userid);
 				$this->session->set_userdata('fullname',$fullname); 
 				$this->session->set_userdata('username',$username); 
+				
+				if($status_satker){
 				$this->session->set_userdata('status_satker',$status_satker);
+				$this->session->set_userdata('satker_id',$pegawai_id);
+				}
+				
+				// die(var_dump($pegawai_id));
+
 				$this->session->set_userdata('group_id',$group_id); 
 				$this->session->set_userdata('group_name',$group_name);
 				$data_login = array('userid' => $userid,
