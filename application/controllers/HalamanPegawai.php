@@ -185,6 +185,8 @@ class HalamanPegawai extends CI_Controller {
 		$alamat = $this->input->post('alamat');
 		$aktif = $this->input->post('aktif');
 
+		// die(var_dump($chat_id));
+
 		$queryGolongan = $this->model->get_seleksi_golongan($golongan_id);
 		$golongan = $queryGolongan->row()->golongan;
 

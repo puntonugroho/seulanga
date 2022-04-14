@@ -138,7 +138,7 @@
 		var pangkat = $('#pangkat').val();
 		var jabatan = $('#group').val();
 		var alamat = $('#alamat').val();
-		var chatid = $('#chatid_').val();
+		var chatid = $('#chatid').val();
 		var aktif = $('#aktif').val();
 		if (id == '') {
 			pesan('PERINGATAN', 'Kesalahan Dalam Akses Aplikasi, Refresh Browser', '');
@@ -172,7 +172,7 @@
 			pangkat: pangkat,
 			jabatan: jabatan,
 			alamat: alamat,
-			chatid : chatid,
+			chatid: chatid,
 			aktif: aktif
 		}, function(response) {
 			var json = jQuery.parseJSON(response);
