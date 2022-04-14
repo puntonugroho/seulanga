@@ -24,6 +24,7 @@ $route['pengguna']  = 'HalamanPengguna/index';
 $route['pengguna_data'] = 'HalamanPengguna/pengguna_data';
 $route['pengguna_add'] = 'HalamanPengguna/pengguna_add';
 $route['pengguna_simpan'] = 'HalamanPengguna/pengguna_simpan';
+$route['pengguna_hapus'] = 'HalamanPengguna/pengguna_hapus';
 
 $route['pegawai']  = 'HalamanPegawai/index';
 $route['pegawai_data'] = 'HalamanPegawai/pegawai_data';
