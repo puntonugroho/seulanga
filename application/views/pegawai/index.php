@@ -89,6 +89,10 @@
 									<div class="col-md-12"><input type="text" class="form-control" required id="alamat" /></div>
 								</div>
 								<div class="form-group">
+									<label class="col-md-6 control-label">Telegram Chat ID</label>
+									<div class="col-md-12"><input type="text" class="form-control" id="chatid"/></div>
+								</div>
+								<div class="form-group">
 									<label class="col-md-6 control-label">Aktif <font color="red">*</font></label>
 									<div class="col-md-12" id="aktif_"></div>
 								</div>
