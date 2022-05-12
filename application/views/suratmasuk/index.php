@@ -546,7 +546,7 @@
 													<div>Jenis Pelaksanaan</div>
 												</th>
 												<th nowrap>
-													<div>Pelaksanaan Dari</div>
+													<div>Dari</div>
 												</th>
 												<th nowrap>
 													<div>Disposisi Kepada</div>
@@ -647,7 +647,7 @@
 					</tr>
 					<tr>
 						<td colspan="2" width="40%" align='center'><b>DISPOSISI</b></td>
-						<td width="30%" align='center'><b>DITERUSKAN KEPADA</b></td>
+						<td width="30%" align='center'><b>KEPADA</b></td>
 						<td width="30%" align='center'><b>KET</b></td>
 					</tr>
 					<tbody id="tampil_pelaksanaan_disposisi"></tbody>

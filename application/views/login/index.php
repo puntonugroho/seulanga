@@ -3,11 +3,11 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Surat Digital</title>
+  <title>SEULANGA</title>
   <!-- <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta content="" name="description" />
-  <meta content="I.A.HARAHAP" name="author" />
+  <meta content="IT MS ACEH" name="author" />
 
   <!-- link rel="stylesheet" href="assets/css/animate.css"> -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
             <div class="detailsh">
               <img class="help" src="<?php echo base_url(); ?>images/help.png" alt="">
               <h3 style="color: #0a0a0a;">Mahkamah Syar'iyah Aceh</h3>
-              <p>Sistem Persuratan Digital</p>
+              <p>Surat Elektronik untuk Layanan Administrasi yang Adaptif</p>
             </div>
           </div>
           <div class="col-md-5 loginform">
@@ -49,8 +49,9 @@
                         <i class="far fa-user"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Masukkan Username" name="nama" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
+                    <input type="text" class="form-control" required placeholder="Enter Username" name="nama" value="<?php echo set_value('nama'); ?>"  aria-label="Username" aria-describedby="basic-addon1">                
+                  </div>
+                  <?php echo form_error('nama'); ?>
               </div>
               <div class="form-row">
                 <label for="">Password</label>
@@ -60,8 +61,9 @@
                       <i class="fas fa-lock"></i>
                     </span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Masukkan Password" name="password" aria-label="Username" aria-describedby="basic-addon1">
+                  <input type="password" class="form-control" required placeholder="Enter Password" name="password" value="<?php echo set_value('password'); ?>"  aria-label="Username" aria-describedby="basic-addon1">
                 </div>
+                <?php echo form_error('password'); ?> 
               </div>
 
               <p class="forget"><a href=""></a></p>
@@ -80,15 +82,6 @@
                   <li>
                     <a href="https://www.instagram.com/ms_aceh/" target="_blank"><i class="fab fa-instagram"></i></a>
                   </li>
-                  <!-- <li>
-                                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-dribbble"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-behance"></i></a>
-                                            </li> -->
                 </ul>
               </div>
 
@@ -107,10 +100,45 @@
   <script src="<?php echo base_url(); ?>assets/js/settings.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/todolist.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/jquery.cookie.js"></script>
+  <script src="<?php echo base_url(); ?>assets/js/gritter/js/jquery.gritter.js"></script>
+  <script src="<?php echo base_url(); ?>assets/js/sweetalert.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/profile-settings.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/bootstrap-datepicker.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/moment.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/js/formpickers.js"></script>
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(document).on('show.bs.modal', '.modal', function(event) {
+			var zIndex = 1040 + (10 * $('.modal:visible').length);
+			$(this).css('z-index', zIndex);
+			setTimeout(function() {
+				$('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+			}, 0);
+		});
+	});
+
+	function pesan($judul, $pesan, $gambar) {
+		$.gritter.add({
+			title: $judul,
+			text: $pesan,
+			image: $gambar,
+			sticky: true,
+			time: '',
+			class_name: 'my-sticky-class'
+		});
+		return false;
+	}
+</script>
+
+<!-- <script>
+		$(document).ready(function() {
+			App.init();
+            TableManageDefault.init();
+            FormPlugins.init();
+		});
+	</script> -->
 </body>
 
 </html>

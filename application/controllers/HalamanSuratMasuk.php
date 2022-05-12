@@ -43,7 +43,7 @@ class HalamanSuratMasuk extends CI_Controller
 			$UserData[] = $row->jenis_surat;
 			$UserData[] = $row->pengirim;
 			$UserData[] = $row->status_pelaksanaan;
-				$UserData[] = '<div>
+			$UserData[] = '<div>
 					<div class="input-group-btn">
 	                	<ul class="dropdown-menu pull-right" style="padding:12px">
 	                    	<li><a href="#" onclick="BukaModalDetil(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')">Detil</a></li>
@@ -82,7 +82,7 @@ class HalamanSuratMasuk extends CI_Controller
 			$UserData[] = $row->nomor_surat;
 			$UserData[] = $row->jenis_surat;
 			$UserData[] = $row->status_pelaksanaan;
-				$UserData[] = '<div>
+			$UserData[] = '<div>
 				<div class="input-group-btn">
 					<ul class="dropdown-menu pull-right" style="padding:12px">
 						<li><a href="#" onclick="BukaModalDetil(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')">Detil</a></li>
@@ -92,8 +92,8 @@ class HalamanSuratMasuk extends CI_Controller
 					<span class="caret"></span>
 					</button>
 				 </div>
-			</div>';	
-			
+			</div>';
+
 
 			$data[] = $UserData;
 		}
@@ -1042,7 +1042,7 @@ class HalamanSuratMasuk extends CI_Controller
 		}
 		// perihal " . $perihal
 		$message_text = "" . $namaJabatan . " MS Aceh Anda Menerima Surat Nomor : "
-			. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $pengirim .
+			. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $pengirim . " perihal : ".$perihal.
 			". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 
 		$telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $jabatan_id)->row()->chatid;
@@ -1116,21 +1116,21 @@ class HalamanSuratMasuk extends CI_Controller
 			$queryJenisSurat = $this->model->get_seleksi('ref_jenis_surat', 'id', $jenis_surat_id);
 			$namaJenisSurat = $queryJenisSurat->row()->nama;
 
-				$this->form_validation->set_rules('nomor_index', 'Nomor Index', 'trim|required');
-				$this->form_validation->set_rules('nomor_agenda', 'Nomor Agenda', 'trim|required');
-				if ($this->form_validation->run() == FALSE) {
-					echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
-					return;
-				}
-				// $nomor_index = $this->input->post('nomor_index');
-				// $nomor_agenda = $this->input->post('nomor_agenda');
+			$this->form_validation->set_rules('nomor_index', 'Nomor Index', 'trim|required');
+			$this->form_validation->set_rules('nomor_agenda', 'Nomor Agenda', 'trim|required');
+			if ($this->form_validation->run() == FALSE) {
+				echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
+				return;
+			}
+			// $nomor_index = $this->input->post('nomor_index');
+			// $nomor_agenda = $this->input->post('nomor_agenda');
 
-				$queryNomorIndex = $this->model->get_seleksi_nomor_index($tahun_register);
-				$nomor_index = (!empty($queryNomorIndex->row()->nomor_index) ? $queryNomorIndex->row()->nomor_index + 1 : '1');
-				$queryKonfigurasi = $this->model->get_seleksi('sys_config', 'id', '24');
-				$format_agenda = $queryKonfigurasi->row()->value;
-				$kataganti = str_replace("NMR_AGENDA", $nomor_index, $format_agenda);
-				$nomor_agenda = str_replace("TAHUN_AGENDA", $tahun_register, $kataganti);	
+			$queryNomorIndex = $this->model->get_seleksi_nomor_index($tahun_register);
+			$nomor_index = (!empty($queryNomorIndex->row()->nomor_index) ? $queryNomorIndex->row()->nomor_index + 1 : '1');
+			$queryKonfigurasi = $this->model->get_seleksi('sys_config', 'id', '24');
+			$format_agenda = $queryKonfigurasi->row()->value;
+			$kataganti = str_replace("NMR_AGENDA", $nomor_index, $format_agenda);
+			$nomor_agenda = str_replace("TAHUN_AGENDA", $tahun_register, $kataganti);
 
 
 			$data = array(
@@ -1198,10 +1198,10 @@ class HalamanSuratMasuk extends CI_Controller
 		}
 		// perihal " . $perihal
 		$message_text = "" . $namaJabatan . " MS Aceh Anda Menerima Surat Nomor : "
-			. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $pengirim .
+			. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $pengirim . " perihal : " .$perihal.
 			". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 
-		$telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $jabatan_id)->row()->chatid;
+		$telegram_id = $this->model->get_seleksi('pegawai', 'jabatan_id', $tujuan_id)->row()->chatid;
 		$ress = kirimNotifikasiTelegram($telegram_id, $message_text);
 		if ($ress = 'sukses') {
 			echo json_encode(array('st' => 1, 'msg' => $message_text, 'tujuan_id' => $telegram_id));

@@ -76,7 +76,7 @@
 						</a>
 					</li>
 					<?php } ?>
-					<?php if((in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan')))||(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_dashboard')))) {?>
+					<?php if(in_array($this->session->userdata('group_id'), $this->session->userdata('kewenangan_persuratan'))) {?>
 					<li class="nav-item  <?php if($this->uri->segment(1)=="suratmasuk"){echo 'active';}?>">
 						<a class="nav-link" href="<?php echo base_url();?>suratmasuk">
 							<i class="mdi mdi-email-plus-outline  menu-icon"></i>

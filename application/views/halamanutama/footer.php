@@ -151,14 +151,32 @@
 			return;
 		}
 
-		if (group_id == '2' || group_id == '3') {
-			// jabatan = '';
-			if (jabatan == '') {
-				pesan('PERINGATAN', 'Kolom Jabatan Tujuan Disposisi Wajib Dipilih', '');
-				return;
-			}
-		} else {
-			if (jenis_pelaksanaan == '10' || jenis_pelaksanaan == '30') {
+		// if (group_id == '2' || group_id == '3') {
+		// 	// jabatan = '';
+		// 	if (jabatan == '') {
+		// 		pesan('PERINGATAN', 'Kolom Jabatan Tujuan Disposisi Wajib Dipilih', '');
+		// 		return;
+		// 	}
+		// } else {
+		// 	if (jenis_pelaksanaan == '10' || jenis_pelaksanaan == '30') {
+		// 		if (jabatan == '') {
+		// 			pesan('PERINGATAN', 'Kolom Jabatan Tujuan Disposisi Wajib Dipilih', '');
+		// 			return;
+		// 		}
+		// 		if (pegawai == '') {
+		// 			pesan('PERINGATAN', 'Kolom Pegawai Tujuan Disposisi Wajib Dipilih', '');
+		// 			return;
+		// 		}
+		// 	}
+		// }
+
+		if (jenis_pelaksanaan == '10' || jenis_pelaksanaan == '30') {
+			if (group_id == '2' || group_id == '3') {
+				if (jabatan == '') {
+					pesan('PERINGATAN', 'Kolom Jabatan Tujuan Disposisi Wajib Dipilih', '');
+					return;
+				}
+			} else {
 				if (jabatan == '') {
 					pesan('PERINGATAN', 'Kolom Jabatan Tujuan Disposisi Wajib Dipilih', '');
 					return;
@@ -169,6 +187,7 @@
 				}
 			}
 		}
+
 		$('#tombol_simpan_dashboard_disposisi').attr("disabled",true);
 		$.post('<?php echo base_url() ?>dashboard_simpan_disposisi', {
 			register_id: register_id,

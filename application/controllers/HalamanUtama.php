@@ -282,6 +282,7 @@ class HalamanUtama extends CI_Controller
 		$queryRegister = $this->model->get_seleksi('v_suratmasuk', 'register_id', $register_id);
 		$tanggal_surat = $this->tanggalhelper->convertDayDate($queryRegister->row()->tanggal_surat);
 		$nomor_surat = $queryRegister->row()->nomor_surat;
+		$perihal = $queryRegister->row()->perihal;
 
 		$data = array(
 			'register_id' => $register_id,
@@ -310,10 +311,12 @@ class HalamanUtama extends CI_Controller
 		if ($jenis_pelaksanaan_id == '10') {
 			$message_text = "Sdr. " . $kepada_fullname . " Anda Menerima Disposisi Surat Nomor : "
 				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
+				" perihal : ".$perihal.
 				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		} else if ($jenis_pelaksanaan_id == '30') {
 			$message_text = "Sdr. " . $kepada_fullname . " Anda Menerima Terusan Surat Nomor : "
 				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
+				" perihal : ".$perihal.
 				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		}
 

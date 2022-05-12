@@ -246,6 +246,11 @@ body {
       padding: 10px 15px; } }
 
 /* ===================================== Login Page Design CSS ==================================== */
+
+.btn-danger:not(:disabled):not(.disabled).active:focus, .btn-danger:not(:disabled):not(.disabled):active:focus, .show>.btn-danger.dropdown-toggle:focus{
+  box-shadow:  0 0 0.2rem rgb(251 224 116)
+}
+
 .form-login-body {
   background-image: url(images/bg.jpg);
   background-size: cover; }
@@ -309,7 +314,8 @@ body {
       .form-login-body .login-desk .loginform .login-det .btn-danger {
         width: 100%;
         border-radius: 0px;
-        background-color: #fa607e;
+        background-color: #fcd53b;
+        border-color:#fcd53b;
         border-radius: 50px; }
       .form-login-body .login-desk .loginform .forget {
         text-align: right; }
@@ -324,6 +330,8 @@ body {
           align-items: center;
           padding: 15px;
           font-size: .9rem; }
+
+
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */

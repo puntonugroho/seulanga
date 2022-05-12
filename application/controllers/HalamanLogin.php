@@ -31,9 +31,13 @@ class HalamanLogin extends CI_Controller {
 	public function validasi(){
 		$this->form_validation->set_rules('nama', 'Nama Pengguna','trim|required|min_length[3]|max_length[100]');
 		$this->form_validation->set_rules('password', 'Kata Kunci','trim|required');
+		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+		$this->form_validation->set_message('required', 'Masukkan %s');
+
 		if ($this->form_validation->run() == FALSE){
-			echo json_encode(array('st'=>0,'msg'=>'Tidak Berhasil:<br/>'.validation_errors()));
-			return;
+			// echo json_encode(array('st'=>0,'msg'=>'Tidak Berhasil:<br/>'.validation_errors()));
+			$this->load->view('login/index',validation_errors());
+			// return;
 		}
 
 		$nama= $this->input->post('nama');

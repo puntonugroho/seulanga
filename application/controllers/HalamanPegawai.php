@@ -200,7 +200,7 @@ class HalamanPegawai extends CI_Controller {
 				$cekPengguna = $queryRegister->num_rows();
 			}
 
-			if($cekPengguna==0){
+			if($cekPengguna>=0){
 				$data_pegawai = array(
 					'nip' => $nip,
 					'nama_gelar' => $nama_gelar,

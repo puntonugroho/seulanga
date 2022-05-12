@@ -57,7 +57,7 @@ class HalamanJenisSuratKeterangan extends CI_Controller {
 		$id = $this->encrypt->decode(base64_decode($this->input->post('id')));
 
 		$array_aktif = array('' => 'Pilih', '1' => 'Ya','2' => 'Tidak');
-		$array_register = array('' => 'Pilih', '1' => 'Register Pidana','2' => 'Register Perdata');
+		$array_register = array('' => 'Pilih', '1' => 'Register Kepaniteraan','2' => 'Register Kesekretariatan');
 
 		if($id=='-1'){
 			$judul = "TAMBAH DATA JENIS SURAT KETERANGAN";
