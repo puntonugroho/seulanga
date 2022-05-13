@@ -23,6 +23,8 @@ class ModelSuratMasuk extends CI_Model {
 			$this->db->or_like('tahun_register', $_POST['search']['value']);
 			$this->db->or_like('nomor_surat', $_POST['search']['value']);
 			$this->db->or_like('pengirim', $_POST['search']['value']);
+			$this->db->or_like('nomor_index', $_POST['search']['value']);
+			$this->db->or_like('nomor_agenda', $_POST['search']['value']);
 			$this->db->group_end();		
 		}
 	}
