@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteRule ^index.php/(.*)$ /amsal/$1 [R=302,L]
+    RewriteRule ^index.php/(.*)$ /seulanga/$1 [R=302,L]
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
