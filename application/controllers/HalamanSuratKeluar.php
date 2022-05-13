@@ -381,6 +381,7 @@ class HalamanSuratKeluar extends CI_Controller
 		$perihal = $this->input->post('perihal');
 		$keterangan = $this->input->post('keterangan');
 		$jenis_pengiriman_id = $this->input->post('jenis_pengiriman');
+		$nomor_surat = $this->input->post('nomor_surat');
 
 		$klasifikasi_surat_id = '2';
 		$klasifikasi_surat = 'Surat Keluar';
@@ -468,7 +469,8 @@ class HalamanSuratKeluar extends CI_Controller
 				'dokumen_elektronik' => $upload_data['file_name'],
 				'keterangan' => $keterangan,
 				'diperbaharui_oleh' => $this->session->userdata('username'),
-				'diperbaharui_tanggal' => date("Y-m-d h:i:s", time())
+				'diperbaharui_tanggal' => date("Y-m-d h:i:s", time()),
+				'nomor_surat' => $nomor_surat
 			);
 
 			$querySimpan = $this->model->pembaharuan_data('register_surat', $data, 'register_id', $register_id);

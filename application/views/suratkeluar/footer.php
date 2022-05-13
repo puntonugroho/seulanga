@@ -231,7 +231,7 @@
 				$("#judul").append(json.judul);
 				if (json.nomor_surat != '') {
 					document.getElementById('datepicker-default').disabled = true;
-					document.getElementById('nomor_surat').disabled = true;
+					document.getElementById('nomor_surat').disabled = false;
 					document.getElementById('jenis_surat').disabled = true;
 					document.getElementById('jabatan_struktural').disabled = true;
 				} else {
