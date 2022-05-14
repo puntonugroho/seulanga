@@ -48,7 +48,7 @@ class HalamanUtama extends CI_Controller
 		$group_id = $this->session->userdata('group_id');
 		$data['group_id'] = $this->session->userdata('group_id');
 
-		if ($group_id == '2' || $group_id == '3' || $group_id == '4' || $group_id == '5' || $group_id == '6' || $group_id == '7' || $group_id == '8' || $group_id == '16' || $group_id == '17' || $group_id == '18' || $group_id == '19' || $group_id == '31' || $group_id == '32') {
+		if ($group_id == '2' || $group_id == '3' || $group_id == '4' || $group_id == '5' || $group_id == '6' || $group_id == '7' || $group_id == '16' || $group_id == '17' || $group_id == '18' ||  $group_id == '19' || $group_id == '30' || $group_id == '31' || $group_id == '32') {
 			$data['queryRegister'] = $this->model->get_seleksi_pertama($group_id);
 		} else {
 			$data['queryRegister'] = $this->model->get_seleksi2('v_suratmasuk', 'tujuan_disposisi_id', $pegawai_id, 'status_pelaksanaan_id<>', '20');
@@ -79,12 +79,14 @@ class HalamanUtama extends CI_Controller
 
 
 		$queryRegister = $this->model->get_seleksi('v_suratmasuk', 'register_id', $register_id);
+		$queryRegister2 = $this->model->get_seleksi('register_pelaksanaan', 'pelaksanaan_id', $register_id);
 		$tanggal_register = $this->tanggalhelper->convertDayDate($queryRegister->row()->tanggal_register);
 		$tanggal_surat = $this->tanggalhelper->convertDayDate($queryRegister->row()->tanggal_surat);
 		$nomor_surat = $queryRegister->row()->nomor_surat;
 		$pengirim = $queryRegister->row()->pengirim;
 		$tujuan = $queryRegister->row()->tujuan;
 		$perihal = $queryRegister->row()->perihal;
+		$keterangan = $queryRegister2->row()->keterangan;
 		$dokumen_elektronik = $queryRegister->row()->dokumen_elektronik;
 
 		$group_id = $this->session->userdata('group_id');
@@ -147,6 +149,7 @@ class HalamanUtama extends CI_Controller
 			'tanggal_surat' => $tanggal_surat,
 			'nomor_surat' => $nomor_surat,
 			'pengirim' => $pengirim,
+			'keterangan' => $keterangan,
 			'group_id' => $group_id,
 			'judul_tanggal' => $judul_tanggal,
 			'judul_pelimpahan' => $judul_pelimpahan,

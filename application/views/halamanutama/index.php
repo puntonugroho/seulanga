@@ -57,7 +57,7 @@
 									<div class="table-responsive">
 										<table class="table table-hover">
 											<thead>
-												<?php if ($group_id == '2' || $group_id == '3' || $group_id == '4' || $group_id == '5' || $group_id == '6' || $group_id == '7' || $group_id == '10' || $group_id == '16' || $group_id == '17' || $group_id == '18' || $group_id == '19' || $group_id == '20' || $group_id == '21' || $group_id == '22' || $group_id == '24' || $group_id == '25' || $group_id == '26' || $group_id == '27' || $group_id == '28' || $group_id == '29' || $group_id == '30') { ?>
+												<!-- <?php if ($group_id == '2' || $group_id == '3' || $group_id == '4' || $group_id == '5' || $group_id == '6' || $group_id == '7' || $group_id == '10' || $group_id == '16' || $group_id == '17' || $group_id == '18' || $group_id == '19' || $group_id == '20' || $group_id == '21' || $group_id == '22' || $group_id == '24' || $group_id == '25' || $group_id == '26' || $group_id == '27' || $group_id == '28' || $group_id == '29' || $group_id == '30') { ?>
 													<tr>
 														<th style="font-weight: 600; font-size:0.9rem">No</th>
 														<th style="font-weight: 600; font-size:0.9rem">Tgl. Register</th>
@@ -77,7 +77,16 @@
 														<th style="font-weight: 600; font-size:0.9rem">Keterangan</th>
 														<th style="font-weight: 600; font-size:0.9rem">Aksi</th>
 													</tr>
-												<?php } ?>
+												<?php } ?> -->
+												<tr>
+													<th style="font-weight: 600; font-size:0.9rem">No</th>
+													<th style="font-weight: 600; font-size:0.9rem">Tgl. Register</th>
+													<th style="font-weight: 600; font-size:0.9rem">Jenis</th>
+													<th style="font-weight: 600; font-size:0.9rem">Nomor</th>
+													<th style="font-weight: 600; font-size:0.9rem">Pengirim</th>
+													<th style="font-weight: 600; font-size:0.9rem">Disposisi dari</th>
+													<th style="font-weight: 600; font-size:0.9rem">Aksi</th>
+												</tr>
 											</thead>
 											<tbody>
 												<?php $a = 0;
@@ -85,22 +94,14 @@
 													$a++;
 													echo "<tr>";
 													echo "<td>" . $a . "</td>";
-													if ($group_id == '2' || $group_id == '3' | $group_id == '4' || $group_id == '5' || $group_id == '6' || $group_id == '7' || $group_id == '10' || $group_id == '16' || $group_id == '17' || $group_id == '18' || $group_id == '19' || $group_id == '20' || $group_id == '21' || $group_id == '22' || $group_id == '24' || $group_id == '25' || $group_id == '26' || $group_id == '27' || $group_id == '28' || $group_id == '29' || $group_id == '30') {
-														echo "<td>" . $this->tanggalhelper->convertDayDate($row->tanggal_register) . "</td>";
-														echo "<td>" . $row->jenis_surat . "</td>";
-														echo "<td>" . $row->nomor_surat . "</td>";
-														echo "<td>" . $row->pengirim . "</td>";
-														if ($row->tujuan_disposisi_dari_jabatan == null) {
-															echo "<td> Langsung </td>";
-														} else {
-															echo "<td>" . $row->tujuan_disposisi_dari_jabatan . "</td>";
-														}
+													echo "<td>" . $this->tanggalhelper->convertDayDate($row->tanggal_register) . "</td>";
+													echo "<td>" . $row->jenis_surat . "</td>";
+													echo "<td>" . $row->nomor_surat . "</td>";
+													echo "<td>" . $row->pengirim . "</td>";
+													if ($row->tujuan_disposisi_dari_jabatan == null) {
+														echo "<td> Langsung </td>";
 													} else {
-														echo "<td>" . $this->tanggalhelper->convertDayDate($row->tujuan_disposisi_tanggal) . "</td>";
-														echo "<td>" . $row->jenis_surat . "</td>";
-														echo "<td>" . $row->nomor_surat . "</td>";
 														echo "<td>" . $row->tujuan_disposisi_dari_jabatan . "</td>";
-														echo "<td>" . $row->tujuan_disposisi_keterangan . "</td>";
 													}
 													// '<button type="button" onclick="Buka ModalDisposisi(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')" class="btn btn-dark btn-rounded btn-icon"><i class="mdi mdi-internet-explorer"></i></button>'
 													echo '<td><button type="button" onclick="BukaModalDisposisi(\'' . base64_encode($this->encrypt->encode($row->register_id)) . '\')" class="btn btn-warning btn-icon"><i class="mdi mdi-grease-pencil"></i></button></td>';
@@ -139,7 +140,7 @@
 													echo "<td style='font-size:0.87rem'>" . $this->tanggalhelper->convertToInputDate($row->tanggal_register) . "</td>";
 													echo "<td style='font-size:0.87rem'>" . $row->nomor_surat . "</td>";
 													echo "<td style='font-size:0.87rem'>" . $row->pengirim . "</td>";
-													echo "<td style='font-size:0.87rem'>" .$row->tujuan_disposisi_nama. "</td>";
+													echo "<td style='font-size:0.87rem'>" . $row->tujuan_disposisi_nama . "</td>";
 													echo "</tr>";
 												} ?>
 											</tbody>
@@ -220,6 +221,10 @@
 										<tr>
 											<td>PERIHAL</td>
 											<td><span id="perihal"></span></td>
+										</tr>
+										<tr>
+											<td>KETERANGAN</td>
+											<td><span id="keterangan"></span></td>
 										</tr>
 										<tr style="background: #a6e3dd;">
 											<td colspan="2">
