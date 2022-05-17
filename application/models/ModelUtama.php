@@ -63,6 +63,16 @@ class ModelUtama extends CI_Model {
 		}
 	}
 
+	public function get_history_pelaksanaan($nama_tabel,$register_id,$reg){
+		try {
+			$this->db->select('tanggal_pelaksanaan,dari_jabatan,keterangan');
+			$this->db->where($register_id,$reg);
+			$this->db->order_by('pelaksanaan_id','ASC');
+			return $this->db->get($nama_tabel);
+		} catch (Exception $e) {
+			return 0;
+		}
+	}
 
 	public function get_seleksi2($nama_tabel,$kolom_seleksi1,$seleksi1,$kolom_seleksi2,$seleksi2){
 		try {

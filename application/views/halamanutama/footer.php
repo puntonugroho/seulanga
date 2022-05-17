@@ -106,7 +106,9 @@
 				$("#tanggal_register").append(json.tanggal_register);
 				$("#pengirim").append(json.pengirim);
 				$("#perihal").append(json.perihal);
+				// console.log(json.keterangan_disposisi);
 				$("#keterangan_disposisi").append(json.keterangan_disposisi);
+
 				$("#jenis_pelaksanaan_").html("");
 				$("#jenis_pelaksanaan_").append(json.jenis_pelaksanaan);
 				if (json.group_id == '2' || json.group_id == '3') {

@@ -77,18 +77,37 @@ class HalamanUtama extends CI_Controller
 
 		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
 
-
 		$queryRegister = $this->model->get_seleksi('v_suratmasuk', 'register_id', $register_id);
-		// $queryRegister2 = $this->model->get_seleksi('register_pelaksanaan', 'pelaksanaan_id', $register_id);
-
+		$getHistoryPelaksanaan = $this->model->get_history_pelaksanaan('register_pelaksanaan', 'register_id', $register_id);
+		
 		$tanggal_register = $this->tanggalhelper->convertDayDate($queryRegister->row()->tanggal_register);
 		$tanggal_surat = $this->tanggalhelper->convertDayDate($queryRegister->row()->tanggal_surat);
 		$nomor_surat = $queryRegister->row()->nomor_surat;
 		$pengirim = $queryRegister->row()->pengirim;
 		$tujuan = $queryRegister->row()->tujuan;
 		$perihal = $queryRegister->row()->perihal;
-		$keterangan_disposisi = $queryRegister->row()->tujuan_disposisi_keterangan;
+		$keterangan = $queryRegister->row()->keterangan;
 		$dokumen_elektronik = $queryRegister->row()->dokumen_elektronik;
+
+		// die(var_dump($getHistoryPelaksanaan->num_rows()));
+		
+		if($getHistoryPelaksanaan->num_rows() > 0){
+			$dataHistory = "<thead><tr style='background-color:#bdf7e3'><th>Tanggal</th><th>Dari</th><th>Keterangan</th></tr></thead><tbody>";
+			foreach ($getHistoryPelaksanaan->result() as $row) {
+			$dataHistory .= "<tr>";
+			$dataHistory .= "<td>" . $this->tanggalhelper->convertToInputDate($row->tanggal_pelaksanaan)."</td>";
+			$dataHistory .= "<td>" . $row->dari_jabatan . "</td>";
+			$dataHistory .= "<td>" . $row->keterangan . "</td>";
+			$dataHistory .= "</tr>";
+			}
+			$keterangan_disposisi = $dataHistory;
+		}else{
+			$keterangan_disposisi = $keterangan;
+		}
+
+		
+
+
 
 		$group_id = $this->session->userdata('group_id');
 
