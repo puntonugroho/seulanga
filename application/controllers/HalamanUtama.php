@@ -79,14 +79,15 @@ class HalamanUtama extends CI_Controller
 
 
 		$queryRegister = $this->model->get_seleksi('v_suratmasuk', 'register_id', $register_id);
-		$queryRegister2 = $this->model->get_seleksi('register_pelaksanaan', 'pelaksanaan_id', $register_id);
+		// $queryRegister2 = $this->model->get_seleksi('register_pelaksanaan', 'pelaksanaan_id', $register_id);
+
 		$tanggal_register = $this->tanggalhelper->convertDayDate($queryRegister->row()->tanggal_register);
 		$tanggal_surat = $this->tanggalhelper->convertDayDate($queryRegister->row()->tanggal_surat);
 		$nomor_surat = $queryRegister->row()->nomor_surat;
 		$pengirim = $queryRegister->row()->pengirim;
 		$tujuan = $queryRegister->row()->tujuan;
 		$perihal = $queryRegister->row()->perihal;
-		$keterangan = $queryRegister2->row()->keterangan;
+		$keterangan_disposisi = $queryRegister->row()->tujuan_disposisi_keterangan;
 		$dokumen_elektronik = $queryRegister->row()->dokumen_elektronik;
 
 		$group_id = $this->session->userdata('group_id');
@@ -149,7 +150,7 @@ class HalamanUtama extends CI_Controller
 			'tanggal_surat' => $tanggal_surat,
 			'nomor_surat' => $nomor_surat,
 			'pengirim' => $pengirim,
-			'keterangan' => $keterangan,
+			'keterangan_disposisi' => $keterangan_disposisi,
 			'group_id' => $group_id,
 			'judul_tanggal' => $judul_tanggal,
 			'judul_pelimpahan' => $judul_pelimpahan,

@@ -224,7 +224,7 @@
 										</tr>
 										<tr>
 											<td>KETERANGAN</td>
-											<td><span id="keterangan"></span></td>
+											<td><span id="keterangan_disposisi"></span></td>
 										</tr>
 										<tr style="background: #a6e3dd;">
 											<td colspan="2">
