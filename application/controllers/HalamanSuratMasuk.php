@@ -243,11 +243,13 @@ class HalamanSuratMasuk extends CI_Controller
 		}
 		$array_generate_nomor = array('1' => 'Ya', '2' => 'Tidak');
 
-		$queryJabatan = $this->model->get_list_jabatan();
+		$queryJabatan = $this->model->get_list_jabatan_struktural();
 		$JabatanQuery = array();
 		$InitJabatan[''] = "Pilih";
 		foreach ($queryJabatan->result() as $row) {
-			$JabatanQuery[$row->group_id] = $row->group_name;
+			if ((!empty($row->nama))) {
+				$JabatanQuery[$row->group_id] = $row->group_name;
+			}
 		}
 		$JenisJabatan = $InitJabatan + $JabatanQuery;
 

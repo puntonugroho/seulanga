@@ -146,6 +146,14 @@ class ModelSuratMasuk extends CI_Model {
 		}	
 	}
 
+	public function get_list_jabatan_struktural(){
+		try {
+			return $this->db->query("SELECT * FROM v_groups_pejabat");
+		} catch (Exception $e) {
+			return 0;
+		}	
+	}
+
 	public function get_jabatan_pelaksana($groupid){
 		try {
 			return $this->db->query("SELECT * FROM v_groups WHERE group_id>$groupid");

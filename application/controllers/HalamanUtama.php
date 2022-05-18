@@ -11,7 +11,7 @@ class HalamanUtama extends CI_Controller
 			redirect('keluar');
 		}
 
-		if($this->session->userdata('status_satker')){
+		if ($this->session->userdata('status_satker')) {
 			redirect('suratmasuk');
 		}
 
@@ -23,7 +23,6 @@ class HalamanUtama extends CI_Controller
 		$queryCek = $this->model->get_seleksi('sys_user_online', 'id', $this->session->userdata('login_id'));
 		if (($queryCek->row()->host_address != $this->input->ip_address()) && ($queryCek->row()->userid != $this->session->userdata('userid')) && ($queryCek->row()->user_agent != $this->input->user_agent())) {
 			redirect('keluar');
-
 		}
 	}
 
@@ -79,7 +78,7 @@ class HalamanUtama extends CI_Controller
 
 		$queryRegister = $this->model->get_seleksi('v_suratmasuk', 'register_id', $register_id);
 		$getHistoryPelaksanaan = $this->model->get_history_pelaksanaan('register_pelaksanaan', 'register_id', $register_id);
-		
+
 		$tanggal_register = $this->tanggalhelper->convertDayDate($queryRegister->row()->tanggal_register);
 		$tanggal_surat = $this->tanggalhelper->convertDayDate($queryRegister->row()->tanggal_surat);
 		$nomor_surat = $queryRegister->row()->nomor_surat;
@@ -90,24 +89,20 @@ class HalamanUtama extends CI_Controller
 		$dokumen_elektronik = $queryRegister->row()->dokumen_elektronik;
 
 		// die(var_dump($getHistoryPelaksanaan->num_rows()));
-		
-		if($getHistoryPelaksanaan->num_rows() > 0){
+
+		if ($getHistoryPelaksanaan->num_rows() > 0) {
 			$dataHistory = "<thead><tr style='background-color:#bdf7e3'><th>Tanggal</th><th>Dari</th><th>Keterangan</th></tr></thead><tbody>";
 			foreach ($getHistoryPelaksanaan->result() as $row) {
-			$dataHistory .= "<tr>";
-			$dataHistory .= "<td>" . $this->tanggalhelper->convertToInputDate($row->tanggal_pelaksanaan)."</td>";
-			$dataHistory .= "<td>" . $row->dari_jabatan . "</td>";
-			$dataHistory .= "<td>" . $row->keterangan . "</td>";
-			$dataHistory .= "</tr>";
+				$dataHistory .= "<tr>";
+				$dataHistory .= "<td>" . $this->tanggalhelper->convertToInputDate($row->tanggal_pelaksanaan) . "</td>";
+				$dataHistory .= "<td>" . $row->dari_jabatan . "</td>";
+				$dataHistory .= "<td>" . $row->keterangan . "</td>";
+				$dataHistory .= "</tr>";
 			}
 			$keterangan_disposisi = $dataHistory;
-		}else{
+		} else {
 			$keterangan_disposisi = $keterangan;
 		}
-
-		
-
-
 
 		$group_id = $this->session->userdata('group_id');
 
@@ -117,8 +112,7 @@ class HalamanUtama extends CI_Controller
 		// } else {
 		// 	$queryJabatan = $this->model->get_data('v_groups');
 		// }
-		$queryJabatan = $this->model->get_data('v_groups_with_name');
-
+		$queryJabatan = $this->model->get_data('v_groups_pejabat');
 		$arrayJabatan = array();
 		$arrayJabatan[''] = "Pilih";
 		foreach ($queryJabatan->result() as $row) {
@@ -132,13 +126,22 @@ class HalamanUtama extends CI_Controller
 			}
 		}
 
+		//Dapat Memilih nama pegawai
+		// if ($group_id == '2' || $group_id == '3') {
+		// 	$array_pelaksanaan = array('' => 'Pilih', '10' => 'Disposisi', '20' => 'Dilaksanakan');
+		// 	$jabatan = form_dropdown('jabatan', $arrayJabatan, '', 'class="form-control" id="jabatan"');
+		// } else {
+		// 	$array_pelaksanaan = array('' => 'Pilih', '10' => 'Disposisi', '20' => 'Dilaksanakan', '30' => 'Diteruskan');
+		// 	$jabatan = form_dropdown('jabatan', $arrayJabatan, '', 'class="form-control" onChange="TampilPegawai()" id="jabatan"');
+		// }
+
+		//Hanya nama jabatan
 		if ($group_id == '2' || $group_id == '3') {
 			$array_pelaksanaan = array('' => 'Pilih', '10' => 'Disposisi', '20' => 'Dilaksanakan');
-			$jabatan = form_dropdown('jabatan', $arrayJabatan, '', 'class="form-control" id="jabatan"');
 		} else {
 			$array_pelaksanaan = array('' => 'Pilih', '10' => 'Disposisi', '20' => 'Dilaksanakan', '30' => 'Diteruskan');
-			$jabatan = form_dropdown('jabatan', $arrayJabatan, '', 'class="form-control" onChange="TampilPegawai()" id="jabatan"');
 		}
+		$jabatan = form_dropdown('jabatan', $arrayJabatan, '', 'class="form-control" id="jabatan"');
 		$jenis_pelaksanaan = form_dropdown('jenis_pelaksanaan', $array_pelaksanaan, '', 'class="form-control" required id="jenis_pelaksanaan" onChange="JenisPelaksanaan()"');
 
 
@@ -207,27 +210,6 @@ class HalamanUtama extends CI_Controller
 		return;
 	}
 
-	private function sendTeleMessage($telegram_id, $message_text, $secret_token)
-	{
-		$url = "https://api.telegram.org/bot" . $secret_token . "/sendMessage?parse_mode=markdown&chat_id=" . $telegram_id;
-		$url = $url . "&text=" . urlencode($message_text);
-		$ch = curl_init();
-		$optArray = array(
-			CURLOPT_URL => $url,
-			CURLOPT_RETURNTRANSFER => true
-		);
-		curl_setopt_array($ch, $optArray);
-		$result = curl_exec($ch);
-		$err = curl_error($ch);
-		curl_close($ch);
-
-		if ($err) {
-			return $err;
-		} else {
-			return 'sukses';
-		}
-	}
-
 	public function dashboard_simpan_disposisi()
 	{
 		$this->form_validation->set_rules('register_id', 'Data Surat Masuk', 'trim|required');
@@ -240,7 +222,6 @@ class HalamanUtama extends CI_Controller
 			return;
 		}
 
-		// $telebot_secret_token = '5064305861:AAFMuCLDvU49EBvSoFsNMJQKzsmYer0OMPI';
 		$register_id = $this->encrypt->decode(base64_decode($this->input->post('register_id')));
 		$group_id = $this->input->post('group_id');
 		$tanggal_pelaksanaan = $this->tanggalhelper->convertToMysqlDate($this->input->post('tanggal_pelaksanaan'));
@@ -255,46 +236,62 @@ class HalamanUtama extends CI_Controller
 			$jenis_pelaksanaan = "Diteruskan";
 		}
 
-
 		$kepada_jabatan_id = "";
 		$kepada_userid = "";
 		$kepada_jabatan = "";
 		$kepada_fullname = "";
+
 		if ($jenis_pelaksanaan_id == '10' || $jenis_pelaksanaan_id == '30') {
-
-			if ($group_id == '2' || $group_id == '3') {
-				$this->form_validation->set_rules('jabatan', 'Jabatan Tujuan Disposisi', 'trim|required');
-				if ($this->form_validation->run() == FALSE) {
-					echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
-					return;
-				}
-
-				$kepada_jabatan_id = $this->input->post('jabatan');
-
-				$queryJabatanTujuan = $this->model->get_seleksi('sys_groups', 'groupid', $kepada_jabatan_id);
-				$kepada_jabatan = $queryJabatanTujuan->row()->name;
-
-				$queryPegawaiTujuan = $this->model->get_seleksi2('pegawai', 'aktif', 'Y', 'jabatan_id', $kepada_jabatan_id);
-				$kepada_fullname = $queryPegawaiTujuan->row()->nama_gelar;
-				$kepada_userid = $queryPegawaiTujuan->row()->id;
-			} else {
-				$this->form_validation->set_rules('jabatan', 'Jabatan Tujuan Disposisi', 'trim|required');
-				$this->form_validation->set_rules('pegawai', 'Pegawai Tujuan Disposisi', 'trim|required');
-				if ($this->form_validation->run() == FALSE) {
-					echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
-					return;
-				}
-
-				$kepada_jabatan_id = $this->input->post('jabatan');
-				$kepada_userid = $this->input->post('pegawai');
-
-				$queryJabatanTujuan = $this->model->get_seleksi('sys_groups', 'groupid', $kepada_jabatan_id);
-				$kepada_jabatan = $queryJabatanTujuan->row()->name;
-
-				$queryPegawaiTujuan = $this->model->get_seleksi('pegawai', 'id', $kepada_userid);
-				$kepada_fullname = $queryPegawaiTujuan->row()->nama_gelar;
+			$this->form_validation->set_rules('jabatan', 'Jabatan Tujuan Disposisi', 'trim|required');
+			if ($this->form_validation->run() == FALSE) {
+				echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
+				return;
 			}
+			$kepada_jabatan_id = $this->input->post('jabatan');
+			$queryJabatanTujuan = $this->model->get_seleksi('sys_groups', 'groupid', $kepada_jabatan_id);
+			$kepada_jabatan = $queryJabatanTujuan->row()->name;
+
+			$queryPegawaiTujuan = $this->model->get_seleksi2('pegawai', 'aktif', 'Y', 'jabatan_id', $kepada_jabatan_id);
+			$kepada_fullname = $queryPegawaiTujuan->row()->nama_gelar;
+			$kepada_userid = $queryPegawaiTujuan->row()->id;
 		}
+
+		//Memilih nama pegawai sesuai dengan jabatannya
+		// if ($jenis_pelaksanaan_id == '10' || $jenis_pelaksanaan_id == '30') {
+
+		// 	if ($group_id == '2' || $group_id == '3') {
+		// 		$this->form_validation->set_rules('jabatan', 'Jabatan Tujuan Disposisi', 'trim|required');
+		// 		if ($this->form_validation->run() == FALSE) {
+		// 			echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
+		// 			return;
+		// 		}
+
+		// 		$kepada_jabatan_id = $this->input->post('jabatan');
+
+		// 		$queryJabatanTujuan = $this->model->get_seleksi('sys_groups', 'groupid', $kepada_jabatan_id);
+		// 		$kepada_jabatan = $queryJabatanTujuan->row()->name;
+
+		// 		$queryPegawaiTujuan = $this->model->get_seleksi2('pegawai', 'aktif', 'Y', 'jabatan_id', $kepada_jabatan_id);
+		// 		$kepada_fullname = $queryPegawaiTujuan->row()->nama_gelar;
+		// 		$kepada_userid = $queryPegawaiTujuan->row()->id;
+		// 	} else {
+		// 		$this->form_validation->set_rules('jabatan', 'Jabatan Tujuan Disposisi', 'trim|required');
+		// 		$this->form_validation->set_rules('pegawai', 'Pegawai Tujuan Disposisi', 'trim|required');
+		// 		if ($this->form_validation->run() == FALSE) {
+		// 			echo json_encode(array('st' => 0, 'msg' => 'Tidak Berhasil:<br/>' . validation_errors()));
+		// 			return;
+		// 		}
+
+		// 		$kepada_jabatan_id = $this->input->post('jabatan');
+		// 		$kepada_userid = $this->input->post('pegawai');
+
+		// 		$queryJabatanTujuan = $this->model->get_seleksi('sys_groups', 'groupid', $kepada_jabatan_id);
+		// 		$kepada_jabatan = $queryJabatanTujuan->row()->name;
+
+		// 		$queryPegawaiTujuan = $this->model->get_seleksi('pegawai', 'id', $kepada_userid);
+		// 		$kepada_fullname = $queryPegawaiTujuan->row()->nama_gelar;
+		// 	}
+		// }
 
 		$userid = $this->session->userdata('userid');
 		$queryPengguna = $this->model->get_seleksi('v_users', 'userid', $userid);
@@ -325,21 +322,19 @@ class HalamanUtama extends CI_Controller
 			'diinput_tanggal' => date("Y-m-d h:i:s", time())
 		);
 
-		// die(var_dump($data));
-
 		//simpan data
 		$querySimpan = $this->model->simpan_data('register_pelaksanaan', $data);
-		
+
 		//isi pesan telegram
 		if ($jenis_pelaksanaan_id == '10') {
 			$message_text = "Sdr. " . $kepada_fullname . " Anda Menerima Disposisi Surat Nomor : "
 				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
-				" perihal : ".$perihal.
+				" perihal : " . $perihal .
 				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		} else if ($jenis_pelaksanaan_id == '30') {
 			$message_text = "Sdr. " . $kepada_fullname . " Anda Menerima Terusan Surat Nomor : "
 				. $nomor_surat . " tanggal " . $tanggal_surat . " dari " . $dari_jabatan . " " . $dari_fullname .
-				" perihal : ".$perihal.
+				" perihal : " . $perihal .
 				". Mohon agar segera ditindaklanjuti, Terima Kasih.";
 		}
 
@@ -357,13 +352,13 @@ class HalamanUtama extends CI_Controller
 			if ($querySimpan == 1) {
 				$data_status = array('status_pelaksanaan_id' => $jenis_pelaksanaan_id, 'status_pelaksanaan' => $jenis_pelaksanaan);
 				$queryUpdate = $this->model->pembaharuan_data('register_surat', $data_status, 'register_id', $register_id);
-				if($telegram_id != ''){
+				if ($telegram_id != '') {
 					$hasil = kirimNotifikasiTelegram($telegram_id, $message_text);
 					echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
-				}else{
+				} else {
 					// $hasil = kirimNotifikasiTelegram($telegram_id, $message_text);
 					echo json_encode(array('st' => 1, 'msg' => 'Disposisi Berhasil dikirim'));
-				}		
+				}
 			} else {
 				echo json_encode(array('st' => 0, 'msg' => 'Simpan Data Disposisi Gagal'));
 			}

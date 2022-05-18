@@ -34,7 +34,7 @@
 
 	$(document).ready(function() {
 		$('#tampil_pelaksanaan_jabatan').hide();
-		$('#tampil_pelaksanaan_pegawai').hide();
+		// $('#tampil_pelaksanaan_pegawai').hide();
 	});
 
 	function JenisPelaksanaan() {
@@ -43,7 +43,7 @@
 			$('#tampil_pelaksanaan_jabatan').show();
 		} else {
 			$('#tampil_pelaksanaan_jabatan').hide();
-			$('#tampil_pelaksanaan_pegawai').hide();
+			// $('#tampil_pelaksanaan_pegawai').hide();
 		}
 	}
 
@@ -116,7 +116,7 @@
 				} else {
 					$('#tampil_pelaksanaan').show();
 					$('#tampil_pelaksanaan_jabatan').hide();
-					$('#tampil_pelaksanaan_pegawai').hide();
+					// $('#tampil_pelaksanaan_pegawai').hide();
 				}
 				$('#modal_disposisi').modal({
 					show: true,

@@ -19,7 +19,6 @@ class HalamanPegawai extends CI_Controller {
 		$this->load->view('pegawai/footer');	
 	}
 
-
 	public function pegawai_data(){
 		$query = $this->model->get_datatables();
 		$data = array();
@@ -59,8 +58,6 @@ class HalamanPegawai extends CI_Controller {
 		echo json_encode(array('st'=>1,'pangkat'=>$pangkat));
 		return;
 	}
-
-
 
 	public function pegawai_add(){
 		$this->form_validation->set_rules('id', 'IDPegawai', 'trim|required');

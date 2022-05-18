@@ -262,10 +262,10 @@
 											<td><span id="judul_pelimpahan"></span></td>
 											<td><span id="jabatan_"></span></td>
 										</tr>
-										<tr id="tampil_pelaksanaan_pegawai">
+										<!-- <tr id="tampil_pelaksanaan_pegawai">
 											<td>PEGAWAI</td>
 											<td><span id="pegawai_"></span></td>
-										</tr>
+										</tr> -->
 										<tr id="tampil_pelaksanaan_keterangan">
 											<td>KETERANGAN</td>
 											<td><textarea class="form-control" id="keterangan_pelaksanaan" rows="3"></textarea></td>
