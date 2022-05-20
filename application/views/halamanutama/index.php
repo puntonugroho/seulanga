@@ -27,9 +27,9 @@
 								<div class="col-lg-3 d-flex grid-margin stretch-card">
 									<div class="card grad3">
 										<div class="card-body text-white">
-											<h3 class="font-weight-bold mb-3">75 %</h3>
+											<h3 class="font-weight-bold mb-3" id="nilai_disposisi">75 %</h3>
 											<div class="progress mb-3">
-												<div class="progress-bar  bg-primary" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+												<div class="progress-bar  bg-primary" role="progressbar" id="progress_disposisi" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 											<p class="pb-0 mb-0" style="font-weight:600">TINDAK LANJUT DISPOSISI</p>
 										</div>
@@ -38,9 +38,9 @@
 								<div class="col-lg-3 d-flex grid-margin stretch-card">
 									<div class="card grad4">
 										<div class="card-body text-white">
-											<h3 class="font-weight-bold mb-3">80 %</h3>
+											<h3 class="font-weight-bold mb-3" id="nilai_pengiriman">80 %</h3>
 											<div class="progress mb-3">
-												<div class="progress-bar  bg-primary" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+												<div class="progress-bar  bg-primary" role="progressbar" id="progress_pengiriman" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 											<p class="pb-0 mb-0" style="font-weight:600">PROGRES PENGIRIMAN SURAT</p>
 										</div>

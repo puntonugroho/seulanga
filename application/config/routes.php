@@ -9,6 +9,8 @@ $route['dashboard']  = 'HalamanUtama';
 $route['dashboard_modal_disposisi']  = 'HalamanUtama/dashboard_modal_disposisi';
 $route['dashboard_simpan_disposisi']  = 'HalamanUtama/dashboard_simpan_disposisi';
 $route['dashboard_modal_pegawai']  = 'HalamanUtama/dashboard_modal_pegawai';
+$route['dashboard_persentase_disposisi']  = 'HalamanUtama/dashboard_persentase_disposisi';
+$route['dashboard_persentase_pengiriman']  = 'HalamanUtama/dashboard_persentase_pengiriman';
 
 $route['login'] = 'HalamanLogin/index';
 $route['login_validasi'] = 'HalamanLogin/validasi';

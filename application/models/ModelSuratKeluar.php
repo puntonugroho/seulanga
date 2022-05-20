@@ -32,10 +32,15 @@ class ModelSuratKeluar extends CI_Model {
 		return $query->result();
 	}
 
+	
 	public function count_filtered(){
 		$this->_get_datatables_query();
 		$query = $this->db->get();
 		return $query->num_rows();
+	}
+
+	public function get_all(){
+		return $this->db->get('v_suratkeluar');
 	}
 
 	public function count_all(){

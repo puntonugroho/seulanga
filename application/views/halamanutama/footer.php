@@ -35,6 +35,22 @@
 	$(document).ready(function() {
 		$('#tampil_pelaksanaan_jabatan').hide();
 		// $('#tampil_pelaksanaan_pegawai').hide();
+		$.ajax({
+			url: '<?php echo base_url() ?>dashboard_persentase_disposisi',
+			success: function(response) {
+				var json = jQuery.parseJSON(response);
+				$('#nilai_disposisi').text(json.persentase + " %");
+				$('#progress_disposisi').width(json.persentase + "%");
+			},
+		});
+		$.ajax({
+			url: '<?php echo base_url() ?>dashboard_persentase_pengiriman',
+			success: function(response) {
+				var json = jQuery.parseJSON(response);
+				$('#nilai_pengiriman').text(json.persentase + " %");
+				$('#progress_pengiriman').width(json.persentase + "%");
+			},
+		});
 	});
 
 	function JenisPelaksanaan() {

@@ -19,6 +19,7 @@ class HalamanUtama extends CI_Controller
 			redirect('keluar');
 		}
 		$this->load->model('ModelUtama', 'model');
+		$this->load->model('ModelSuratKeluar', 'model_suratkeluar');
 		$this->load->helper('telebot_helper');
 		$queryCek = $this->model->get_seleksi('sys_user_online', 'id', $this->session->userdata('login_id'));
 		if (($queryCek->row()->host_address != $this->input->ip_address()) && ($queryCek->row()->userid != $this->session->userdata('userid')) && ($queryCek->row()->user_agent != $this->input->user_agent())) {
@@ -53,12 +54,56 @@ class HalamanUtama extends CI_Controller
 			$data['queryRegister'] = $this->model->get_seleksi2('v_suratmasuk', 'tujuan_disposisi_id', $pegawai_id, 'status_pelaksanaan_id<>', '20');
 		}
 
+		// die(var_dump($data['queryRegister']->result));
+
 		$data['queryPelaksanaanSK'] = $this->model->get_data('v_pelaksanaan_suratmasuk');
 		$data['queryPelaksanaanSM'] = $this->model->get_data('v_pelaksanaan_suratkeluar');
 
 		$this->load->view('header');
 		$this->load->view('halamanutama/index', $data);
 		$this->load->view('halamanutama/footer');
+	}
+
+	public function dashboard_persentase_disposisi()
+	{
+		$userid = $this->session->userdata('userid');
+		$group_id = $this->session->userdata('group_id');
+
+		error_reporting(0);
+		$seluruh_surat_masuk = $this->model->get_seleksi_pertama($group_id)->num_rows();
+
+		if($seluruh_surat_masuk==0){
+			$percentage = 100;
+		} 
+		else if($seluruh_surat_masuk == 1){
+			$percentage = 75;
+		}
+		else{
+			$percentage = round((100/$seluruh_surat_masuk),1);
+		}
+		echo json_encode(array('persentase' => $percentage));
+		return;
+	}
+
+	public function dashboard_persentase_pengiriman()
+	{
+		$queryRegister_numrows = $this->model_suratkeluar->count_all();
+		if ($queryRegister_numrows==0){
+			echo json_encode(array('persentase' => 100));
+			return;
+		} else {
+			$a=0;
+			$queryRegister = $this->model_suratkeluar->get_all();
+			foreach ($queryRegister->result() as $row) {
+				if(!empty($row->tanggal_kirim)){
+					$a++;
+				}
+			}
+			error_reporting(0);
+			$percentage = round(($a/$queryRegister_numrows)*100,1);
+			echo json_encode(array('persentase' => $percentage));
+			return;
+		}
 	}
 
 	public function dashboard_modal_disposisi()
